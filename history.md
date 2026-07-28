@@ -41,3 +41,19 @@ Scaffold: Vite 8 react-ts template (came with oxlint instead of eslint — kept 
 All corrections are precondition-keyed in convert-graphml.ts and logged in data-notes/validation.md. Generated `src/data/patterns.ts` as a `.ts` module (`satisfies readonly PatternData[]` — added unbranded `PatternData` twin to schema.ts because literal `number`s can't satisfy branded `PatternId`).
 
 Phase 0 acceptance: 17 tests green (16 integrity + render smoke), `npm run build` clean (227 kB / 70 kB gzip), lint clean, App lists 253 patterns grouped by band.
+
+## 2026-07-28: Phase 1 — data source pivot + layout + gist pipeline
+
+**The headline: BeksOmega's graphml failed validation and was replaced.** Three-source comparison (BeksOmega vs apl-md hand transcription vs iwritewordsgood book mirror):
+- Edges: BeksOmega Jaccard 0.34 vs mirror; apl-md 0.93. BeksOmega's edges are mostly wrong, not noisy.
+- Stars: BeksOmega agrees with mirror on 172/227 parseable patterns; apl-md 225/227. Spot checks (1, 21, 110 all ** in the book; BeksOmega had 0) confirmed.
+- New pipeline: `scripts/extract-apl-metadata.ts` pulls FACTUAL METADATA ONLY (never prose — hard rule) from apl-md @ commit c622b25 → `data-notes/patterns-extracted.json` (SHA-256 pinned) → `scripts/convert.ts` → `src/data/patterns.ts`. apl-md prose is licensed non-commercial-by-permission; we take names/numbers/stars/links only (facts, Feist).
+- 1,758 directed edges; 126 conflicting direction declarations resolved small-id→large-id; 159 legit "backwards" edges (pinned count, NOT an invariant — the old direction-by-scale test rule was wrong). No orphans; 75 and 211 fully threaded. Confidence 54/115/84 matches the book. Categories now 36 (subsection tags).
+- Direction parse trick: apl-md Related Patterns section = preamble paragraph (upward links) then closing paragraphs (downward). Works for 252/253 (253 declares nothing; edges reach it from other files).
+- Open: stars for 13 and 98 differ between apl-md and mirror — book check pending.
+
+**Layout**: compute-layout.ts runs d3-force to completion at build time. Determinism requirements discovered: seed `simulation.randomSource` (splitmix32), sort nodes+links by id, fixed 300 ticks, round to 1 decimal, hard band clamp per tick. Verified byte-identical across two runs (sha256). Bands at y=250/750/1250, half-width 230, canvas width 1000. `positionFor()` throws on missing id; layout.ts embeds input hash so stale layouts fail tests.
+
+**Gists**: draft-gists.ts (Claude API, Opus 4.8, structured outputs, batches of 25) writes data-notes/gists.json; refuses to touch reviewed entries; reviewedHash = sha256 of approved text, converter hard-fails on mismatch. NOT YET RUN — no ANTHROPIC_API_KEY on this machine; smoke-tested to the API boundary (clean 401). Review workflow documented in validation.md.
+
+21 tests green; build 70 kB gzip; lint clean. Remaining Phase 1 item: run `ANTHROPIC_API_KEY=... npm run data:gists` once, then human review.
