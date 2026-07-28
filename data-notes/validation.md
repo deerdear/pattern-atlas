@@ -35,6 +35,20 @@ were consistent.
 Ladder ends (verified plausible, not errors): 1 has no broader (top);
 178, 198, 245, 246, 252, 253 have no narrower. No orphans.
 
+## Gist review workflow
+
+1. `ANTHROPIC_API_KEY=... npm run data:gists` drafts all missing/unreviewed
+   gists into `data-notes/gists.json` (`reviewed: false`). Reviewed entries
+   are never touched — safe to re-run.
+2. Review each entry: original prose (not the book's), ≤140 chars, reads as
+   problem → move.
+3. To approve, set `reviewed: true` and `reviewedHash` to the sha256 hex of
+   the exact gist string (the script prints a one-liner for this).
+4. `npm run data:convert` merges reviewed gists into `patterns.ts`; the
+   converter hard-fails if a reviewed gist's text doesn't match its hash.
+5. Unreviewed gists never reach the generated data; a card without a gist is
+   the worst case in production.
+
 ## Open items
 
 - [ ] Stars for 13 (Subculture Boundary: apl-md *, mirror shows none) and

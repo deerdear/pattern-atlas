@@ -14,7 +14,9 @@
     "test:watch": "vitest",
     "preview": "vite preview",
     "data:convert": "tsx scripts/convert.ts",
-    "data:extract": "tsx scripts/extract-apl-metadata.ts"
+    "data:extract": "tsx scripts/extract-apl-metadata.ts",
+    "data:layout": "tsx scripts/compute-layout.ts",
+    "data:gists": "tsx scripts/draft-gists.ts"
   },
   "dependencies": {
     "react": "^19.2.7",
@@ -22,10 +24,13 @@
     "wouter": "^3.10.0"
   },
   "devDependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
+    "@types/d3-force": "^3.0.10",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
+    "d3-force": "^3.0.0",
     "jsdom": "^28.0.0",
     "oxlint": "^1.71.0",
     "tsx": "^4.20.0",
