@@ -7,5 +7,8 @@ export default defineConfig({
   plugins: [react()],
   test: {
     environment: 'jsdom',
+    // .claude/worktrees holds parallel-session checkouts with their own copies
+    // of the suite — never run them from the main tree.
+    exclude: ['**/node_modules/**', '**/dist/**', '**/.claude/**'],
   },
 })
