@@ -1,0 +1,159 @@
+/* The map. Everything here obeys the design language: ink on paper, no
+   sans-serif, no shadows, square corners. Dim/glow classes are toggled
+   imperatively from Graph.tsx; edges never transition (repaint cost). */
+
+.atlas {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.atlas-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+.atlas-svg:active {
+  cursor: grabbing;
+}
+
+/* --- edges ------------------------------------------------------------- */
+
+.edges {
+  stroke: var(--color-ink);
+  opacity: 0.1;
+  fill: none;
+  pointer-events: none;
+}
+
+.edge-hi {
+  stroke: var(--color-ink);
+  opacity: 0;
+  fill: none;
+  pointer-events: none;
+  stroke-linecap: round;
+}
+
+.glowing .edges {
+  opacity: 0.03;
+}
+
+.glowing .edge-hi {
+  opacity: 0.7;
+}
+
+/* --- bands ------------------------------------------------------------- */
+
+.band-rules line {
+  stroke: var(--color-rule);
+  stroke-width: 1px;
+}
+
+.band-label {
+  position: absolute;
+  left: 0.75rem;
+  top: 0;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--color-fade);
+  pointer-events: none;
+  user-select: none;
+}
+
+/* --- nodes ------------------------------------------------------------- */
+
+.node {
+  color: var(--color-ink);
+  transition: color 120ms; /* nodes only — never edges */
+  cursor: pointer;
+}
+
+.glowing .node:not(.lit) {
+  color: var(--color-node-dim);
+}
+
+.node .lod-dot {
+  fill: currentColor;
+  display: none;
+}
+
+.lod-dots .node use {
+  display: none;
+}
+
+.lod-dots .node .lod-dot {
+  display: inline;
+}
+
+.node .hit {
+  r: var(--hit-r, 28px);
+  fill: none;
+  pointer-events: all;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node {
+    transition: none;
+  }
+}
+
+/* --- chrome ------------------------------------------------------------ */
+
+.atlas-header {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.atlas-header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.atlas-header nav {
+  pointer-events: auto;
+}
+
+.atlas-header a {
+  color: var(--color-fade);
+}
+
+.legend {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: var(--color-page);
+  border: 1px solid var(--color-ink);
+  padding: 0.4rem 0.7rem;
+  max-width: 18rem;
+  font-size: 0.85rem;
+}
+
+.legend summary {
+  cursor: pointer;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  color: var(--color-ink);
+}
+
+.legend-row svg {
+  flex: none;
+}

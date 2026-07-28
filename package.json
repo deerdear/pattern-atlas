@@ -16,7 +16,8 @@
     "data:convert": "tsx scripts/convert.ts",
     "data:extract": "tsx scripts/extract-apl-metadata.ts",
     "data:layout": "tsx scripts/compute-layout.ts",
-    "data:gists": "tsx scripts/draft-gists.ts"
+    "data:gists": "tsx scripts/draft-gists.ts",
+    "check:colors": "tsx scripts/validate-colors.ts"
   },
   "dependencies": {
     "d3-selection": "^3.0.0",
