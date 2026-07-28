@@ -12,13 +12,13 @@ import {
   type PatternId,
 } from '../src/data/schema'
 
-const EDGE_COUNT = 1686 // cleaned: raw 1858 minus 66 self-edges and 106 dups
+// Pins current as of the apl-md-derived dataset (see data-notes/validation.md).
+const EDGE_COUNT = 1758
 const BAND_COUNTS = { towns: 94, buildings: 110, construction: 49 }
-const DIRECTION_QUIRKS = 199 // unique non-self edges with source > target
-// 75 and 211: threads conflated into 73/201 by upstream id collisions;
-// see data-notes/validation.md open items. 1 has no broader (top of ladder)
-// but is not an orphan.
-const ORPHAN_ALLOWLIST = new Set([75, 211])
+const DIRECTION_QUIRKS = 159 // edges declared larger-id -> smaller-id
+const CATEGORY_COUNT = 36
+const CONFIDENCE_COUNTS = { 0: 54, 1: 115, 2: 84 }
+const ORPHAN_ALLOWLIST = new Set<number>() // none — every pattern is threaded
 
 const byId = new Map(patterns.map((p) => [p.id as number, p]))
 
@@ -56,8 +56,7 @@ describe('names', () => {
 describe('categories', () => {
   it("come from a closed set of the book's section headings", () => {
     const categories = new Set(patterns.map((p) => p.category))
-    // 35 subsection headings in the source; pinned so free-text drift fails.
-    expect(categories.size).toBe(35)
+    expect(categories.size).toBe(CATEGORY_COUNT)
     for (const c of categories) expect(c).toBeTruthy()
   })
 })
@@ -117,9 +116,10 @@ describe('confidence', () => {
     for (const p of patterns) expect([0, 1, 2]).toContain(p.confidence)
   })
 
-  it('has the expected spread (not all one value)', () => {
-    const spread = new Set(patterns.map((p) => p.confidence))
-    expect(spread.size).toBe(3)
+  it('matches the pinned distribution (54 / 115 / 84)', () => {
+    const counts = { 0: 0, 1: 0, 2: 0 }
+    for (const p of patterns) counts[p.confidence]++
+    expect(counts).toEqual(CONFIDENCE_COUNTS)
   })
 })
 

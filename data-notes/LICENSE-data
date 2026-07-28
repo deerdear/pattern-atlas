@@ -1,44 +1,33 @@
-# Provenance and license for patterns.graphml
+# Provenance for patterns-extracted.json
 
-Upstream:   https://github.com/BeksOmega/pattern-language-graph
-Commit:     1404507682a027e02cab4ecf6edf16d771f826e1
-Retrieved:  2026-07-18
-SHA-256:    f107192313d9a68f0a9dfc24eddec3a595c82da20da0a2af54203cd1a4c8a939
-Contents:   253 nodes, 1858 directed edges. Node attrs: label, name, section,
-            subsection, stars. Edge attr: origin (start|end).
+Extracted:  2026-07-28 by scripts/extract-apl-metadata.ts
+Upstream:   https://github.com/zenodotus280/apl-md
+Commit:     c622b25f0b4267363d854eba3da6a82516dd5af9
+SHA-256:    c72d4b92bc8178a40e02a94a80210cd3fe1c7c5c50da1ff2cee62e698e204e96
+            (of patterns-extracted.json; pinned in scripts/convert.ts)
 
-The file encodes factual metadata about Christopher Alexander, Sara Ishikawa,
+Contents: factual metadata only about Christopher Alexander, Sara Ishikawa,
 and Murray Silverstein, "A Pattern Language" (Oxford University Press, 1977):
-pattern numbers, names, confidence asterisks, section groupings, and the
-cross-reference structure. It contains none of the book's prose.
+pattern numbers, names, confidence asterisks (as 0/1/2), section and
+subsection groupings, and the directed cross-reference structure (1,758
+edges after direction resolution). It contains NONE of the book's prose, and
+none of the apl-md transcription's prose. Facts are not copyrightable
+(Feist v. Rural, 1991; US Copyright Office Circular 33).
 
-scripts/convert-graphml.ts refuses any file whose SHA-256 does not match the
-hash pinned above; re-vendoring is a deliberate step that updates this file.
+The apl-md transcription itself is reproduced by its author with written
+permission from patternlanguage.com (2024-04-14, non-commercial with
+attribution — see its LICENSE.md). We take no text from it; extraction
+fetches the files transiently and writes only the metadata above.
 
-Corrections to the data are made in the conversion script (precondition-keyed),
-never by editing patterns.graphml. See the corrections list in
-scripts/convert-graphml.ts and data-notes/validation.md.
+Validation: the extracted metadata was cross-checked against two independent
+sources (the BeksOmega/pattern-language-graph GraphML and the
+iwritewordsgood.com/apl mirror). Asterisks agree with the mirror on 225/227
+parseable patterns; the undirected edge structure agrees at Jaccard 0.93
+(differences are single-file declarations, expected). Full log:
+data-notes/validation.md.
 
-## Upstream license (MIT)
-
-MIT License
-
-Copyright (c) 2021 Beka Westberg
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+History: v1 of this pipeline vendored BeksOmega/pattern-language-graph
+patterns.graphml (MIT, commit 1404507). Three-source validation showed its
+edges (Jaccard 0.34 vs the book mirror) and stars (172/227 agreement) were
+unreliable, and it contained two node-id collisions (73/75, 201/211). It was
+replaced by this extraction on 2026-07-28; see git history for the file.

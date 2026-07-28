@@ -13,7 +13,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "preview": "vite preview",
-    "data:convert": "tsx scripts/convert-graphml.ts"
+    "data:convert": "tsx scripts/convert.ts",
+    "data:extract": "tsx scripts/extract-apl-metadata.ts"
   },
   "dependencies": {
     "react": "^19.2.7",

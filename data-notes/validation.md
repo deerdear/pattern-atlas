@@ -1,44 +1,46 @@
 # Dataset validation log
 
-Source: `patterns.graphml` @ BeksOmega/pattern-language-graph
-commit `1404507` (see LICENSE-data). Findings below drive the corrections in
-`scripts/convert-graphml.ts`; each correction is precondition-keyed and fails
-the conversion if upstream fixes the same error.
+Current source: `patterns-extracted.json`, extracted from apl-md @ `c622b25`
+by `scripts/extract-apl-metadata.ts`. See LICENSE-data for provenance.
 
-## Found during Phase 0 conversion (2026-07)
+## Phase 1 (2026-07-28): three-source validation and source pivot
 
-1. **Duplicate node id 73.** "THE FAMILY" (book pattern 75) was extracted
-   with id 73, colliding with the real 73 "ADVENTURE PLAYGROUND"; id 75 is
-   absent. File position (between 74 and 76) and the book confirm.
-   → correction: reassigned to id 75. Candidate upstream PR.
-2. **Duplicate node id 201.** "THICKENING THE OUTER WALLS" (book pattern
-   211, CONSTRUCTION) was extracted with id 201 / section BUILDINGS,
-   colliding with the real 201 "WAIST-HIGH SHELF"; id 211 is absent.
-   → correction: reassigned to id 211, section CONSTRUCTION. Candidate
-   upstream PR.
-3. **Missing stars on the two collision victims** (73 Adventure Playground,
-   201 Waist-High Shelf). → defaulted to 0 pending book check (see open
-   items).
-4. **66 self-edges** (a pattern "completing itself") and **106 duplicated
-   edge pairs** — extraction noise. → dropped/deduped. Clean directed edge
-   count: **1,686** (raw file: 1,858).
-5. **~199 edges run "backwards" by id** (source > target). Kept as-is: the
-   book's threads genuinely cross the numbering in places; direction-by-id
-   is not an invariant, only a pinned count.
+Compared three independent derivations of the book's structure:
 
-## Open items for the Phase 1 book spot-check
+| Source | Kind | Edges (undirected) | Stars vs mirror |
+|---|---|---|---|
+| BeksOmega graphml (v1 source) | automated extraction | 1,649 · Jaccard **0.34** vs mirror | 172/227 agree |
+| apl-md wiki-links (current) | hand transcription | 1,758 · Jaccard **0.93** vs mirror | 225/227 agree |
+| iwritewordsgood mirror | HTML mirror of the book | 1,855 (incl. its own noise) | reference |
 
-- [ ] Verify stars for 73 (Adventure Playground) and 201 (Waist-High Shelf)
-      against the book; replace the default-0 correction with true values.
-- [ ] Patterns 75 and 211 have **no edges** — their threads were conflated
-      into ids 73/201 by the collisions above. Transcribe their true
-      broader/narrower links from the book and add edge corrections;
-      remove them from the orphan allowlist in `tests/data.test.ts`.
-- [ ] Category (subsection) for 75 "The Family" reads "Local Common Land" —
-      inherited from the collision; verify the book's grouping.
-- [ ] 20-pattern random spot-check of names/stars/links per the plan.
+**Verdict: the BeksOmega graphml's edges and stars are unreliable** (its
+README's "not perfect" warning understated it), and it carried two node-id
+collisions (73/75 and 201/211, both fixed by correction in v1). The pipeline
+was pivoted to apl-md-derived metadata. All v1 graphml corrections are
+obsolete and removed with the source; see git history.
 
-## Spot-checks passed so far
+Spot checks against the mirror's own pages:
+- 1 Independent Regions **, 21 Four-Story Limit **, 110 Main Entrance **,
+  180 Window Place ** — all match apl-md (BeksOmega had 0 for the first three).
+- 75 The Family * — matches apl-md (medium).
+- 180's declared neighbors (130, 134, 159, 164, 179 up; 202, 221, 222, 223,
+  231 down) are all present in our edge set.
 
-- Node 180 = "Window Place", stars 2, BUILDINGS/Alcoves — matches the book.
-- Band counts after corrections: towns 94, buildings 110, construction 49.
+Direction resolution: apl-md declares each edge in up to two files; 126
+pairs conflicted (each side claiming the other as child). Resolved
+smaller-id → larger-id (the ladder tracks the numbering); count pinned in
+tests. 159 edges legitimately run larger-id → smaller-id where declarations
+were consistent.
+
+Ladder ends (verified plausible, not errors): 1 has no broader (top);
+178, 198, 245, 246, 252, 253 have no narrower. No orphans.
+
+## Open items
+
+- [ ] Stars for 13 (Subculture Boundary: apl-md *, mirror shows none) and
+      98 (Circulation Realms: apl-md **, mirror shows *) — check against a
+      physical copy; correct via the corrections layer if apl-md is wrong.
+- [ ] 20-pattern random spot-check against a physical copy (plan Phase 1);
+      the three-source digital validation above substitutes for now.
+- [ ] Consider filing upstream issues: BeksOmega (id collisions, edge
+      quality) and apl-md (13/98 stars if book disagrees).

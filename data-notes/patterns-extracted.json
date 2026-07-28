@@ -1,0 +1,5113 @@
+{
+  "source": {
+    "repo": "zenodotus280/apl-md",
+    "commit": "c622b25f0b4267363d854eba3da6a82516dd5af9",
+    "note": "metadata only; no prose"
+  },
+  "patterns": [
+    {
+      "id": 1,
+      "name": "Independent Regions",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Network of Lattices",
+      "up": [
+        2
+      ],
+      "down": []
+    },
+    {
+      "id": 2,
+      "name": "The Distribution of Towns",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Regional Policies",
+      "up": [
+        1
+      ],
+      "down": [
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "id": 3,
+      "name": "City Country Fingers",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Regional Policies",
+      "up": [
+        2
+      ],
+      "down": [
+        4,
+        8,
+        16,
+        17
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Agricultural Valleys",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Regional Policies",
+      "up": [
+        1,
+        3
+      ],
+      "down": [
+        3,
+        7
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Lace of Country Streets",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Regional Policies",
+      "up": [
+        3
+      ],
+      "down": [
+        7,
+        14,
+        37
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Country Towns",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Regional Policies",
+      "up": [
+        2
+      ],
+      "down": [
+        7,
+        12,
+        26
+      ]
+    },
+    {
+      "id": 7,
+      "name": "The Countryside",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Regional Policies",
+      "up": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "down": [
+        37,
+        51
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Mosaic of Subcultures",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "City Policies",
+      "up": [
+        3
+      ],
+      "down": [
+        12,
+        13,
+        14,
+        37
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Scattered Work",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "City Policies",
+      "up": [
+        8
+      ],
+      "down": [
+        13,
+        15,
+        41,
+        42,
+        80,
+        157
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Magic of the City",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "City Policies",
+      "up": [
+        3,
+        8
+      ],
+      "down": [
+        11,
+        16,
+        31,
+        33,
+        58,
+        63
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Local Transport Areas",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "City Policies",
+      "up": [
+        3,
+        8,
+        10
+      ],
+      "down": [
+        17,
+        22,
+        23,
+        34,
+        51,
+        52,
+        56,
+        97
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Community of 7000",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Communities",
+      "up": [
+        8
+      ],
+      "down": [
+        13,
+        14,
+        28,
+        31,
+        44
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Subculture Boundary",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Communities",
+      "up": [
+        8,
+        12,
+        14
+      ],
+      "down": [
+        7,
+        17,
+        23,
+        24,
+        25,
+        28,
+        30,
+        41,
+        42,
+        64,
+        71,
+        84,
+        97
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Identifiable Neighborhood",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Communities",
+      "up": [
+        8,
+        12
+      ],
+      "down": [
+        15,
+        37,
+        41,
+        53,
+        60,
+        61
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Neighborhood Boundary",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Communities",
+      "up": [
+        12,
+        13,
+        14
+      ],
+      "down": [
+        23,
+        32,
+        41,
+        53,
+        59,
+        60,
+        64,
+        69,
+        70,
+        72,
+        73,
+        97,
+        103
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Web of Public Transport",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Networking",
+      "up": [
+        3,
+        11
+      ],
+      "down": [
+        20,
+        34
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Ring Roads",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Community Networking",
+      "up": [
+        11,
+        16,
+        34
+      ],
+      "down": [
+        13,
+        25,
+        42,
+        97
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Network of Learning",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Networking",
+      "up": [
+        43,
+        57,
+        83,
+        84,
+        85,
+        86,
+        157
+      ],
+      "down": []
+    },
+    {
+      "id": 19,
+      "name": "Web of Shopping",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Networking",
+      "up": [
+        8,
+        9,
+        11,
+        13
+      ],
+      "down": [
+        10,
+        31,
+        32,
+        46,
+        89
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Mini-Buses",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Networking",
+      "up": [
+        11,
+        16
+      ],
+      "down": [
+        23,
+        34,
+        92
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Four-Story Limit",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Community Policies",
+      "up": [
+        3,
+        5,
+        10
+      ],
+      "down": [
+        29,
+        39,
+        62,
+        82,
+        95,
+        96
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Nine Per Cent Parking",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Community Policies",
+      "up": [
+        11,
+        12,
+        14
+      ],
+      "down": [
+        97,
+        103
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Parallel Roads",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Community Policies",
+      "up": [
+        11,
+        13,
+        15,
+        17
+      ],
+      "down": [
+        11,
+        49,
+        50,
+        51,
+        52,
+        54,
+        55
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Sacred Sites",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Policies",
+      "up": [
+        59,
+        66,
+        134,
+        171,
+        176
+      ],
+      "down": []
+    },
+    {
+      "id": 25,
+      "name": "Access to Water",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Policies",
+      "up": [
+        24
+      ],
+      "down": [
+        7,
+        23,
+        31,
+        103
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Life Cycle",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Policies",
+      "up": [
+        12,
+        14
+      ],
+      "down": [
+        35,
+        40,
+        41,
+        44,
+        57,
+        65,
+        66,
+        70,
+        75,
+        79,
+        83,
+        84,
+        85,
+        86,
+        153,
+        154,
+        155,
+        156,
+        187
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Men and Women",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Community Policies",
+      "up": [
+        12,
+        14,
+        26
+      ],
+      "down": [
+        9,
+        141
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Eccentric Nucleus",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Centers",
+      "up": [
+        10,
+        12,
+        13,
+        21
+      ],
+      "down": [
+        24,
+        29,
+        30,
+        31,
+        32,
+        59,
+        71
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Density Rings",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Centers",
+      "up": [
+        8,
+        12,
+        13,
+        28
+      ],
+      "down": [
+        31,
+        37,
+        38,
+        39,
+        61,
+        123
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Activity Nodes",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Centers",
+      "up": [
+        12,
+        13,
+        14,
+        15,
+        28,
+        29,
+        31,
+        52,
+        100
+      ],
+      "down": [
+        31,
+        33,
+        36,
+        41,
+        43,
+        44,
+        47,
+        61,
+        65,
+        84,
+        85,
+        87,
+        88,
+        90,
+        93,
+        120
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Promenade",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Centers",
+      "up": [
+        8,
+        12,
+        30
+      ],
+      "down": [
+        30,
+        32,
+        33,
+        58,
+        63,
+        100,
+        121,
+        123
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Shopping Street",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Centers",
+      "up": [
+        10,
+        19,
+        31
+      ],
+      "down": [
+        23,
+        46,
+        48,
+        52,
+        54,
+        87,
+        97,
+        100,
+        244
+      ]
+    },
+    {
+      "id": 33,
+      "name": "Night Life",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Centers",
+      "up": [
+        10,
+        12,
+        31
+      ],
+      "down": [
+        30,
+        44,
+        58,
+        63,
+        88,
+        90,
+        91
+      ]
+    },
+    {
+      "id": 34,
+      "name": "Interchange",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Local Centers",
+      "up": [
+        11,
+        16
+      ],
+      "down": [
+        9,
+        20,
+        30,
+        39,
+        40,
+        41,
+        92,
+        119
+      ]
+    },
+    {
+      "id": 35,
+      "name": "Household Mix",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Housing Clusters",
+      "up": [
+        14,
+        26,
+        37,
+        41
+      ],
+      "down": [
+        40,
+        68,
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Degrees of Publicness",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Housing Clusters",
+      "up": [
+        14,
+        29,
+        30
+      ],
+      "down": [
+        37,
+        38,
+        39,
+        51,
+        55,
+        100,
+        121,
+        123
+      ]
+    },
+    {
+      "id": 37,
+      "name": "House Cluster",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Housing Clusters",
+      "up": [
+        14,
+        29,
+        35,
+        36
+      ],
+      "down": [
+        36,
+        38,
+        39,
+        67,
+        75,
+        76,
+        77,
+        78,
+        79,
+        98,
+        103,
+        157
+      ]
+    },
+    {
+      "id": 38,
+      "name": "Row Houses",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Housing Clusters",
+      "up": [
+        29,
+        36,
+        37
+      ],
+      "down": [
+        23,
+        37,
+        52,
+        75,
+        76,
+        77,
+        78,
+        95,
+        103,
+        109
+      ]
+    },
+    {
+      "id": 39,
+      "name": "Housing Hill",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Housing Clusters",
+      "up": [
+        21,
+        29
+      ],
+      "down": [
+        67,
+        68,
+        79,
+        118,
+        158,
+        177
+      ]
+    },
+    {
+      "id": 40,
+      "name": "Old People Everywhere",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Housing Clusters",
+      "up": [
+        14,
+        26,
+        35
+      ],
+      "down": [
+        18,
+        75,
+        86,
+        155,
+        156,
+        177
+      ]
+    },
+    {
+      "id": 41,
+      "name": "Work Community",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        9,
+        13,
+        15,
+        30
+      ],
+      "down": [
+        60,
+        61,
+        72,
+        80,
+        88,
+        93,
+        115,
+        147
+      ]
+    },
+    {
+      "id": 42,
+      "name": "Industrial Ribbon",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        9,
+        13,
+        41
+      ],
+      "down": [
+        17,
+        41,
+        106,
+        122
+      ]
+    },
+    {
+      "id": 43,
+      "name": "University as a Marketplace",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        18
+      ],
+      "down": [
+        31,
+        48,
+        59,
+        83,
+        95,
+        100
+      ]
+    },
+    {
+      "id": 44,
+      "name": "Local Town Hall",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        12
+      ],
+      "down": [
+        30,
+        45,
+        61,
+        81,
+        123
+      ]
+    },
+    {
+      "id": 45,
+      "name": "Necklace of Community Projects",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        43,
+        44,
+        47
+      ],
+      "down": [
+        69,
+        87,
+        122,
+        160,
+        165
+      ]
+    },
+    {
+      "id": 46,
+      "name": "Market of Many Shops",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        19,
+        32
+      ],
+      "down": [
+        87,
+        100,
+        101,
+        212,
+        244
+      ]
+    },
+    {
+      "id": 47,
+      "name": "Health Center",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        26
+      ],
+      "down": [
+        37,
+        38,
+        79
+      ]
+    },
+    {
+      "id": 48,
+      "name": "Housing In Between",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Work Communities",
+      "up": [
+        13,
+        14,
+        15,
+        37,
+        41
+      ],
+      "down": [
+        37,
+        38,
+        79
+      ]
+    },
+    {
+      "id": 49,
+      "name": "Looped Local Roads",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        11,
+        14,
+        23,
+        37,
+        41
+      ],
+      "down": [
+        50,
+        51,
+        52,
+        103,
+        113
+      ]
+    },
+    {
+      "id": 50,
+      "name": "T Junctions",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        23,
+        49
+      ],
+      "down": [
+        54
+      ]
+    },
+    {
+      "id": 51,
+      "name": "Green Streets",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        49,
+        50,
+        67
+      ],
+      "down": [
+        52,
+        67,
+        103,
+        170,
+        245,
+        247
+      ]
+    },
+    {
+      "id": 52,
+      "name": "Network of Paths and Cars",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        23,
+        30,
+        31,
+        49,
+        51,
+        120
+      ],
+      "down": [
+        51,
+        54,
+        55,
+        121
+      ]
+    },
+    {
+      "id": 53,
+      "name": "Main Gateways",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        14,
+        37,
+        41,
+        95,
+        98
+      ],
+      "down": [
+        98,
+        110,
+        112
+      ]
+    },
+    {
+      "id": 54,
+      "name": "Road Crossing",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        23,
+        52
+      ],
+      "down": [
+        55,
+        61,
+        92,
+        93,
+        103,
+        174,
+        244
+      ]
+    },
+    {
+      "id": 55,
+      "name": "Raised Walk",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        23,
+        52,
+        54
+      ],
+      "down": [
+        125,
+        243
+      ]
+    },
+    {
+      "id": 56,
+      "name": "Bike Paths and Racks",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        11,
+        49,
+        52
+      ],
+      "down": [
+        59,
+        110,
+        119,
+        173
+      ]
+    },
+    {
+      "id": 57,
+      "name": "Children in the City",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Local Networking",
+      "up": [
+        18,
+        23,
+        31,
+        49,
+        51,
+        52,
+        56
+      ],
+      "down": [
+        40,
+        41,
+        43,
+        68,
+        70,
+        72,
+        73,
+        74,
+        84,
+        85,
+        86,
+        164
+      ]
+    },
+    {
+      "id": 58,
+      "name": "Carnival",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        31,
+        33
+      ],
+      "down": [
+        61,
+        63,
+        69,
+        93,
+        100,
+        244
+      ]
+    },
+    {
+      "id": 59,
+      "name": "Quiet Backs",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        9,
+        41
+      ],
+      "down": [
+        60,
+        64,
+        71,
+        171,
+        173
+      ]
+    },
+    {
+      "id": 60,
+      "name": "Accessible Green",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        13,
+        14,
+        15,
+        41,
+        59
+      ],
+      "down": [
+        66,
+        70,
+        72,
+        74,
+        94,
+        106,
+        171,
+        173
+      ]
+    },
+    {
+      "id": 61,
+      "name": "Small Public Squares",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        14,
+        30,
+        31,
+        41
+      ],
+      "down": [
+        106,
+        114,
+        122,
+        123,
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "id": 62,
+      "name": "High Places",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        12,
+        21,
+        61,
+        66
+      ],
+      "down": [
+        61,
+        125,
+        134,
+        158
+      ]
+    },
+    {
+      "id": 63,
+      "name": "Dancing in the Street",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        10,
+        31,
+        33,
+        58,
+        61
+      ],
+      "down": [
+        69,
+        93,
+        124,
+        244
+      ]
+    },
+    {
+      "id": 64,
+      "name": "Pools and Streams",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        15,
+        24,
+        25,
+        59,
+        100
+      ],
+      "down": [
+        31,
+        66,
+        71,
+        119
+      ]
+    },
+    {
+      "id": 65,
+      "name": "Birth Places",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        12,
+        14,
+        26
+      ],
+      "down": [
+        95,
+        111,
+        129,
+        136,
+        139,
+        173
+      ]
+    },
+    {
+      "id": 66,
+      "name": "Holy Ground",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Community Recreation",
+      "up": [
+        24,
+        26
+      ],
+      "down": [
+        53,
+        64,
+        134,
+        171
+      ]
+    },
+    {
+      "id": 67,
+      "name": "Common Land",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        37,
+        38,
+        39,
+        41,
+        60
+      ],
+      "down": [
+        51,
+        68,
+        69,
+        72,
+        105,
+        106,
+        114,
+        177
+      ]
+    },
+    {
+      "id": 68,
+      "name": "Connected Play",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        67
+      ],
+      "down": [
+        37,
+        51,
+        71,
+        73,
+        74,
+        86
+      ]
+    },
+    {
+      "id": 69,
+      "name": "Public Outdoor Room",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        53,
+        60,
+        61,
+        67,
+        100,
+        120
+      ],
+      "down": [
+        115,
+        119,
+        121,
+        124,
+        125,
+        129,
+        160,
+        163,
+        241,
+        244
+      ]
+    },
+    {
+      "id": 70,
+      "name": "Grave Sites",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        14,
+        26,
+        66,
+        67
+      ],
+      "down": [
+        59,
+        171,
+        241
+      ]
+    },
+    {
+      "id": 71,
+      "name": "Still Water",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        25,
+        37,
+        41,
+        47,
+        64,
+        67,
+        72
+      ],
+      "down": [
+        64,
+        69,
+        105,
+        174,
+        243
+      ]
+    },
+    {
+      "id": 72,
+      "name": "Local Sports",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        41,
+        47
+      ],
+      "down": [
+        71,
+        95,
+        101,
+        144,
+        165,
+        241,
+        243
+      ]
+    },
+    {
+      "id": 73,
+      "name": "Adventure Playground",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        67,
+        68
+      ],
+      "down": [
+        56,
+        161,
+        172,
+        173,
+        203,
+        243
+      ]
+    },
+    {
+      "id": 74,
+      "name": "Animals",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Local Recreation",
+      "up": [
+        51,
+        67,
+        79
+      ],
+      "down": [
+        51,
+        60,
+        86,
+        178
+      ]
+    },
+    {
+      "id": 75,
+      "name": "The Family",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Families",
+      "up": [
+        26,
+        35,
+        37,
+        38,
+        39,
+        48
+      ],
+      "down": [
+        76,
+        77,
+        78,
+        79,
+        95,
+        129,
+        147
+      ]
+    },
+    {
+      "id": 76,
+      "name": "House for a Small Family",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Families",
+      "up": [
+        37,
+        75
+      ],
+      "down": [
+        79,
+        129,
+        136,
+        137,
+        143
+      ]
+    },
+    {
+      "id": 77,
+      "name": "House for a Couple",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Families",
+      "up": [
+        37,
+        75
+      ],
+      "down": [
+        79,
+        136,
+        141
+      ]
+    },
+    {
+      "id": 78,
+      "name": "House for One Person",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Families",
+      "up": [
+        75,
+        76,
+        77
+      ],
+      "down": [
+        79,
+        139,
+        144,
+        154,
+        155,
+        180,
+        183,
+        188,
+        189
+      ]
+    },
+    {
+      "id": 79,
+      "name": "Your Own Home",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Families",
+      "up": [
+        38,
+        39,
+        75,
+        76,
+        77,
+        78
+      ],
+      "down": [
+        95,
+        111
+      ]
+    },
+    {
+      "id": 80,
+      "name": "Self-Governing Workshops and Offices",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Workgroups",
+      "up": [
+        9,
+        41,
+        42
+      ],
+      "down": [
+        81,
+        82,
+        83,
+        95,
+        148
+      ]
+    },
+    {
+      "id": 81,
+      "name": "Small Services Without Red Tape",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Workgroups",
+      "up": [
+        41,
+        43,
+        44,
+        47,
+        84
+      ],
+      "down": [
+        45,
+        82,
+        95,
+        101,
+        102,
+        146,
+        148
+      ]
+    },
+    {
+      "id": 82,
+      "name": "Office Connections",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Workgroups",
+      "up": [
+        41,
+        80,
+        81
+      ],
+      "down": []
+    },
+    {
+      "id": 83,
+      "name": "Master and Apprentices",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Workgroups",
+      "up": [
+        18,
+        80
+      ],
+      "down": [
+        129,
+        147,
+        148,
+        151,
+        152,
+        183
+      ]
+    },
+    {
+      "id": 84,
+      "name": "Teenage Society",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Workgroups",
+      "up": [
+        18,
+        26,
+        83
+      ],
+      "down": [
+        18,
+        72,
+        95,
+        147,
+        157
+      ]
+    },
+    {
+      "id": 85,
+      "name": "Shopfront Schools",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Workgroups",
+      "up": [
+        18,
+        86
+      ],
+      "down": [
+        60,
+        80,
+        95,
+        100,
+        165
+      ]
+    },
+    {
+      "id": 86,
+      "name": "Children's Home",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Workgroups",
+      "up": [
+        18,
+        57,
+        68
+      ],
+      "down": [
+        73,
+        75,
+        79,
+        95,
+        101,
+        129
+      ]
+    },
+    {
+      "id": 87,
+      "name": "Individually Owned Shops",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        32,
+        46,
+        88,
+        89
+      ],
+      "down": [
+        95,
+        165,
+        191,
+        197,
+        200
+      ]
+    },
+    {
+      "id": 88,
+      "name": "Street Cafe",
+      "stars": 2,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        14,
+        30,
+        61
+      ],
+      "down": [
+        95,
+        125,
+        150,
+        165,
+        243,
+        244,
+        251
+      ]
+    },
+    {
+      "id": 89,
+      "name": "Corner Grocery",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        14,
+        19,
+        46
+      ],
+      "down": [
+        87,
+        95,
+        110,
+        165,
+        191,
+        197,
+        200
+      ]
+    },
+    {
+      "id": 90,
+      "name": "Beer Hall",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        15,
+        31,
+        33
+      ],
+      "down": [
+        95,
+        179,
+        181,
+        190
+      ]
+    },
+    {
+      "id": 91,
+      "name": "Traveler's Inn",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        10,
+        30,
+        31,
+        33,
+        41
+      ],
+      "down": [
+        63,
+        90,
+        94,
+        95,
+        129,
+        147,
+        186
+      ]
+    },
+    {
+      "id": 92,
+      "name": "Bus Stop",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        20
+      ],
+      "down": [
+        53,
+        69,
+        93,
+        121,
+        150,
+        241
+      ]
+    },
+    {
+      "id": 93,
+      "name": "Food Stands",
+      "stars": 1,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        30,
+        54,
+        55,
+        61,
+        92
+      ],
+      "down": [
+        87,
+        124,
+        244
+      ]
+    },
+    {
+      "id": 94,
+      "name": "Sleeping in Public",
+      "stars": 0,
+      "section": "TOWN",
+      "subsection": "Social Institutions — Local Gathering",
+      "up": [
+        34,
+        61,
+        69,
+        88,
+        100,
+        101,
+        150
+      ],
+      "down": [
+        160,
+        188,
+        241
+      ]
+    },
+    {
+      "id": 95,
+      "name": "Building Complex",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        109,
+        110,
+        119,
+        122
+      ],
+      "down": [
+        98,
+        99,
+        104,
+        105,
+        107,
+        205
+      ]
+    },
+    {
+      "id": 96,
+      "name": "Number of Stories",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        21,
+        95
+      ],
+      "down": [
+        99,
+        104,
+        105,
+        116,
+        117,
+        118,
+        171,
+        205,
+        213
+      ]
+    },
+    {
+      "id": 97,
+      "name": "Shielded Parking",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        11,
+        22,
+        95
+      ],
+      "down": [
+        39,
+        48,
+        87,
+        98,
+        102,
+        110,
+        135,
+        158,
+        166,
+        205,
+        244
+      ]
+    },
+    {
+      "id": 98,
+      "name": "Circulation Realms",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        95,
+        96
+      ],
+      "down": [
+        53,
+        67,
+        99,
+        100,
+        101,
+        102,
+        110,
+        114,
+        115,
+        120
+      ]
+    },
+    {
+      "id": 99,
+      "name": "Main Building",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        95,
+        96,
+        98
+      ],
+      "down": [
+        116,
+        129,
+        205
+      ]
+    },
+    {
+      "id": 100,
+      "name": "Pedestrian Street",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        31,
+        32,
+        38,
+        39,
+        43,
+        46,
+        52,
+        55,
+        95,
+        98
+      ],
+      "down": [
+        102,
+        119,
+        121,
+        123,
+        140,
+        158,
+        164,
+        165,
+        166,
+        167
+      ]
+    },
+    {
+      "id": 101,
+      "name": "Building Thoroughfare",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        95,
+        98,
+        100
+      ],
+      "down": [
+        100,
+        102,
+        123,
+        124,
+        135,
+        149,
+        158,
+        180,
+        190,
+        194,
+        237
+      ]
+    },
+    {
+      "id": 102,
+      "name": "Family of Entrances",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        98
+      ],
+      "down": [
+        110,
+        112,
+        130,
+        149
+      ]
+    },
+    {
+      "id": 103,
+      "name": "Small Parking Lots",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Group of Buildings",
+      "up": [
+        22,
+        32,
+        37,
+        41,
+        51,
+        53,
+        97,
+        98
+      ],
+      "down": [
+        98,
+        106,
+        171,
+        173
+      ]
+    },
+    {
+      "id": 104,
+      "name": "Site Repair",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Siting the Buildings",
+      "up": [
+        95,
+        96,
+        98
+      ],
+      "down": [
+        105,
+        106,
+        107,
+        109,
+        169,
+        171,
+        172
+      ]
+    },
+    {
+      "id": 105,
+      "name": "South Facing Outdoors",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Siting the Buildings",
+      "up": [
+        104
+      ],
+      "down": [
+        106,
+        107,
+        111,
+        128,
+        161,
+        162
+      ]
+    },
+    {
+      "id": 106,
+      "name": "Positive Outdoor Space",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Siting the Buildings",
+      "up": [
+        105,
+        107
+      ],
+      "down": [
+        107,
+        114,
+        115,
+        118,
+        121,
+        122,
+        160,
+        163,
+        171,
+        172,
+        173,
+        174
+      ]
+    },
+    {
+      "id": 107,
+      "name": "Wings of Light",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Siting the Buildings",
+      "up": [
+        75,
+        76,
+        77,
+        78,
+        80,
+        81,
+        82,
+        83,
+        87,
+        105,
+        106
+      ],
+      "down": [
+        106,
+        108,
+        116,
+        119,
+        132,
+        159,
+        205
+      ]
+    },
+    {
+      "id": 108,
+      "name": "Connected Buildings",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Siting the Buildings",
+      "up": [
+        95,
+        106,
+        107
+      ],
+      "down": [
+        115,
+        119,
+        163
+      ]
+    },
+    {
+      "id": 109,
+      "name": "Long Thin House",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Siting the Buildings",
+      "up": [
+        107
+      ],
+      "down": [
+        106,
+        116,
+        127,
+        129
+      ]
+    },
+    {
+      "id": 110,
+      "name": "Main Entrance",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        98,
+        102,
+        104,
+        105,
+        107
+      ],
+      "down": [
+        97,
+        102,
+        112,
+        113,
+        130
+      ]
+    },
+    {
+      "id": 111,
+      "name": "Half-Hidden Garden",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        37,
+        38,
+        41,
+        79,
+        95,
+        104,
+        105
+      ],
+      "down": [
+        110,
+        112,
+        115,
+        118,
+        140,
+        172,
+        173
+      ]
+    },
+    {
+      "id": 112,
+      "name": "Entrance Transition",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        53,
+        102,
+        110,
+        111
+      ],
+      "down": [
+        127,
+        130,
+        134,
+        135,
+        173,
+        174
+      ]
+    },
+    {
+      "id": 113,
+      "name": "Car Connection",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        110,
+        112
+      ],
+      "down": [
+        112,
+        119,
+        120,
+        127,
+        129,
+        162,
+        163,
+        205,
+        245
+      ]
+    },
+    {
+      "id": 114,
+      "name": "Hierarchy of Open Space",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        104,
+        105,
+        106
+      ],
+      "down": [
+        7,
+        49,
+        51,
+        60,
+        61,
+        67,
+        111,
+        124,
+        140,
+        176
+      ]
+    },
+    {
+      "id": 115,
+      "name": "Courtyards Which Live",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        106,
+        114
+      ],
+      "down": [
+        114,
+        119,
+        126,
+        134,
+        161,
+        163,
+        166,
+        167,
+        173,
+        209
+      ]
+    },
+    {
+      "id": 116,
+      "name": "Cascade of Roofs",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        95,
+        96,
+        99,
+        107
+      ],
+      "down": [
+        117,
+        118,
+        190,
+        205,
+        209
+      ]
+    },
+    {
+      "id": 117,
+      "name": "Sheltering Roof",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        107,
+        116
+      ],
+      "down": [
+        118,
+        119,
+        145,
+        166,
+        209,
+        220,
+        231
+      ]
+    },
+    {
+      "id": 118,
+      "name": "Roof Garden",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Building Layout",
+      "up": [
+        107,
+        116,
+        117
+      ],
+      "down": [
+        107,
+        140,
+        161,
+        163,
+        166,
+        167,
+        177,
+        244,
+        245,
+        246
+      ]
+    },
+    {
+      "id": 119,
+      "name": "Arcades",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        98,
+        100,
+        108,
+        116
+      ],
+      "down": [
+        117,
+        160,
+        190,
+        193,
+        205,
+        211,
+        224,
+        226,
+        227
+      ]
+    },
+    {
+      "id": 120,
+      "name": "Paths and Goals",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        36,
+        52,
+        95,
+        98,
+        106,
+        107,
+        119
+      ],
+      "down": [
+        102,
+        110,
+        121,
+        126,
+        171,
+        241,
+        245,
+        247
+      ]
+    },
+    {
+      "id": 121,
+      "name": "Path Shape",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        31,
+        32,
+        52,
+        55,
+        100,
+        120
+      ],
+      "down": [
+        69,
+        119,
+        122,
+        123,
+        124,
+        125,
+        164
+      ]
+    },
+    {
+      "id": 122,
+      "name": "Building Fronts",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        95,
+        106,
+        107,
+        119,
+        121,
+        124
+      ],
+      "down": [
+        125,
+        140,
+        158,
+        160,
+        164,
+        165,
+        166,
+        242
+      ]
+    },
+    {
+      "id": 123,
+      "name": "Pedestrian Density",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        31,
+        61,
+        100,
+        101,
+        121
+      ],
+      "down": [
+        88,
+        124,
+        125,
+        140,
+        160,
+        164,
+        165,
+        166
+      ]
+    },
+    {
+      "id": 124,
+      "name": "Activity Pockets",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        31,
+        61,
+        69,
+        100,
+        101,
+        121
+      ],
+      "down": [
+        88,
+        92,
+        93,
+        119,
+        120,
+        122,
+        150,
+        163,
+        174,
+        241,
+        243
+      ]
+    },
+    {
+      "id": 125,
+      "name": "Stair Seats",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        61,
+        102,
+        106,
+        110,
+        121,
+        158
+      ],
+      "down": [
+        168,
+        241,
+        248
+      ]
+    },
+    {
+      "id": 126,
+      "name": "Something Roughly in the Middle",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Between the Buildings",
+      "up": [
+        61,
+        67,
+        115,
+        121,
+        124,
+        125
+      ],
+      "down": [
+        62,
+        63,
+        64,
+        69,
+        71,
+        120,
+        171,
+        243
+      ]
+    },
+    {
+      "id": 127,
+      "name": "Intimacy Gradient",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        96,
+        107,
+        110
+      ],
+      "down": [
+        129,
+        130,
+        141,
+        142,
+        144,
+        149,
+        152
+      ]
+    },
+    {
+      "id": 128,
+      "name": "Indoor Sunlight",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        105,
+        127
+      ],
+      "down": [
+        138,
+        157,
+        161,
+        162,
+        163,
+        183,
+        199,
+        236
+      ]
+    },
+    {
+      "id": 129,
+      "name": "Common Areas at the Heart",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        116,
+        127,
+        128
+      ],
+      "down": [
+        119,
+        131,
+        132,
+        139,
+        142,
+        147,
+        159,
+        163,
+        181,
+        191
+      ]
+    },
+    {
+      "id": 130,
+      "name": "Entrance Room",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        102,
+        110,
+        112,
+        113,
+        140
+      ],
+      "down": [
+        102,
+        135,
+        142,
+        159,
+        166,
+        191,
+        201,
+        202,
+        237,
+        242
+      ]
+    },
+    {
+      "id": 131,
+      "name": "The Flow Through Rooms",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        127,
+        129
+      ],
+      "down": [
+        130,
+        132,
+        133,
+        134,
+        135,
+        159,
+        196
+      ]
+    },
+    {
+      "id": 132,
+      "name": "Short Passages",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        98,
+        101,
+        131
+      ],
+      "down": [
+        159,
+        163,
+        166,
+        179,
+        180,
+        191,
+        194,
+        197,
+        198,
+        222,
+        237
+      ]
+    },
+    {
+      "id": 133,
+      "name": "Staircase as a Stage",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        110,
+        131,
+        132
+      ],
+      "down": [
+        125,
+        134,
+        135,
+        191,
+        195
+      ]
+    },
+    {
+      "id": 134,
+      "name": "Zen View",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        112,
+        120,
+        130,
+        132,
+        133
+      ],
+      "down": [
+        135,
+        180,
+        221
+      ]
+    },
+    {
+      "id": 135,
+      "name": "Tapestry of Light and Dark",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Light and Space",
+      "up": [
+        131,
+        132,
+        133,
+        134
+      ],
+      "down": [
+        180,
+        250,
+        252
+      ]
+    },
+    {
+      "id": 136,
+      "name": "Couple's Realm",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        75,
+        76,
+        77,
+        127
+      ],
+      "down": [
+        138,
+        144,
+        159,
+        185,
+        187,
+        189,
+        191,
+        198,
+        224
+      ]
+    },
+    {
+      "id": 137,
+      "name": "Children's Realm",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        68,
+        76,
+        129,
+        136
+      ],
+      "down": [
+        132,
+        139,
+        143,
+        144,
+        157,
+        163
+      ]
+    },
+    {
+      "id": 138,
+      "name": "Sleeping to the East",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        127,
+        128,
+        136,
+        137
+      ],
+      "down": [
+        136,
+        143,
+        180,
+        187,
+        188,
+        221,
+        238
+      ]
+    },
+    {
+      "id": 139,
+      "name": "Farmhouse Kitchen",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        129,
+        147
+      ],
+      "down": [
+        142,
+        159,
+        179,
+        182,
+        184,
+        191,
+        199,
+        200,
+        201
+      ]
+    },
+    {
+      "id": 140,
+      "name": "Private Terrace on the Street",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        51,
+        100,
+        111,
+        129,
+        142
+      ],
+      "down": [
+        163,
+        169,
+        173,
+        193,
+        243
+      ]
+    },
+    {
+      "id": 141,
+      "name": "A Room of One's Own",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        75,
+        76,
+        77,
+        127,
+        129
+      ],
+      "down": [
+        129,
+        154,
+        155,
+        157,
+        159,
+        179,
+        183,
+        188,
+        189,
+        191,
+        253
+      ]
+    },
+    {
+      "id": 142,
+      "name": "Sequence of Sitting Spaces",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        127
+      ],
+      "down": [
+        129,
+        130,
+        134,
+        136,
+        139,
+        140,
+        141,
+        146,
+        150,
+        152,
+        180,
+        181,
+        185,
+        191,
+        241
+      ]
+    },
+    {
+      "id": 143,
+      "name": "Bed Cluster",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        136,
+        137,
+        138
+      ],
+      "down": [
+        137,
+        159,
+        186,
+        188,
+        189,
+        191,
+        198,
+        203
+      ]
+    },
+    {
+      "id": 144,
+      "name": "Bathing Room",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        127,
+        129,
+        136,
+        137,
+        138,
+        143
+      ],
+      "down": [
+        71,
+        159,
+        173,
+        178,
+        191,
+        238
+      ]
+    },
+    {
+      "id": 145,
+      "name": "Bulk Storage",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Private Rooms",
+      "up": [
+        76,
+        80,
+        87,
+        95
+      ],
+      "down": [
+        117,
+        153,
+        162,
+        169,
+        215
+      ]
+    },
+    {
+      "id": 146,
+      "name": "Flexible Office Space",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Public Rooms",
+      "up": [
+        80,
+        82,
+        127,
+        129
+      ],
+      "down": [
+        147,
+        148,
+        149,
+        152,
+        159,
+        190,
+        226
+      ]
+    },
+    {
+      "id": 147,
+      "name": "Communal Eating",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Public Rooms",
+      "up": [
+        75,
+        80,
+        129
+      ],
+      "down": [
+        139,
+        148,
+        151,
+        182
+      ]
+    },
+    {
+      "id": 148,
+      "name": "Small Work Groups",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Public Rooms",
+      "up": [
+        80,
+        146
+      ],
+      "down": [
+        82,
+        83,
+        129,
+        146,
+        152,
+        158,
+        183
+      ]
+    },
+    {
+      "id": 149,
+      "name": "Reception Welcomes You",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Public Rooms",
+      "up": [
+        80,
+        81,
+        91,
+        130,
+        146
+      ],
+      "down": [
+        135,
+        150,
+        159,
+        179,
+        180,
+        181,
+        183,
+        191
+      ]
+    },
+    {
+      "id": 150,
+      "name": "A Place to Wait",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Public Rooms",
+      "up": [
+        34,
+        47,
+        81,
+        82
+      ],
+      "down": [
+        71,
+        88,
+        94,
+        159,
+        164,
+        165,
+        176,
+        180,
+        191
+      ]
+    },
+    {
+      "id": 151,
+      "name": "Small Meeting Rooms",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Public Rooms",
+      "up": [
+        43,
+        44,
+        83,
+        146,
+        148
+      ],
+      "down": [
+        159,
+        185,
+        191,
+        251,
+        252
+      ]
+    },
+    {
+      "id": 152,
+      "name": "Half-Private Office",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Public Rooms",
+      "up": [
+        127,
+        146,
+        148
+      ],
+      "down": [
+        159,
+        183,
+        185,
+        191,
+        192
+      ]
+    },
+    {
+      "id": 153,
+      "name": "Rooms to Rent",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Outbuildings",
+      "up": [
+        45,
+        75,
+        80,
+        81,
+        146,
+        154,
+        155,
+        157
+      ],
+      "down": [
+        112,
+        154,
+        155,
+        157,
+        158,
+        159,
+        191
+      ]
+    },
+    {
+      "id": 154,
+      "name": "Teenager's Cottage",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Outbuildings",
+      "up": [
+        75,
+        76,
+        141,
+        153
+      ],
+      "down": [
+        153,
+        157,
+        158,
+        185,
+        188,
+        191,
+        205
+      ]
+    },
+    {
+      "id": 155,
+      "name": "Old Age Cottage",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Outbuildings",
+      "up": [
+        40,
+        75,
+        153,
+        154
+      ],
+      "down": [
+        78,
+        140,
+        156,
+        164,
+        191,
+        205,
+        242
+      ]
+    },
+    {
+      "id": 156,
+      "name": "Settled Work",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Outbuildings",
+      "up": [
+        75,
+        141,
+        155
+      ],
+      "down": [
+        140,
+        157,
+        165
+      ]
+    },
+    {
+      "id": 157,
+      "name": "Home Workshop",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Outbuildings",
+      "up": [
+        9,
+        18,
+        27,
+        37,
+        79
+      ],
+      "down": [
+        159,
+        161,
+        165,
+        183,
+        191,
+        192
+      ]
+    },
+    {
+      "id": 158,
+      "name": "Open Stairs",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Outbuildings",
+      "up": [
+        76,
+        77,
+        78,
+        80,
+        81,
+        100,
+        148,
+        153,
+        154,
+        156,
+        157
+      ],
+      "down": [
+        102,
+        118,
+        125,
+        161,
+        195
+      ]
+    },
+    {
+      "id": 159,
+      "name": "Light on Two Sides of Every Room",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        106,
+        107,
+        109,
+        116
+      ],
+      "down": [
+        106,
+        180,
+        192,
+        209,
+        221,
+        223,
+        238
+      ]
+    },
+    {
+      "id": 160,
+      "name": "Building Edge",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        106,
+        107,
+        159
+      ],
+      "down": [
+        119,
+        125,
+        161,
+        162,
+        163,
+        164,
+        166,
+        167,
+        168,
+        241,
+        242
+      ]
+    },
+    {
+      "id": 161,
+      "name": "Sunny Place",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        105,
+        160,
+        163
+      ],
+      "down": [
+        140,
+        163,
+        167,
+        174,
+        238,
+        241,
+        244
+      ]
+    },
+    {
+      "id": 162,
+      "name": "North Face",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        105,
+        128,
+        161
+      ],
+      "down": [
+        113,
+        128,
+        145,
+        159,
+        173,
+        178,
+        198
+      ]
+    },
+    {
+      "id": 163,
+      "name": "Outdoor Room",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        69,
+        111,
+        129,
+        139,
+        140,
+        142,
+        161
+      ],
+      "down": [
+        168,
+        173,
+        174,
+        191,
+        205,
+        226,
+        243,
+        244
+      ]
+    },
+    {
+      "id": 164,
+      "name": "Street Windows",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        51,
+        61,
+        100,
+        101
+      ],
+      "down": [
+        180,
+        236,
+        238,
+        246
+      ]
+    },
+    {
+      "id": 165,
+      "name": "Opening to the Street",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        43,
+        44,
+        45,
+        46,
+        47,
+        88,
+        101,
+        164
+      ],
+      "down": [
+        121,
+        163,
+        243
+      ]
+    },
+    {
+      "id": 166,
+      "name": "Gallery Surround",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        100,
+        118,
+        119,
+        160
+      ],
+      "down": [
+        140,
+        163,
+        167,
+        193,
+        226
+      ]
+    },
+    {
+      "id": 167,
+      "name": "Six-Foot Balcony",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        119,
+        166
+      ],
+      "down": [
+        161,
+        163,
+        191,
+        193,
+        226,
+        243
+      ]
+    },
+    {
+      "id": 168,
+      "name": "Connection to the Earth",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Liminal Space",
+      "up": [
+        119,
+        140,
+        160,
+        166,
+        167
+      ],
+      "down": [
+        130,
+        140,
+        163,
+        169,
+        215,
+        247,
+        248
+      ]
+    },
+    {
+      "id": 169,
+      "name": "Terraced Slope",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        104,
+        160,
+        168
+      ],
+      "down": [
+        170,
+        177,
+        243,
+        245
+      ]
+    },
+    {
+      "id": 170,
+      "name": "Fruit Trees",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        67,
+        111
+      ],
+      "down": [
+        120,
+        171,
+        176
+      ]
+    },
+    {
+      "id": 171,
+      "name": "Tree Places",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        104,
+        170
+      ],
+      "down": [
+        163,
+        174,
+        176,
+        241,
+        243
+      ]
+    },
+    {
+      "id": 172,
+      "name": "Garden Growing Wild",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        169,
+        170
+      ],
+      "down": [
+        71,
+        175,
+        176,
+        245
+      ]
+    },
+    {
+      "id": 173,
+      "name": "Garden Wall",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        59,
+        60,
+        111,
+        140
+      ],
+      "down": [
+        106,
+        114,
+        134,
+        140,
+        174,
+        193
+      ]
+    },
+    {
+      "id": 174,
+      "name": "Trellised Walk",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        106,
+        112,
+        120,
+        163,
+        170,
+        171,
+        175
+      ],
+      "down": [
+        226,
+        238,
+        246,
+        247
+      ]
+    },
+    {
+      "id": 175,
+      "name": "Greenhouse",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        37,
+        41,
+        67
+      ],
+      "down": [
+        145,
+        176,
+        177,
+        178,
+        180,
+        201
+      ]
+    },
+    {
+      "id": 176,
+      "name": "Garden Seat",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        161,
+        172
+      ],
+      "down": [
+        238,
+        241
+      ]
+    },
+    {
+      "id": 177,
+      "name": "Vegetable Garden",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        67,
+        111,
+        170
+      ],
+      "down": [
+        144,
+        178
+      ]
+    },
+    {
+      "id": 178,
+      "name": "Compost",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Gardens",
+      "up": [
+        37,
+        74,
+        170,
+        177
+      ],
+      "down": [
+        144
+      ]
+    },
+    {
+      "id": 179,
+      "name": "Alcoves",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        129,
+        139,
+        142,
+        146,
+        150,
+        151
+      ],
+      "down": [
+        180,
+        190,
+        191,
+        193,
+        202,
+        211,
+        226
+      ]
+    },
+    {
+      "id": 180,
+      "name": "Window Place",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        130,
+        134,
+        159,
+        164
+      ],
+      "down": [
+        179,
+        202,
+        221,
+        222,
+        223,
+        231
+      ]
+    },
+    {
+      "id": 181,
+      "name": "The Fire",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        129
+      ],
+      "down": [
+        178,
+        180,
+        185
+      ]
+    },
+    {
+      "id": 182,
+      "name": "Eating Atmosphere",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        139,
+        147
+      ],
+      "down": [
+        200,
+        201,
+        202,
+        250,
+        251,
+        252
+      ]
+    },
+    {
+      "id": 183,
+      "name": "Workspace Enclosure",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        146,
+        152,
+        157,
+        179
+      ],
+      "down": [
+        185,
+        191,
+        192,
+        193,
+        197,
+        200,
+        201,
+        252
+      ]
+    },
+    {
+      "id": 184,
+      "name": "Cooking Layout",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        139
+      ],
+      "down": [
+        197,
+        199,
+        200
+      ]
+    },
+    {
+      "id": 185,
+      "name": "Sitting Circle",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        127,
+        142
+      ],
+      "down": [
+        129,
+        142,
+        180,
+        181,
+        191,
+        193,
+        251,
+        252
+      ]
+    },
+    {
+      "id": 186,
+      "name": "Communal Sleeping",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        136,
+        137,
+        138,
+        143,
+        187,
+        188
+      ],
+      "down": [
+        143,
+        179,
+        187,
+        188,
+        189
+      ]
+    },
+    {
+      "id": 187,
+      "name": "Marriage Bed",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        136
+      ],
+      "down": [
+        188,
+        189,
+        190,
+        191,
+        249
+      ]
+    },
+    {
+      "id": 188,
+      "name": "Bed Alcove",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        141,
+        143,
+        186,
+        187
+      ],
+      "down": [
+        189,
+        190,
+        191,
+        193,
+        197,
+        200,
+        221
+      ]
+    },
+    {
+      "id": 189,
+      "name": "Dressing Rooms",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Minor Rooms",
+      "up": [
+        144,
+        187,
+        188
+      ],
+      "down": [
+        159,
+        191,
+        197,
+        198,
+        200,
+        201
+      ]
+    },
+    {
+      "id": 190,
+      "name": "Ceiling Height Variety",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Shaping the Rooms",
+      "up": [
+        145,
+        191,
+        205,
+        213,
+        219
+      ],
+      "down": []
+    },
+    {
+      "id": 191,
+      "name": "The Shape of Indoor Space",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Shaping the Rooms",
+      "up": [
+        190
+      ],
+      "down": [
+        106,
+        193,
+        197,
+        198,
+        205,
+        210,
+        212,
+        218,
+        219
+      ]
+    },
+    {
+      "id": 192,
+      "name": "Windows Overlooking Life",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Shaping the Rooms",
+      "up": [
+        159,
+        190,
+        191
+      ],
+      "down": [
+        221,
+        222,
+        223,
+        239
+      ]
+    },
+    {
+      "id": 193,
+      "name": "Half-Open Wall",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Shaping the Rooms",
+      "up": [
+        101,
+        119,
+        131,
+        152,
+        167,
+        179,
+        185,
+        188,
+        191
+      ],
+      "down": [
+        179,
+        183,
+        194,
+        212,
+        226,
+        227,
+        239,
+        249
+      ]
+    },
+    {
+      "id": 194,
+      "name": "Interior Windows",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Shaping the Rooms",
+      "up": [
+        101,
+        130,
+        131,
+        132,
+        135,
+        142,
+        193
+      ],
+      "down": [
+        237,
+        239
+      ]
+    },
+    {
+      "id": 195,
+      "name": "Staircase Volume",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Shaping the Rooms",
+      "up": [
+        133,
+        158
+      ],
+      "down": [
+        125,
+        203,
+        212,
+        228
+      ]
+    },
+    {
+      "id": 196,
+      "name": "Corner Doors",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Shaping the Rooms",
+      "up": [
+        131,
+        135,
+        142
+      ],
+      "down": [
+        198,
+        224,
+        225,
+        237,
+        249
+      ]
+    },
+    {
+      "id": 197,
+      "name": "Thick Walls",
+      "stars": 2,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        160,
+        179,
+        180,
+        190,
+        191
+      ],
+      "down": [
+        180,
+        198,
+        199,
+        200,
+        201,
+        202,
+        203,
+        204,
+        211,
+        212
+      ]
+    },
+    {
+      "id": 198,
+      "name": "Closets Between Rooms",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        183,
+        189,
+        196
+      ],
+      "down": [
+        197
+      ]
+    },
+    {
+      "id": 199,
+      "name": "Sunny Counter",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        128,
+        139,
+        184
+      ],
+      "down": [
+        192,
+        200,
+        211,
+        250
+      ]
+    },
+    {
+      "id": 200,
+      "name": "Open Shelves",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        139,
+        183,
+        197
+      ],
+      "down": [
+        201,
+        211
+      ]
+    },
+    {
+      "id": 201,
+      "name": "Waist-High Shelf",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        197,
+        200
+      ],
+      "down": [
+        211,
+        253
+      ]
+    },
+    {
+      "id": 202,
+      "name": "Built-in Seats",
+      "stars": 1,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        130,
+        142,
+        179,
+        180
+      ],
+      "down": [
+        197,
+        211
+      ]
+    },
+    {
+      "id": 203,
+      "name": "Child Caves",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        73,
+        86,
+        137,
+        197
+      ],
+      "down": [
+        211,
+        224
+      ]
+    },
+    {
+      "id": 204,
+      "name": "Secret Place",
+      "stars": 0,
+      "section": "BUILDING",
+      "subsection": "Thick Walls",
+      "up": [
+        190,
+        197
+      ],
+      "down": [
+        198,
+        211,
+        219
+      ]
+    },
+    {
+      "id": 205,
+      "name": "Structure Follows Social Spaces",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Emergent Structure",
+      "up": [
+        212,
+        219
+      ],
+      "down": [
+        206,
+        207,
+        208
+      ]
+    },
+    {
+      "id": 206,
+      "name": "Efficient Structure",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Emergent Structure",
+      "up": [
+        205
+      ],
+      "down": [
+        209,
+        210,
+        212,
+        213,
+        216,
+        217,
+        218,
+        219,
+        220,
+        225,
+        227
+      ]
+    },
+    {
+      "id": 207,
+      "name": "Good Materials",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Emergent Structure",
+      "up": [
+        205,
+        206
+      ],
+      "down": [
+        205,
+        206,
+        208,
+        234,
+        235
+      ]
+    },
+    {
+      "id": 208,
+      "name": "Gradual Stiffening",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Emergent Structure",
+      "up": [
+        205,
+        206,
+        207
+      ],
+      "down": [
+        207,
+        216,
+        217,
+        218,
+        219,
+        220
+      ]
+    },
+    {
+      "id": 209,
+      "name": "Roof Layout",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Structural Layout",
+      "up": [
+        116,
+        117,
+        118
+      ],
+      "down": [
+        115,
+        211,
+        220
+      ]
+    },
+    {
+      "id": 210,
+      "name": "Floor and Ceiling Layout",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Structural Layout",
+      "up": [
+        190,
+        206,
+        209
+      ],
+      "down": [
+        211,
+        212,
+        213,
+        217,
+        219,
+        233
+      ]
+    },
+    {
+      "id": 211,
+      "name": "Thickening the Outer Walls",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Structural Layout",
+      "up": [
+        116,
+        180,
+        197,
+        199,
+        202,
+        203,
+        204
+      ],
+      "down": [
+        209,
+        210,
+        212,
+        219,
+        220
+      ]
+    },
+    {
+      "id": 212,
+      "name": "Columns at the Corners",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Structural Layout",
+      "up": [
+        205,
+        208,
+        209,
+        210
+      ],
+      "down": [
+        213,
+        214,
+        216,
+        217,
+        219,
+        220,
+        226
+      ]
+    },
+    {
+      "id": 213,
+      "name": "Final Column Distribution",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Structural Layout",
+      "up": [
+        190,
+        206,
+        212
+      ],
+      "down": [
+        190,
+        216,
+        218
+      ]
+    },
+    {
+      "id": 214,
+      "name": "Root Foundations",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Erecting the Frame",
+      "up": [
+        104,
+        168,
+        212,
+        213
+      ],
+      "down": [
+        215,
+        216
+      ]
+    },
+    {
+      "id": 215,
+      "name": "Ground Floor Slab",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Erecting the Frame",
+      "up": [
+        168,
+        206,
+        212,
+        214
+      ],
+      "down": [
+        168,
+        219,
+        233,
+        248
+      ]
+    },
+    {
+      "id": 216,
+      "name": "Box Columns",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Erecting the Frame",
+      "up": [
+        213,
+        214
+      ],
+      "down": [
+        214,
+        217,
+        219,
+        226,
+        227
+      ]
+    },
+    {
+      "id": 217,
+      "name": "Perimeter Beams",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Erecting the Frame",
+      "up": [
+        210,
+        216,
+        219
+      ],
+      "down": [
+        219,
+        227
+      ]
+    },
+    {
+      "id": 218,
+      "name": "Wall Membranes",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Erecting the Frame",
+      "up": [
+        206,
+        213,
+        216
+      ],
+      "down": [
+        213,
+        234,
+        235,
+        248
+      ]
+    },
+    {
+      "id": 219,
+      "name": "Floor-Ceiling Vaults",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Erecting the Frame",
+      "up": [
+        190,
+        206,
+        207,
+        210,
+        217
+      ],
+      "down": [
+        213,
+        214,
+        233,
+        235
+      ]
+    },
+    {
+      "id": 220,
+      "name": "Roof Vaults",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Erecting the Frame",
+      "up": [
+        117,
+        118,
+        219
+      ],
+      "down": [
+        231,
+        232,
+        234
+      ]
+    },
+    {
+      "id": 221,
+      "name": "Natural Doors and Windows",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Fenestration",
+      "up": [
+        134,
+        164,
+        180,
+        192,
+        196,
+        216,
+        217
+      ],
+      "down": [
+        222,
+        223,
+        239
+      ]
+    },
+    {
+      "id": 222,
+      "name": "Low Sill",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Fenestration",
+      "up": [
+        134,
+        180,
+        192,
+        221
+      ],
+      "down": [
+        201,
+        225,
+        236,
+        245
+      ]
+    },
+    {
+      "id": 223,
+      "name": "Deep Reveals",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Fenestration",
+      "up": [
+        159,
+        225
+      ],
+      "down": [
+        197,
+        225,
+        238,
+        240,
+        246
+      ]
+    },
+    {
+      "id": 224,
+      "name": "Low Doorway",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Fenestration",
+      "up": [
+        102,
+        110,
+        131,
+        196,
+        221
+      ],
+      "down": [
+        221,
+        225,
+        237,
+        249
+      ]
+    },
+    {
+      "id": 225,
+      "name": "Frames as Thickened Edges",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Fenestration",
+      "up": [
+        206,
+        208,
+        221
+      ],
+      "down": [
+        223,
+        236,
+        237,
+        239
+      ]
+    },
+    {
+      "id": 226,
+      "name": "Column Place",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Frame Adjustments",
+      "up": [
+        69,
+        119,
+        163,
+        166,
+        167,
+        174,
+        212
+      ],
+      "down": [
+        216,
+        227,
+        243,
+        245,
+        251
+      ]
+    },
+    {
+      "id": 227,
+      "name": "Column Connections",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Frame Adjustments",
+      "up": [
+        119,
+        166,
+        167,
+        206,
+        216,
+        217,
+        225,
+        226
+      ],
+      "down": [
+        226,
+        249
+      ]
+    },
+    {
+      "id": 228,
+      "name": "Stair Vault",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Frame Adjustments",
+      "up": [
+        133,
+        195,
+        206,
+        207
+      ],
+      "down": [
+        179,
+        198,
+        203,
+        219,
+        233,
+        248
+      ]
+    },
+    {
+      "id": 229,
+      "name": "Duct Space",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Frame Adjustments",
+      "up": [
+        206,
+        219
+      ],
+      "down": [
+        219,
+        230,
+        252
+      ]
+    },
+    {
+      "id": 230,
+      "name": "Radiant Heat",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Frame Adjustments",
+      "up": [
+        218,
+        219,
+        229
+      ],
+      "down": [
+        202,
+        219,
+        229
+      ]
+    },
+    {
+      "id": 231,
+      "name": "Dormer Windows",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Frame Adjustments",
+      "up": [
+        117,
+        180,
+        220
+      ],
+      "down": [
+        179,
+        180,
+        208,
+        212,
+        216,
+        217,
+        218,
+        219,
+        220,
+        225,
+        236,
+        239
+      ]
+    },
+    {
+      "id": 232,
+      "name": "Roof Caps",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Frame Adjustments",
+      "up": [
+        118,
+        220
+      ],
+      "down": [
+        249
+      ]
+    },
+    {
+      "id": 233,
+      "name": "Floor Surface",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        127,
+        215,
+        219
+      ],
+      "down": [
+        248,
+        249,
+        250
+      ]
+    },
+    {
+      "id": 234,
+      "name": "Lapped Outside Walls",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        218,
+        220
+      ],
+      "down": []
+    },
+    {
+      "id": 235,
+      "name": "Soft Inside Walls",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        218,
+        219
+      ],
+      "down": [
+        218,
+        219,
+        240
+      ]
+    },
+    {
+      "id": 236,
+      "name": "Windows Which Open Wide",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        180,
+        192,
+        221
+      ],
+      "down": [
+        239
+      ]
+    },
+    {
+      "id": 237,
+      "name": "Solid Doors with Glass",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        135,
+        194,
+        196,
+        224
+      ],
+      "down": [
+        218,
+        239
+      ]
+    },
+    {
+      "id": 238,
+      "name": "Filtered Light",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        221,
+        223
+      ],
+      "down": [
+        239,
+        244,
+        246,
+        250
+      ]
+    },
+    {
+      "id": 239,
+      "name": "Small Panes",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        194,
+        221,
+        225,
+        236,
+        237
+      ],
+      "down": [
+        238,
+        240
+      ]
+    },
+    {
+      "id": 240,
+      "name": "Half-Inch Trim",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Interior Details",
+      "up": [
+        216,
+        217,
+        219,
+        225,
+        234,
+        235,
+        249
+      ],
+      "down": [
+        249,
+        250
+      ]
+    },
+    {
+      "id": 241,
+      "name": "Seat Spots",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        121,
+        124,
+        140,
+        160,
+        161,
+        163,
+        168,
+        174,
+        176
+      ],
+      "down": [
+        125,
+        242,
+        243
+      ]
+    },
+    {
+      "id": 242,
+      "name": "Front Door Bench",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        119,
+        130,
+        155,
+        160,
+        161,
+        168,
+        241
+      ],
+      "down": [
+        110,
+        241,
+        243,
+        245
+      ]
+    },
+    {
+      "id": 243,
+      "name": "Sitting Wall",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        51,
+        100,
+        106,
+        111,
+        114,
+        121,
+        124,
+        140,
+        163,
+        165,
+        166,
+        172
+      ],
+      "down": [
+        241,
+        242,
+        245,
+        248,
+        249
+      ]
+    },
+    {
+      "id": 244,
+      "name": "Canvas Roofs",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        103,
+        118,
+        119,
+        140,
+        163,
+        166,
+        174,
+        180,
+        238
+      ],
+      "down": [
+        238,
+        249,
+        250
+      ]
+    },
+    {
+      "id": 245,
+      "name": "Raised Flowers",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        120,
+        125,
+        160,
+        169,
+        173,
+        243
+      ],
+      "down": []
+    },
+    {
+      "id": 246,
+      "name": "Climbing Plants",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        174,
+        238
+      ],
+      "down": []
+    },
+    {
+      "id": 247,
+      "name": "Paving With Cracks Between the Stones",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        51,
+        121,
+        140,
+        163,
+        168,
+        169
+      ],
+      "down": [
+        168,
+        248
+      ]
+    },
+    {
+      "id": 248,
+      "name": "Soft Tile and Brick",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Outdoor Details",
+      "up": [
+        168,
+        207,
+        233,
+        243,
+        247
+      ],
+      "down": [
+        249,
+        250
+      ]
+    },
+    {
+      "id": 249,
+      "name": "Ornament",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Ornamentation",
+      "up": [
+        110,
+        160,
+        168,
+        173,
+        180,
+        196,
+        225,
+        226,
+        227,
+        232,
+        235,
+        243
+      ],
+      "down": [
+        218,
+        225,
+        234,
+        235,
+        240,
+        248,
+        250,
+        253
+      ]
+    },
+    {
+      "id": 250,
+      "name": "Warm Colors",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Ornamentation",
+      "up": [
+        207,
+        233,
+        235
+      ],
+      "down": [
+        240,
+        244,
+        248,
+        249,
+        252
+      ]
+    },
+    {
+      "id": 251,
+      "name": "Different Chairs",
+      "stars": 0,
+      "section": "CONSTRUCTION",
+      "subsection": "Ornamentation",
+      "up": [
+        142,
+        185,
+        202
+      ],
+      "down": [
+        252
+      ]
+    },
+    {
+      "id": 252,
+      "name": "Pools of Light",
+      "stars": 2,
+      "section": "CONSTRUCTION",
+      "subsection": "Ornamentation",
+      "up": [
+        129,
+        130,
+        146,
+        179,
+        182,
+        183,
+        185,
+        250,
+        251
+      ],
+      "down": [
+        250
+      ]
+    },
+    {
+      "id": 253,
+      "name": "Things From Your Life",
+      "stars": 1,
+      "section": "CONSTRUCTION",
+      "subsection": "Ornamentation",
+      "up": [],
+      "down": []
+    }
+  ]
+}
