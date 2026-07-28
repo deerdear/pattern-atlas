@@ -19,6 +19,8 @@
     "data:gists": "tsx scripts/draft-gists.ts"
   },
   "dependencies": {
+    "d3-selection": "^3.0.0",
+    "d3-zoom": "^3.0.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "wouter": "^3.10.0"
@@ -26,6 +28,8 @@
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.115.0",
     "@types/d3-force": "^3.0.10",
+    "@types/d3-selection": "^3.0.11",
+    "@types/d3-zoom": "^3.0.8",
     "@types/node": "^24.13.2",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
