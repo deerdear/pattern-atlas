@@ -56,5 +56,13 @@ Ladder ends (verified plausible, not errors): 1 has no broader (top);
       physical copy; correct via the corrections layer if apl-md is wrong.
 - [ ] 20-pattern random spot-check against a physical copy (plan Phase 1);
       the three-source digital validation above substitutes for now.
-- [ ] Consider filing upstream issues: BeksOmega (id collisions, edge
-      quality) and apl-md (13/98 stars if book disagrees).
+- [x] Upstream fix submitted: BeksOmega PR #1
+      (https://github.com/BeksOmega/pattern-language-graph/pull/1) — fixes
+      the `end`-edge off-by-one in addEdges (root cause of the 0.34 Jaccard:
+      `lines[i-2]` is the *previous* pattern's closing; 1008/1053 end edges
+      correct after the shift), the 141 name typo, adds a dedupe guard, and
+      repairs the committed graphml (0.34 → 0.81, 64 star corrections,
+      node renames). Builds on their unmerged `fix-data-errors` branch.
+      A companion issue draft with the full 55-star mismatch table is in
+      the session scratchpad (`beksomega-issue-draft.md`) — not filed.
+- [ ] File apl-md issue for 13/98 stars if the book check disagrees.
