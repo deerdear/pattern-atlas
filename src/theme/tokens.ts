@@ -4,13 +4,17 @@
 
 export const color = {
   cover: '#B4941F', // the ochre of the 1977 Oxford cover
+  /** Ochre step dark enough for graphics on page (cover ochre is ~2.7:1). */
+  ochreDeep: '#8A6D14',
   page: '#FBF6E8', // bible paper
   ink: '#221D14',
-  red: '#A93315', // printer's red: trails, asterisks, Therefore
-  fade: '#7D735A',
+  // Printer's red: trails, asterisks, Therefore. Deepened from #A93315 so it
+  // stays distinct from the ochre under deuteranopia (validate-colors.ts).
+  red: '#93280F',
+  fade: '#786E56',
   rule: '#DCD3B6',
-  /** Precomputed dim state: ink flattened onto paper at ~40% (>=3:1 on page). */
-  nodeDim: '#A79B85',
+  /** Precomputed dim state: ink flattened onto paper at 50% (3.2:1 on page). */
+  nodeDim: '#8F8A7E',
 } as const
 
 export const serif =

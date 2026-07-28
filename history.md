@@ -57,3 +57,17 @@ Phase 0 acceptance: 17 tests green (16 integrity + render smoke), `npm run build
 **Gists**: draft-gists.ts (Claude API, Opus 4.8, structured outputs, batches of 25) writes data-notes/gists.json; refuses to touch reviewed entries; reviewedHash = sha256 of approved text, converter hard-fails on mismatch. NOT YET RUN — no ANTHROPIC_API_KEY on this machine; smoke-tested to the API boundary (clean 401). Review workflow documented in validation.md.
 
 21 tests green; build 70 kB gzip; lint clean. Remaining Phase 1 item: run `ANTHROPIC_API_KEY=... npm run data:gists` once, then human review.
+
+## 2026-07-28: Phase 2 — the map (branch feat/phase-2-graph)
+
+New: `src/lib/glyph.ts` (grammar), `src/atlas/{Graph,NodeGlyph,Edges,GlyphGrid}.tsx`, `atlas/glow.ts`, `atlas/useCamera.ts`, `atlas/atlas.css`, `src/index/PatternIndex.tsx` (Phase 0 list moved, now `/patterns`), `scripts/validate-colors.ts` (`npm run check:colors`). App.tsx is now the wouter route shell; `/dev/glyphs` is dev-only via `import.meta.env.DEV` + lazy import (verified absent from the prod bundle).
+
+**Color validator caught real token errors.** The pinned `nodeDim #A79B85` claimed ≥3:1 in its comment but measures 2.54:1 — replaced with `#8F8A7E` (ink onto page at 50%, 3.19:1). `fade` was 4.35:1, darkened to `#786E56`. Red `#A93315` vs ochre converge under deuteranopia (ΔE 5.8) — red deepened to `#93280F` per the plan's remedy (ΔE 13.4, and 7.6:1 on page). Cover ochre is 2.70:1 on page → added `ochreDeep #8A6D14` (4.55:1) as the graphics ochre; a test documents that `cover` must not be used for graphics. CVD sim is Viénot 1999 matrices; separation metric is Lab ΔE76 ≥ 12.
+
+**Glyph grammar**: splitmix32(id) chooses rotation (30° snap), one of 4 compositions (rays/baseline/chord/axis), tick count 2–4, dot placement. Confidence → NODE_RADIUS 7/9/11 (primary), STROKE_WIDTH 1/1.3/1.7, arc sweep 150/270/360. Box-containment is tested; first draft's `baseline` composition escaped the 16px box at diagonal rotations (−8.17) — shrunk its radii/spacing.
+
+**Renderer**: 1,758 edges batched into 4 concatenated `<path>`s (`EDGES_PER_PATH=500`); 253 `<symbol>`/`<use>` glyphs; per-node LOD dot + invisible hit circle (`r` via CSS var `--hit-r`, rewritten only on >20% k change, tracks ~32 CSS px). d3-zoom owns the camera; handler writes transform + edge stroke (width/√k) + band-label positions imperatively; React state is only the LOD tier (k<0.7 → dots). Glow: single 50ms timer, `glowing` class goes on the *svg* (not the camera `<g>` — React rewrites that element's className on tier change and would wipe imperative classes), lit set is O(degree) classList writes, highlighted edges are one imperative path `d`. `glow.ts` is pure and tested: n+1 nodes, n edges for all 253.
+
+**jsdom gotchas**: d3-zoom's `defaultExtent` reads `svg.viewBox.baseVal` (missing in jsdom) — fixed properly by passing an explicit `.extent()`, which we know anyway. `act()` needs `IS_REACT_ACT_ENVIRONMENT = true` manually.
+
+38 tests green; build 93.8 kB gzip; lint clean. Chrome extension wasn't connected, so the two visual acceptance items remain for human sign-off: glyph-grid cohesion review (`/dev/glyphs`) and 60fps pan/zoom on laptop + A15 phone.

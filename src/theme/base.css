@@ -4,12 +4,13 @@
 :root {
   color-scheme: light;
   --color-cover: #b4941f;
+  --color-ochre-deep: #8a6d14;
   --color-page: #fbf6e8;
   --color-ink: #221d14;
-  --color-red: #a93315;
-  --color-fade: #7d735a;
+  --color-red: #93280f;
+  --color-fade: #786e56;
   --color-rule: #dcd3b6;
-  --color-node-dim: #a79b85;
+  --color-node-dim: #8f8a7e;
   --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
 }
 
