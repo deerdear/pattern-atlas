@@ -1,46 +1,61 @@
-// The map (Phase 2). Rendering contract (AD-3): React renders the static
-// scene once — batched edges, symbol/use glyphs, band rules — and everything
-// interactive happens imperatively: d3-zoom writes the camera transform,
-// hover glow marks O(degree) elements, band labels ride the transform.
-// The only React state is the discrete LOD tier.
+// The map. Rendering contract (AD-3): React renders the static scene once —
+// district cells, batched edges, symbol/use glyphs, footprints, labels —
+// and everything interactive happens imperatively: d3-zoom writes the
+// camera transform, hover glow marks O(degree) elements. The only React
+// state is the discrete semantic tier, which reads the map like a town:
+// the town plan first, a district's buildings as you approach, and the
+// construction details once you are close enough to touch a wall.
 
 import { memo, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'wouter'
 import type { ZoomTransform } from 'd3-zoom'
+import { canvas, districts } from '../data/layout'
 import { patterns } from '../data/patterns'
 import { positionFor } from '../data/position'
-import type { PatternId } from '../data/schema'
-import { DOT_RADIUS, NODE_RADIUS } from '../lib/glyph'
+import { scaleForId, type PatternId, type Scale } from '../data/schema'
+import { footprintFor } from '../lib/footprint'
+import { NODE_RADIUS } from '../lib/glyph'
 import { Edges } from './Edges'
 import { NodeGlyph, glyphId } from './NodeGlyph'
 import { highlightFor } from './glow'
-import { useCamera, type World } from './useCamera'
+import { useCamera, type LodTier, type World } from './useCamera'
 import './atlas.css'
 
-const world: World = (() => {
-  let x0 = Infinity
-  let y0 = Infinity
-  let x1 = -Infinity
-  let y1 = -Infinity
-  for (const p of patterns) {
-    const { x, y } = positionFor(p.id)
-    x0 = Math.min(x0, x)
-    y0 = Math.min(y0, y)
-    x1 = Math.max(x1, x)
-    y1 = Math.max(y1, y)
-  }
-  return { x0: x0 - 50, y0: y0 - 60, x1: x1 + 50, y1: y1 + 60 }
-})()
-
-const BANDS = [
-  { label: 'towns · 1–94', center: 250 },
-  { label: 'buildings · 95–204', center: 750 },
-  { label: 'construction · 205–253', center: 1250 },
-] as const
-const BAND_HALF = 280 // label clamp range around each band's stratum
-const BAND_RULES = [500, 1000] // hairlines between the strata
+const world: World = {
+  x0: -30,
+  y0: -30,
+  x1: canvas.w + 30,
+  y1: canvas.h + 30,
+}
 
 const EDGE_WIDTH = 0.65 // at k = 1; scales as width/√k so zoom yields air
+
+/** Per-scale glyph sizing: a town reads at town zoom, a detail up close. */
+const SCALE_R: Record<Scale, number> = {
+  towns: 1.5,
+  buildings: 0.9,
+  construction: 0.42,
+}
+
+/** Context-dot radius when a scale is one tier below the current view. */
+const CTX_DOT_R: Record<Scale, number> = {
+  towns: 4,
+  buildings: 2.4,
+  construction: 1.1,
+}
+
+/** Label size in world units, tuned per scale for its home tier's k range. */
+const LABEL_SIZE: Record<Scale, number> = {
+  towns: 15,
+  buildings: 6.5,
+  construction: 3.2,
+}
+
+const TIER_NOTE: Record<LodTier, string> = {
+  town: 'the town — zoom in on a district for its buildings',
+  building: 'the buildings — zoom in for construction details',
+  construction: 'the construction details',
+}
 
 /** All 253 glyph definitions, rendered once into <defs>. */
 const GlyphDefs = memo(function GlyphDefs() {
@@ -53,22 +68,53 @@ const GlyphDefs = memo(function GlyphDefs() {
   )
 })
 
-/** The 253 node groups: glyph <use>, LOD dot, generous invisible hit circle. */
+/** The 94 district cells of the town plan. */
+const Districts = memo(function Districts() {
+  return (
+    <>
+      {Object.entries(districts).map(([id, ring]) => (
+        <path
+          key={id}
+          className="district"
+          d={ring.map(([x, y], i) => `${i === 0 ? 'M' : 'L'}${x} ${y}`).join('') + 'Z'}
+          vectorEffect="non-scaling-stroke"
+        />
+      ))}
+    </>
+  )
+})
+
+/**
+ * The 253 node groups: glyph <use>, building footprint where the scale calls
+ * for one, context dot, label, and a generous invisible hit circle.
+ */
 const Nodes = memo(function Nodes() {
   return (
     <>
       {patterns.map((p) => {
         const { x, y } = positionFor(p.id)
-        const r = NODE_RADIUS[p.confidence]
+        const scale = scaleForId(p.id)
+        const r = NODE_RADIUS[p.confidence] * SCALE_R[scale]
+        const fs = LABEL_SIZE[scale]
+        const fp = scale === 'buildings' ? footprintFor(p.id) : null
         return (
           <g
             key={p.id}
-            className="node"
+            className={`node node--${scale}`}
             data-id={p.id}
             transform={`translate(${x} ${y})`}
           >
+            {fp && (
+              <g className="footprint">
+                <path d={fp.outline} />
+                <path d={fp.wall} className="footprint-wall" />
+              </g>
+            )}
             <use href={`#${glyphId(p.id)}`} x={-r} y={-r} width={2 * r} height={2 * r} />
-            <circle className="lod-dot" r={DOT_RADIUS[p.confidence]} />
+            <circle className="ctx-dot" r={CTX_DOT_R[scale]} />
+            <text className="label" y={r + fs} fontSize={fs}>
+              {p.name}
+            </text>
             <circle className="hit" />
           </g>
         )
@@ -105,10 +151,15 @@ function Legend() {
       </div>
       <div className="legend-row">
         <svg width="46" height="18" aria-hidden="true">
-          <line x1="6" y1="4" x2="40" y2="4" stroke="var(--color-rule)" />
-          <line x1="6" y1="14" x2="40" y2="14" stroke="var(--color-rule)" />
+          <path
+            d="M4 15V4h14v11Z M11 4v11"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <path d="M24 15 30 4l12 4-3 7Z" fill="none" stroke="currentColor" strokeWidth="1" />
         </svg>
-        <span>higher = larger scale</span>
+        <span>zoom in: town → buildings → construction</span>
       </div>
     </details>
   )
@@ -120,10 +171,9 @@ export default function Graph() {
   const edgesRef = useRef<SVGGElement>(null)
   const hiEdgeRef = useRef<SVGPathElement>(null)
   const nodesRef = useRef<SVGGElement>(null)
-  const labelRefs = useRef<(HTMLSpanElement | null)[]>([])
   const lastHitR = useRef(28)
 
-  // --- camera side effects: edge weight, hit radius, running-head labels ---
+  // --- camera side effects: edge weight, hit radius ------------------------
   const onTransform = useCallback((t: ZoomTransform) => {
     const sw = EDGE_WIDTH / Math.sqrt(t.k)
     edgesRef.current?.setAttribute('stroke-width', String(sw))
@@ -135,16 +185,6 @@ export default function Graph() {
       nodesRef.current?.style.setProperty('--hit-r', `${hitR}px`)
       lastHitR.current = hitR
     }
-    const viewportH = svgRef.current?.clientHeight || 720
-    BANDS.forEach((band, i) => {
-      const el = labelRefs.current[i]
-      if (!el) return
-      const top = t.applyY(band.center - BAND_HALF)
-      const bottom = t.applyY(band.center + BAND_HALF)
-      const y = Math.min(Math.max(top + 8, 56), bottom - 28)
-      el.style.transform = `translateY(${y}px)`
-      el.style.visibility = bottom < 56 || top > viewportH ? 'hidden' : 'visible'
-    })
   }, [])
 
   const tier = useCamera(svgRef, cameraRef, world, onTransform)
@@ -221,23 +261,14 @@ export default function Graph() {
         ref={svgRef}
         className="atlas-svg"
         role="img"
-        aria-label="Map of the 253 patterns of A Pattern Language, linked by their threads. The pattern index offers the same content as a readable list."
+        aria-label="Town plan of the 253 patterns of A Pattern Language: districts for the towns patterns, buildings inside them, construction details on each building. The pattern index offers the same content as a readable list."
         onPointerOver={onPointerOver}
         onPointerLeave={onPointerLeave}
       >
         <GlyphDefs />
-        <g ref={cameraRef} className={tier === 'dot' ? 'scene lod-dots' : 'scene'}>
-          <g className="band-rules">
-            {BAND_RULES.map((y) => (
-              <line
-                key={y}
-                x1={world.x0}
-                y1={y}
-                x2={world.x1}
-                y2={y}
-                vectorEffect="non-scaling-stroke"
-              />
-            ))}
+        <g ref={cameraRef} className={`scene tier-${tier}`}>
+          <g className="districts">
+            <Districts />
           </g>
           <g ref={edgesRef} className="edges">
             <Edges />
@@ -254,17 +285,7 @@ export default function Graph() {
           <Link href="/patterns">pattern index</Link>
         </nav>
       </header>
-      {BANDS.map((band, i) => (
-        <span
-          key={band.label}
-          className="band-label"
-          ref={(el) => {
-            labelRefs.current[i] = el
-          }}
-        >
-          {band.label}
-        </span>
-      ))}
+      <span className="tier-note">{TIER_NOTE[tier]}</span>
       <Legend />
     </div>
   )

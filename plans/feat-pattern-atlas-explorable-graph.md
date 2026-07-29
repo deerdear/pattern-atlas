@@ -4,6 +4,26 @@ An explorable map of the 253 patterns from Christopher Alexander's *A Pattern La
 
 ---
 
+## Addendum 2026-07-29 — the town plan (user-directed pivot)
+
+The map is now cartographic rather than banded. The three scales nest by
+containment instead of stacking on the y-axis: the towns patterns tessellate
+the canvas into **districts** (force layout + Voronoi), each buildings
+pattern sits inside its parent district as a **building footprint**, and each
+construction pattern settles against its parent building as a **detail
+mark**. Parents come from walking `broader` links up one scale; the whole
+layout stays baked and deterministic (`compute-layout.ts`).
+
+Zoom is semantic: three tiers (town / building / construction, thresholds in
+`useCamera.ts`) decide what draws in full, what remains as area labels and
+walls for orientation, and what waits as context dots. Edges batch per scale
+level so each tier shows its own streets. Where this addendum contradicts
+the band/"y-axis is scale" language below (AD-3 banding, band rules, band
+labels, the Ladder of Scales as vertical position), the addendum wins;
+pattern 1 now reads as *depth*: what you see when you zoom out serves what
+appears when you zoom in. Everything else — glyph grammar, glow, trail,
+cards, URL model, data pipeline, paper-light identity — stands unchanged.
+
 ## Enhancement summary
 
 **Planned:** 2026-07-15 from a hand-written PLAN.md draft, grounded by four research agents (repo survey, dataset/copyright, framework docs, user-flow analysis).

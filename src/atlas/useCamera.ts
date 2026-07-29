@@ -1,15 +1,21 @@
 // The camera (AD-3): d3-zoom's internal transform is the single source of
 // truth. Its handler writes the transform to the inner <g> imperatively —
 // zero React renders during a gesture. React state holds only the discrete
-// LOD tier (crossing k ≈ 0.7). Nothing else ever writes the transform;
-// future programmatic moves (Phase 3 centering) go through zoom.transform.
+// semantic tier: zooming descends the ladder of scales — the town plan,
+// then the buildings inside a district, then the construction details on a
+// building. Nothing else ever writes the transform; future programmatic
+// moves (Phase 3 centering) go through zoom.transform.
 
 import { useEffect, useState, type RefObject } from 'react'
 import { select } from 'd3-selection'
 import { zoom, zoomIdentity, type ZoomTransform } from 'd3-zoom'
 
-export const LOD_THRESHOLD = 0.7
-export type LodTier = 'glyph' | 'dot'
+/** k thresholds where the map changes meaning. */
+export const BUILDING_K = 1.5
+export const CONSTRUCTION_K = 3.2
+export const MAX_K = 9
+
+export type LodTier = 'town' | 'building' | 'construction'
 
 export interface World {
   x0: number
@@ -19,7 +25,9 @@ export interface World {
 }
 
 export function tierFor(k: number): LodTier {
-  return k < LOD_THRESHOLD ? 'dot' : 'glyph'
+  if (k < BUILDING_K) return 'town'
+  if (k < CONSTRUCTION_K) return 'building'
+  return 'construction'
 }
 
 /** The transform that fits the world into a w×h viewport, 5% breathing room. */
@@ -36,7 +44,7 @@ export function useCamera(
   world: World,
   onTransform?: (t: ZoomTransform) => void,
 ): LodTier {
-  const [tier, setTier] = useState<LodTier>('dot')
+  const [tier, setTier] = useState<LodTier>('town')
 
   useEffect(() => {
     const svg = svgRef.current
@@ -55,7 +63,7 @@ export function useCamera(
         [0, 0],
         [w, h],
       ])
-      .scaleExtent([fit.k, 4])
+      .scaleExtent([fit.k, MAX_K])
       .translateExtent([
         [world.x0 - pad, world.y0 - pad],
         [world.x1 + pad, world.y1 + pad],

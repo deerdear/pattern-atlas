@@ -1,10 +1,18 @@
-// Bakes the force layout at build time (AD-3): runs d3-force to completion
-// synchronously and writes src/data/layout.ts. The browser never simulates.
+// Bakes the town-plan layout at build time (AD-3): the browser never
+// simulates. The map is cartographic, not banded — zooming descends the
+// ladder of scales like approaching a real town:
 //
-// Determinism: nodes and links enter sorted by id, the simulation's
-// randomSource is seeded (splitmix32), tick count is fixed by the standard
-// alpha schedule, and coordinates round to 1 decimal. Running twice must be
-// byte-identical (tested in Phase 1 acceptance).
+//   1. The 94 towns-scale patterns get a force layout over the canvas, then
+//      a Voronoi tessellation turns each into a DISTRICT cell.
+//   2. Every buildings-scale pattern is assigned a parent district (via its
+//      broader links, walking up until a towns-scale ancestor is found) and
+//      packed inside that district's cell — a BUILDING on the plan.
+//   3. Every construction-scale pattern is assigned a parent building the
+//      same way and settles against it — a DETAIL on the drawing.
+//
+// Determinism: nodes and links enter sorted by id, every simulation's
+// randomSource is seeded (splitmix32), tick counts are fixed, and
+// coordinates round to 1 decimal. Running twice must be byte-identical.
 //
 // Run: npm run data:layout
 
@@ -12,6 +20,7 @@ import { createHash } from 'node:crypto'
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { Delaunay } from 'd3-delaunay'
 import {
   forceCollide,
   forceLink,
@@ -22,28 +31,23 @@ import {
   type SimulationLinkDatum,
   type SimulationNodeDatum,
 } from 'd3-force'
+import { pointInPolygon, polygonCentroid, type Ring } from '../src/lib/geometry.ts'
 import { splitmix32 } from '../src/lib/prng.ts'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const PATTERNS_PATH = join(root, 'src/data/patterns.ts')
 const OUT_PATH = join(root, 'src/data/layout.ts')
 
-// d3 types stay confined to this script (plan: schema.ts never extends them).
 interface LayoutNode extends SimulationNodeDatum {
   id: number
 }
 
-// Canvas in abstract units; the renderer fits it to the viewport.
-const WIDTH = 1000
-const BAND = { towns: 250, buildings: 750, construction: 1250 } as const
-const BAND_HALF = 230 // clamp: keeps every node inside its band's stratum
+// Canvas in abstract world units; the renderer fits it to the viewport.
+const CANVAS = { w: 1600, h: 1200 } as const
+const MARGIN = 70 // town centers keep this far from the canvas edge
 const SEED = 0x9a7031 // arbitrary, fixed forever
 
-function bandOf(id: number): keyof typeof BAND {
-  if (id <= 94) return 'towns'
-  if (id <= 204) return 'buildings'
-  return 'construction'
-}
+const round1 = (n: number) => Math.round(n * 10) / 10
 
 // --- Load the generated dataset (parse the JSON literal back out) --------
 const ts = readFileSync(PATTERNS_PATH, 'utf8')
@@ -52,70 +56,299 @@ const match = ts.match(/= (\[[\s\S]*\]) satisfies/)
 if (!match) throw new Error('cannot parse src/data/patterns.ts')
 const patterns = JSON.parse(match[1]!) as {
   id: number
+  broader: number[]
   narrower: number[]
 }[]
+const byId = new Map(patterns.map((p) => [p.id, p]))
 
-const nodes: LayoutNode[] = patterns
-  .map((p) => ({ id: p.id }))
-  .sort((a, b) => a.id - b.id)
-const links: SimulationLinkDatum<LayoutNode>[] = patterns
-  .flatMap((p) => p.narrower.map((n) => ({ source: p.id, target: n })))
-  .sort((a, b) =>
-    (a.source as number) - (b.source as number) ||
-    (a.target as number) - (b.target as number),
-  )
+const towns = patterns.filter((p) => p.id <= 94)
+const buildings = patterns.filter((p) => p.id > 94 && p.id <= 204)
+const construction = patterns.filter((p) => p.id > 204)
 
-// Deterministic phyllotaxis-like seeding inside each band (d3's default
-// initializer depends on array order only, but being explicit costs nothing
-// and keeps intent visible).
-const rand = splitmix32(SEED)
-for (const n of nodes) {
-  n.x = (rand() - 0.5) * WIDTH
-  n.y = BAND[bandOf(n.id)] + (rand() - 0.5) * BAND_HALF
+// --- 1. Parent assignment: every pattern hangs off the scale above -------
+// A building's district is its most specific towns-scale ancestor (largest
+// towns id among broader links, else recurse through smaller buildings-scale
+// broaders). Same scheme one rung down for construction details. The rare
+// pattern with no upward path inherits the previous sibling's parent —
+// deterministic and logged, never silent.
+
+const townOf = new Map<number, number>()
+function resolveTown(id: number): number | undefined {
+  if (id <= 94) return id
+  if (townOf.has(id)) return townOf.get(id)
+  const p = byId.get(id)!
+  const direct = p.broader.filter((b) => b <= 94)
+  if (direct.length > 0) {
+    const t = Math.max(...direct)
+    townOf.set(id, t)
+    return t
+  }
+  const upward = p.broader.filter((b) => b > 94 && b <= 204 && b < id).sort((a, b) => b - a)
+  for (const b of upward) {
+    const t = resolveTown(b)
+    if (t !== undefined) {
+      townOf.set(id, t)
+      return t
+    }
+  }
+  return undefined
 }
 
-const simulation = forceSimulation(nodes)
-  .randomSource(splitmix32(SEED ^ 0x5f5f5f))
-  .force(
-    'link',
-    forceLink<LayoutNode, SimulationLinkDatum<LayoutNode>>(links)
-      .id((d) => d.id)
-      .distance(60)
-      .strength(0.08),
-  )
-  .force('charge', forceManyBody().strength(-80).distanceMax(300))
-  .force('x', forceX(WIDTH / 2).strength(0.03))
-  .force('y', forceY<LayoutNode>((d) => BAND[bandOf(d.id)]).strength(0.25))
-  .force('collide', forceCollide(14).iterations(2))
-  .stop()
+const buildingOf = new Map<number, number>()
+function resolveBuilding(id: number): number | undefined {
+  if (buildingOf.has(id)) return buildingOf.get(id)
+  const p = byId.get(id)!
+  const direct = p.broader.filter((b) => b > 94 && b <= 204)
+  if (direct.length > 0) {
+    const b = Math.max(...direct)
+    buildingOf.set(id, b)
+    return b
+  }
+  const upward = p.broader.filter((b) => b > 204 && b < id).sort((a, b) => b - a)
+  for (const c of upward) {
+    const b = resolveBuilding(c)
+    if (b !== undefined) {
+      buildingOf.set(id, b)
+      return b
+    }
+  }
+  return undefined
+}
 
-const ticks = Math.ceil(
-  Math.log(simulation.alphaMin()) / Math.log(1 - simulation.alphaDecay()),
-)
-for (let i = 0; i < ticks; i++) {
-  simulation.tick()
-  // Hard band clamp each tick: the y-force attracts, this guarantees.
-  for (const n of nodes) {
-    const center = BAND[bandOf(n.id)]
-    if (n.y! < center - BAND_HALF) n.y = center - BAND_HALF
-    if (n.y! > center + BAND_HALF) n.y = center + BAND_HALF
+let fallbacks = 0
+let lastTown = 94
+for (const p of buildings) {
+  const t = resolveTown(p.id)
+  if (t === undefined) {
+    townOf.set(p.id, lastTown)
+    fallbacks++
+  } else {
+    lastTown = t
+  }
+}
+let lastBuilding = 204
+for (const p of construction) {
+  const b = resolveBuilding(p.id)
+  if (b === undefined) {
+    buildingOf.set(p.id, lastBuilding)
+    fallbacks++
+  } else {
+    lastBuilding = b
+  }
+}
+// A construction detail lives in the district of its building.
+for (const p of construction) townOf.set(p.id, townOf.get(buildingOf.get(p.id)!)!)
+
+// --- 2. Town layout + Voronoi districts ----------------------------------
+const childCount = new Map<number, number>(towns.map((t) => [t.id, 0]))
+for (const p of patterns) {
+  if (p.id > 94) {
+    const t = townOf.get(p.id)!
+    childCount.set(t, (childCount.get(t) ?? 0) + 1)
   }
 }
 
-const positions = Object.fromEntries(
-  nodes.map((n) => [n.id, { x: Math.round(n.x! * 10) / 10, y: Math.round(n.y! * 10) / 10 }]),
+const townNodes: LayoutNode[] = towns
+  .map((p) => ({ id: p.id }))
+  .sort((a, b) => a.id - b.id)
+const townLinks: SimulationLinkDatum<LayoutNode>[] = towns
+  .flatMap((p) =>
+    p.narrower.filter((n) => n <= 94).map((n) => ({ source: p.id, target: n })),
+  )
+  .sort(
+    (a, b) =>
+      (a.source as number) - (b.source as number) ||
+      (a.target as number) - (b.target as number),
+  )
+
+const seedRand = splitmix32(SEED)
+for (const n of townNodes) {
+  n.x = MARGIN + seedRand() * (CANVAS.w - 2 * MARGIN)
+  n.y = MARGIN + seedRand() * (CANVAS.h - 2 * MARGIN)
+}
+
+const townSim = forceSimulation(townNodes)
+  .randomSource(splitmix32(SEED ^ 0x5f5f5f))
+  .force(
+    'link',
+    forceLink<LayoutNode, SimulationLinkDatum<LayoutNode>>(townLinks)
+      .id((d) => d.id)
+      .distance(130)
+      .strength(0.06),
+  )
+  .force('charge', forceManyBody().strength(-480).distanceMax(700))
+  .force('x', forceX(CANVAS.w / 2).strength(0.032))
+  .force('y', forceY(CANVAS.h / 2).strength(0.045))
+  .force(
+    'collide',
+    forceCollide<LayoutNode>(
+      (d) => 42 + 11 * Math.sqrt(childCount.get(d.id) ?? 0),
+    ).iterations(2),
+  )
+  .stop()
+
+const TOWN_TICKS = 300
+for (let i = 0; i < TOWN_TICKS; i++) {
+  townSim.tick()
+  for (const n of townNodes) {
+    n.x = Math.min(Math.max(n.x!, MARGIN), CANVAS.w - MARGIN)
+    n.y = Math.min(Math.max(n.y!, MARGIN), CANVAS.h - MARGIN)
+  }
+}
+
+const delaunay = Delaunay.from(
+  townNodes,
+  (d) => d.x!,
+  (d) => d.y!,
+)
+const voronoi = delaunay.voronoi([0, 0, CANVAS.w, CANVAS.h])
+const districts = new Map<number, Ring>()
+townNodes.forEach((n, i) => {
+  const cell = voronoi.cellPolygon(i)
+  if (!cell) throw new Error(`no Voronoi cell for town ${n.id}`)
+  districts.set(
+    n.id,
+    cell.map(([x, y]) => [round1(x!), round1(y!)] as const),
+  )
+})
+
+// --- 3. Pack each district: buildings settle in the cell, details on their
+// building. One seeded simulation per district over its buildings AND their
+// construction details, every node clamped into the cell each tick.
+
+const positions = new Map<number, { x: number; y: number }>()
+for (const n of townNodes) positions.set(n.id, { x: n.x!, y: n.y! })
+
+function clampIntoCell(n: LayoutNode, cell: Ring, cx: number, cy: number) {
+  for (let i = 0; i < 24 && !pointInPolygon(n.x!, n.y!, cell); i++) {
+    n.x = n.x! + (cx - n.x!) * 0.18
+    n.y = n.y! + (cy - n.y!) * 0.18
+  }
+  // A final nudge keeps linework off the district boundary.
+  n.x = n.x! + (cx - n.x!) * 0.04
+  n.y = n.y! + (cy - n.y!) * 0.04
+}
+
+const townIds = [...districts.keys()].sort((a, b) => a - b)
+for (const townId of townIds) {
+  const cell = districts.get(townId)!
+  const centroid = polygonCentroid(cell)
+  const members = patterns
+    .filter((p) => p.id > 94 && townOf.get(p.id) === townId)
+    .sort((a, b) => a.id - b.id)
+  if (members.length === 0) continue
+
+  const memberIds = new Set(members.map((m) => m.id))
+  const nodes: LayoutNode[] = members.map((m) => ({ id: m.id }))
+  const rand = splitmix32(SEED ^ (townId * 0x85eb))
+  // Seeded phyllotaxis around the centroid.
+  nodes.forEach((n, i) => {
+    const a = i * 2.3999632 + rand() * Math.PI * 2
+    const r = 10 * Math.sqrt(i + 1)
+    n.x = centroid.x + r * Math.cos(a)
+    n.y = centroid.y + r * Math.sin(a)
+  })
+
+  // Details tether to their building, short and stiff.
+  const tethers: SimulationLinkDatum<LayoutNode>[] = members
+    .filter((m) => m.id > 204 && memberIds.has(buildingOf.get(m.id)!))
+    .map((m) => ({ source: buildingOf.get(m.id)!, target: m.id }))
+  // Same-scale threads within the district, loose.
+  const siblings: SimulationLinkDatum<LayoutNode>[] = members
+    .flatMap((m) =>
+      m.narrower
+        .filter((n) => memberIds.has(n) && (m.id <= 204) === (n <= 204))
+        .map((n) => ({ source: m.id, target: n })),
+    )
+    .sort(
+      (a, b) =>
+        (a.source as number) - (b.source as number) ||
+        (a.target as number) - (b.target as number),
+    )
+
+  const sim = forceSimulation(nodes)
+    .randomSource(splitmix32(SEED ^ (townId * 0x2545f)))
+    .force(
+      'tether',
+      forceLink<LayoutNode, SimulationLinkDatum<LayoutNode>>(tethers)
+        .id((d) => d.id)
+        .distance(24)
+        .strength(0.9),
+    )
+    .force(
+      'sibling',
+      forceLink<LayoutNode, SimulationLinkDatum<LayoutNode>>(siblings)
+        .id((d) => d.id)
+        .distance(60)
+        .strength(0.05),
+    )
+    .force('charge', forceManyBody().strength(-55).distanceMax(200))
+    .force('x', forceX(centroid.x).strength(0.055))
+    .force('y', forceY(centroid.y).strength(0.055))
+    .force(
+      'collide',
+      forceCollide<LayoutNode>((d) => (d.id <= 204 ? 28 : 8)).iterations(2),
+    )
+    .stop()
+
+  const DISTRICT_TICKS = 220
+  for (let i = 0; i < DISTRICT_TICKS; i++) {
+    sim.tick()
+    for (const n of nodes) clampIntoCell(n, cell, centroid.x, centroid.y)
+  }
+  for (const n of nodes) positions.set(n.id, { x: n.x!, y: n.y! })
+}
+
+// --- Emit -----------------------------------------------------------------
+if (positions.size !== patterns.length) {
+  throw new Error(`positions for ${positions.size}/${patterns.length} patterns`)
+}
+console.log(`parent fallbacks: ${fallbacks}`)
+
+const positionsOut = Object.fromEntries(
+  [...positions.entries()]
+    .sort((a, b) => a[0] - b[0])
+    .map(([id, p]) => [id, { x: round1(p.x), y: round1(p.y) }]),
+)
+const districtsOut = Object.fromEntries(
+  townIds.map((id) => [id, districts.get(id)!.map(([x, y]) => [x, y])]),
+)
+const parentsOut = Object.fromEntries(
+  patterns
+    .filter((p) => p.id > 94)
+    .sort((a, b) => a.id - b.id)
+    .map((p) => [p.id, p.id <= 204 ? townOf.get(p.id)! : buildingOf.get(p.id)!]),
 )
 
 const out = `// GENERATED by scripts/compute-layout.ts — do not edit by hand.
-// Deterministic banded force layout (seed ${SEED}, ${ticks} ticks).
+// Deterministic town-plan layout (seed ${SEED}): Voronoi districts for the
+// towns scale, buildings packed inside their parent district, construction
+// details settled against their parent building.
 // inputHash guards against a layout baked from stale patterns.ts.
 // Regenerate with: npm run data:layout
 
 export const layoutInputHash =
   '${inputHash}'
 
+/** World canvas the layout was baked on. */
+export const canvas = { w: ${CANVAS.w}, h: ${CANVAS.h} } as const
+
 export const positions: Readonly<Record<number, { x: number; y: number }>> =
-  ${JSON.stringify(positions)}
+  ${JSON.stringify(positionsOut)}
+
+/** District cell (closed Voronoi ring) per towns-scale pattern. */
+export const districts: Readonly<
+  Record<number, readonly (readonly [number, number])[]>
+> = ${JSON.stringify(districtsOut)}
+
+/**
+ * Parent on the scale above: buildings-scale id → its district's towns id;
+ * construction-scale id → its parent buildings id.
+ */
+export const parents: Readonly<Record<number, number>> =
+  ${JSON.stringify(parentsOut)}
 `
 writeFileSync(OUT_PATH, out)
-console.log(`wrote ${OUT_PATH}: ${nodes.length} positions, ${ticks} ticks`)
+console.log(
+  `wrote ${OUT_PATH}: ${positions.size} positions, ${townIds.length} districts`,
+)

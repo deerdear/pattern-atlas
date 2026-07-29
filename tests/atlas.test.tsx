@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client'
 import Graph from '../src/atlas/Graph'
 import { edgeChunkCount, edgeCount } from '../src/atlas/Edges'
 import { adjacency, highlightFor } from '../src/atlas/glow'
-import { fitTransform, tierFor } from '../src/atlas/useCamera'
+import { fitTransform, tierFor, BUILDING_K, CONSTRUCTION_K } from '../src/atlas/useCamera'
 import { patterns } from '../src/data/patterns'
 
 describe('graph scene', () => {
@@ -18,15 +18,21 @@ describe('graph scene', () => {
 
   it('batches the static edge field into a few concatenated paths', () => {
     expect(edgeCount).toBe(1758) // pinned aggregate
-    expect(edgeChunkCount).toBeLessThanOrEqual(5)
+    expect(edgeChunkCount).toBeLessThanOrEqual(8)
   })
 
-  it('renders band furniture and the legend', () => {
-    expect(html).toContain('towns · 1–94')
-    expect(html).toContain('construction · 205–253')
-    expect((html.match(/class="band-rules"/g) ?? []).length).toBe(1)
+  it('draws the town plan: 94 districts, 110 footprints, a label per node', () => {
+    expect((html.match(/class="district"/g) ?? []).length).toBe(94)
+    expect((html.match(/class="footprint"/g) ?? []).length).toBe(110)
+    expect((html.match(/class="label"/g) ?? []).length).toBe(253)
+  })
+
+  it('renders the tier note and the legend', () => {
+    expect(html).toContain('tier-town') // initial semantic tier
+    expect(html).toContain('the town — zoom in on a district for its buildings')
     expect(html).toContain('Legend')
     expect(html).toContain('your path this session')
+    expect(html).toContain('zoom in: town → buildings → construction')
   })
 
   it('marks the SVG as decoration with a pointer to the index', () => {
@@ -57,9 +63,11 @@ describe('camera math', () => {
     expect(t.applyY(750)).toBeCloseTo(375)
   })
 
-  it('collapses glyphs to dots below the LOD threshold', () => {
-    expect(tierFor(0.69)).toBe('dot')
-    expect(tierFor(0.7)).toBe('glyph')
+  it('descends the ladder of scales as k crosses the tier thresholds', () => {
+    expect(tierFor(BUILDING_K - 0.01)).toBe('town')
+    expect(tierFor(BUILDING_K)).toBe('building')
+    expect(tierFor(CONSTRUCTION_K - 0.01)).toBe('building')
+    expect(tierFor(CONSTRUCTION_K)).toBe('construction')
   })
 })
 

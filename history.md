@@ -71,3 +71,45 @@ New: `src/lib/glyph.ts` (grammar), `src/atlas/{Graph,NodeGlyph,Edges,GlyphGrid}.
 **jsdom gotchas**: d3-zoom's `defaultExtent` reads `svg.viewBox.baseVal` (missing in jsdom) — fixed properly by passing an explicit `.extent()`, which we know anyway. `act()` needs `IS_REACT_ACT_ENVIRONMENT = true` manually.
 
 38 tests green; build 93.8 kB gzip; lint clean. Chrome extension wasn't connected, so the two visual acceptance items remain for human sign-off: glyph-grid cohesion review (`/dev/glyphs`) and 60fps pan/zoom on laptop + A15 phone.
+
+## 2026-07-29: The town plan — map, not graph (branch worktree-feat-town-plan-map)
+
+User-directed pivot: the banded force graph becomes a cartographic map where
+zooming descends the ladder of scales — see the whole thing as a TOWN, zoom
+into a district for its BUILDINGS, zoom again for CONSTRUCTION details. This
+supersedes the plan's horizontal-band layout ("Ladder of Scales" now reads
+as containment depth, not the y-axis); addendum added to the plan doc.
+
+**Layout (compute-layout.ts rewritten, d3-delaunay added as devDep).**
+Three nested deterministic stages: (1) towns-only force sim over a 1600×1200
+canvas, collide radius grown by sqrt(child count), then Voronoi → 94 district
+cells; (2) every buildings pattern assigned a parent district by walking
+`broader` links (largest towns id among broader, else recurse through smaller
+buildings-scale broaders) — 0 fallbacks needed, the thread structure resolves
+all 110; same scheme construction→buildings (0 fallbacks); (3) one seeded sim
+per district packs its buildings + their details, every node clamped into the
+cell polygon each tick. layout.ts now also exports `districts` (cell rings),
+`parents`, `canvas`. Byte-identical across runs (verified).
+
+**Semantic tiers replace the glyph/dot LOD.** tierFor(k): town < 1.5 ≤
+building < 3.2 ≤ construction (MAX_K 9). Tier class rides the scene <g>
+(React-owned, same slot the old lod-dots class used — svg keeps `glowing`
+imperative). atlas.css holds the tier matrix: current scale full (glyphs +
+labels), scale above as area labels/walls for orientation, scale below as
+context dots; hidden scales get pointer-events: none; `.lit` overrides tier
+visibility so a glow thread surfaces cross-scale neighbors. Edges batch into
+per-level chunks (edge-towns/-buildings/-construction, still 1,758 pinned,
+≤8 paths) so each tier lights its own streets. New src/lib/footprint.ts
+(seeded orthogonal plans: rect/L/courtyard-notch, box-containment tested) and
+src/lib/geometry.ts (pointInPolygon, centroid — shared with tests). Labels
+are per-node <text> in world units sized per scale (15/6.5/3.2).
+
+**Verified** by rasterized SVG previews (qlmanage; Chrome extension not
+connected again): town tier reads as a cadastral plan, building tier as a
+neighborhood of footprints, construction tier as a detail drawing. 45 tests
+green (layout suite rewritten: district tessellation, parent validity,
+point-in-polygon containment, detail-near-building ≤80u); build 97.2 kB gzip;
+lint clean. Remaining human sign-off: live pan/zoom feel, tier thresholds,
+label overlap in dense districts (worst near canvas center), 60fps check.
+Force retune after first preview: towns spread to fill canvas (charge -480,
+collide 42+11√children), buildings fill their cell (charge -55, center 0.055).

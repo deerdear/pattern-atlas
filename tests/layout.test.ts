@@ -1,35 +1,77 @@
-// Layout integrity: complete coverage, band containment, freshness.
+// Layout integrity: complete coverage, the town-plan containment contract
+// (buildings inside their parent district, details near their building),
+// and freshness.
 
 import { createHash } from 'node:crypto'
 import { readFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
-import { layoutInputHash, positions } from '../src/data/layout'
+import { canvas, districts, layoutInputHash, parents, positions } from '../src/data/layout'
 import { patterns } from '../src/data/patterns'
 import { positionFor } from '../src/data/position'
-import { scaleForId, type Scale } from '../src/data/schema'
-
-// Must mirror scripts/compute-layout.ts
-const BAND: Record<Scale, number> = { towns: 250, buildings: 750, construction: 1250 }
-const BAND_HALF = 230
+import { scaleForId, type PatternId } from '../src/data/schema'
+import { pointInPolygon } from '../src/lib/geometry'
 
 describe('layout', () => {
-  it('positions every pattern', () => {
+  it('positions every pattern on the canvas', () => {
     for (const p of patterns) {
       const pos = positionFor(p.id)
       expect(Number.isFinite(pos.x)).toBe(true)
       expect(Number.isFinite(pos.y)).toBe(true)
+      expect(pos.x, `pattern ${p.id}`).toBeGreaterThanOrEqual(0)
+      expect(pos.x, `pattern ${p.id}`).toBeLessThanOrEqual(canvas.w)
+      expect(pos.y, `pattern ${p.id}`).toBeGreaterThanOrEqual(0)
+      expect(pos.y, `pattern ${p.id}`).toBeLessThanOrEqual(canvas.h)
     }
     expect(Object.keys(positions).length).toBe(patterns.length)
   })
 
-  it('keeps every node inside its scale band', () => {
+  it('tessellates every towns pattern into a district cell', () => {
+    const townIds = patterns.filter((p) => scaleForId(p.id) === 'towns')
+    expect(Object.keys(districts).length).toBe(townIds.length)
+    for (const p of townIds) {
+      const cell = districts[p.id]
+      expect(cell, `town ${p.id}`).toBeDefined()
+      expect(cell!.length).toBeGreaterThanOrEqual(4) // closed ring
+    }
+  })
+
+  it('assigns every pattern a parent on the scale above', () => {
     for (const p of patterns) {
-      const { y } = positionFor(p.id)
-      const center = BAND[scaleForId(p.id)]
-      expect(y, `pattern ${p.id}`).toBeGreaterThanOrEqual(center - BAND_HALF)
-      expect(y, `pattern ${p.id}`).toBeLessThanOrEqual(center + BAND_HALF)
+      const scale = scaleForId(p.id)
+      if (scale === 'towns') {
+        expect(parents[p.id]).toBeUndefined()
+      } else if (scale === 'buildings') {
+        const t = parents[p.id]
+        expect(t, `building ${p.id}`).toBeDefined()
+        expect(t!).toBeLessThanOrEqual(94)
+      } else {
+        const b = parents[p.id]
+        expect(b, `detail ${p.id}`).toBeDefined()
+        expect(b!).toBeGreaterThan(94)
+        expect(b!).toBeLessThanOrEqual(204)
+      }
+    }
+  })
+
+  it('keeps every building and detail inside its parent district', () => {
+    for (const p of patterns) {
+      const scale = scaleForId(p.id)
+      if (scale === 'towns') continue
+      const town = scale === 'buildings' ? parents[p.id]! : parents[parents[p.id]!]!
+      const cell = districts[town]!
+      const { x, y } = positionFor(p.id)
+      expect(pointInPolygon(x, y, cell), `pattern ${p.id} in district ${town}`).toBe(true)
+    }
+  })
+
+  it('settles every construction detail against its building', () => {
+    for (const p of patterns) {
+      if (scaleForId(p.id) !== 'construction') continue
+      const b = positionFor(parents[p.id]! as PatternId)
+      const d = positionFor(p.id)
+      expect(Math.hypot(d.x - b.x, d.y - b.y), `detail ${p.id}`).toBeLessThan(80)
     }
   })
 

@@ -1,6 +1,11 @@
-/* The map. Everything here obeys the design language: ink on paper, no
-   sans-serif, no shadows, square corners. Dim/glow classes are toggled
-   imperatively from Graph.tsx; edges never transition (repaint cost). */
+/* The town plan. Everything here obeys the design language: ink on paper,
+   no sans-serif, no shadows, square corners. Dim/glow classes are toggled
+   imperatively from Graph.tsx; edges never transition (repaint cost).
+
+   The scene carries one tier class — tier-town / tier-building /
+   tier-construction — and this file is the matrix of what each tier shows:
+   the current scale draws in full, the scale above stays as area labels and
+   walls for orientation, the scale below waits as small context dots. */
 
 .atlas {
   position: relative;
@@ -21,13 +26,61 @@
   cursor: grabbing;
 }
 
-/* --- edges ------------------------------------------------------------- */
+/* --- districts --------------------------------------------------------- */
+
+.district {
+  fill: none;
+  stroke: var(--color-fade);
+  stroke-width: 1px; /* non-scaling */
+  pointer-events: none;
+}
+
+.tier-town .district {
+  opacity: 0.55;
+}
+
+.tier-building .district {
+  opacity: 0.3;
+}
+
+.tier-construction .district {
+  opacity: 0.15;
+}
+
+/* --- edges (streets of each tier) -------------------------------------- */
 
 .edges {
   stroke: var(--color-ink);
-  opacity: 0.1;
   fill: none;
   pointer-events: none;
+}
+
+.edges path {
+  opacity: 0.04;
+}
+
+.tier-town .edge-towns {
+  opacity: 0.12;
+}
+
+.tier-town .edge-construction {
+  visibility: hidden;
+}
+
+.tier-building .edge-buildings {
+  opacity: 0.1;
+}
+
+.tier-building .edge-construction {
+  opacity: 0.02;
+}
+
+.tier-construction .edge-construction {
+  opacity: 0.12;
+}
+
+.tier-construction .edge-towns {
+  visibility: hidden;
 }
 
 .edge-hi {
@@ -38,33 +91,15 @@
   stroke-linecap: round;
 }
 
-.glowing .edges {
-  opacity: 0.03;
+.glowing .edges path {
+  opacity: 0.02;
 }
 
 .glowing .edge-hi {
   opacity: 0.7;
 }
 
-/* --- bands ------------------------------------------------------------- */
-
-.band-rules line {
-  stroke: var(--color-rule);
-  stroke-width: 1px;
-}
-
-.band-label {
-  position: absolute;
-  left: 0.75rem;
-  top: 0;
-  font-variant-caps: small-caps;
-  letter-spacing: 0.08em;
-  color: var(--color-fade);
-  pointer-events: none;
-  user-select: none;
-}
-
-/* --- nodes ------------------------------------------------------------- */
+/* --- nodes -------------------------------------------------------------- */
 
 .node {
   color: var(--color-ink);
@@ -76,23 +111,133 @@
   color: var(--color-node-dim);
 }
 
-.node .lod-dot {
+.node .ctx-dot {
   fill: currentColor;
   display: none;
 }
 
-.lod-dots .node use {
+.node .footprint {
   display: none;
+  stroke: currentColor;
+  stroke-width: 0.5px;
+  fill: currentColor;
+  fill-opacity: 0.05;
 }
 
-.lod-dots .node .lod-dot {
-  display: inline;
+.node .footprint-wall {
+  fill: none;
+  stroke-width: 0.35px;
+  opacity: 0.6;
+}
+
+.node .label {
+  display: none;
+  fill: var(--color-fade);
+  text-anchor: middle;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  user-select: none;
 }
 
 .node .hit {
   r: var(--hit-r, 28px);
   fill: none;
   pointer-events: all;
+}
+
+/* --- the tier matrix ----------------------------------------------------
+
+   town tier: towns glyphs + names; buildings as faint dots; details absent */
+
+.tier-town .node--buildings use,
+.tier-town .node--construction {
+  display: none;
+}
+
+.tier-town .node--buildings {
+  cursor: default;
+}
+
+.tier-town .node--buildings .ctx-dot {
+  display: inline;
+  opacity: 0.45;
+}
+
+.tier-town .node--buildings .hit,
+.tier-town .node--construction .hit {
+  pointer-events: none;
+}
+
+.tier-town .node--towns .label {
+  display: inline;
+}
+
+/* building tier: footprints + glyphs + names; town names stay as area
+   labels; details as faint dots */
+
+.tier-building .node--towns use {
+  display: none;
+}
+
+.tier-building .node--towns .label {
+  display: inline;
+  opacity: 0.55;
+  pointer-events: all; /* the district name still hovers/opens its pattern */
+}
+
+.tier-building .node--buildings .footprint,
+.tier-building .node--buildings .label {
+  display: inline;
+}
+
+.tier-building .node--construction use {
+  display: none;
+}
+
+.tier-building .node--construction .ctx-dot {
+  display: inline;
+  opacity: 0.5;
+}
+
+.tier-building .node--construction .hit {
+  pointer-events: none;
+}
+
+/* construction tier: detail glyphs + names; building walls stay as context */
+
+.tier-construction .node--towns {
+  display: none;
+}
+
+.tier-construction .node--buildings use {
+  opacity: 0.35;
+}
+
+.tier-construction .node--buildings .footprint {
+  display: inline;
+  opacity: 0.5;
+}
+
+.tier-construction .node--buildings .label {
+  display: inline;
+  opacity: 0.4;
+}
+
+.tier-construction .node--construction .label {
+  display: inline;
+}
+
+/* A lit thread (Neighborhood Glow) surfaces its neighbors even on tiers
+   that would otherwise hide their scale. Placed last: .lit wins. */
+
+.node.lit,
+.tier-construction .node--towns.lit {
+  display: inline;
+}
+
+.node.lit .ctx-dot {
+  display: inline;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -127,6 +272,18 @@
 
 .atlas-header a {
   color: var(--color-fade);
+}
+
+.tier-note {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  color: var(--color-fade);
+  pointer-events: none;
+  user-select: none;
 }
 
 .legend {
