@@ -1,19 +1,46 @@
-// Route shell. Phase 2: the map at /, the a11y index at /patterns, and a
-// dev-only glyph grid. Phase 3 adds /pattern/:id and the not-found card.
+// Route shell: the map at / and /pattern/:id (the Graph stays mounted
+// across the two so opening a card never resets the camera), the a11y
+// index at /patterns, and a dev-only glyph grid.
 
 import { lazy, Suspense } from 'react'
-import { Link, Route, Switch } from 'wouter'
+import { Link, Redirect, Route, Switch, useRoute } from 'wouter'
 import Graph from './atlas/Graph'
+import PatternCard from './card/PatternCard'
+import NotFoundCard from './card/NotFoundCard'
 import PatternIndex from './index/PatternIndex'
+import { parsePatternId } from './data/schema'
 
 const GlyphGrid = import.meta.env.DEV
   ? lazy(() => import('./atlas/GlyphGrid'))
   : null
 
 export default function App() {
+  const [onMap] = useRoute('/')
+  const [onCard, params] = useRoute('/pattern/:id')
+
+  if (onMap || onCard) {
+    let card = null
+    if (onCard) {
+      const raw = params.id ?? ''
+      const id = parsePatternId(raw)
+      if (id === null) {
+        card = <NotFoundCard raw={raw} />
+      } else if (String(id) !== raw) {
+        card = <Redirect to={`/pattern/${id}`} replace />
+      } else {
+        card = <PatternCard id={id} />
+      }
+    }
+    return (
+      <>
+        <Graph />
+        {card}
+      </>
+    )
+  }
+
   return (
     <Switch>
-      <Route path="/" component={Graph} />
       <Route path="/patterns" component={PatternIndex} />
       {GlyphGrid ? (
         <Route path="/dev/glyphs">

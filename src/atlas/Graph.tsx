@@ -7,12 +7,12 @@
 // construction details once you are close enough to touch a wall.
 
 import { memo, useCallback, useEffect, useRef } from 'react'
-import { Link } from 'wouter'
+import { Link, useLocation, useRoute } from 'wouter'
 import type { ZoomTransform } from 'd3-zoom'
 import { canvas, districtHulls, lanes, quarters } from '../data/layout'
 import { patterns } from '../data/patterns'
 import { positionFor } from '../data/position'
-import { scaleForId, type PatternId, type Scale } from '../data/schema'
+import { parsePatternId, scaleForId, type PatternId, type Scale } from '../data/schema'
 import { footprintFor } from '../lib/footprint'
 import { NODE_RADIUS } from '../lib/glyph'
 import { splitmix32 } from '../lib/prng'
@@ -238,6 +238,13 @@ export default function Graph() {
   const tier = useCamera(svgRef, cameraRef, world, onTransform)
 
   // --- Neighborhood Glow, applied imperatively (refs + adjacency) ----------
+  // Glow has one owner: an open card beats hover, always.
+  const [, navigate] = useLocation()
+  const [onCard, cardParams] = useRoute('/pattern/:id')
+  const selected = onCard ? parsePatternId(cardParams.id ?? '') : null
+  const selectedRef = useRef<PatternId | null>(selected)
+  selectedRef.current = selected
+
   const nodeEls = useRef<Map<number, Element>>(new Map())
   const litEls = useRef<Element[]>([])
   const hoverTimer = useRef<number | undefined>(undefined)
@@ -274,10 +281,19 @@ export default function Graph() {
     }
   }, [])
 
+  // The open card's thread stays lit; navigation cancels any pending hover.
+  useEffect(() => {
+    window.clearTimeout(hoverTimer.current)
+    pendingId.current = null
+    applyGlow(selected)
+  }, [selected, applyGlow])
+
   // One pending ~50ms timer: cleared on every new hover, on pointerleave of
-  // the SVG, and (Phase 3) on navigation.
+  // the SVG, and on navigation. While a card is open it owns the glow and
+  // hover does not compete.
   const scheduleGlow = useCallback(
     (id: PatternId | null) => {
+      if (selectedRef.current !== null) return
       if (id === pendingId.current) return
       pendingId.current = id
       window.clearTimeout(hoverTimer.current)
@@ -298,10 +314,22 @@ export default function Graph() {
   )
 
   const onPointerLeave = useCallback(() => {
+    if (selectedRef.current !== null) return
     window.clearTimeout(hoverTimer.current)
     pendingId.current = null
     applyGlow(null)
   }, [applyGlow])
+
+  // Click opens the pattern's card. d3-zoom's clickDistance is the sole
+  // click-vs-drag referee: it suppresses the click after a real pan.
+  const onClick = useCallback(
+    (e: React.MouseEvent<SVGSVGElement>) => {
+      const hit = (e.target as Element).closest('[data-id]')
+      if (!hit) return
+      navigate(`/pattern/${(hit as SVGGElement).dataset['id']}`)
+    },
+    [navigate],
+  )
 
   return (
     <div className="atlas">
@@ -312,6 +340,7 @@ export default function Graph() {
         aria-label="Town plan of the 253 patterns of A Pattern Language: districts for the towns patterns, buildings inside them, construction details on each building. The pattern index offers the same content as a readable list."
         onPointerOver={onPointerOver}
         onPointerLeave={onPointerLeave}
+        onClick={onClick}
       >
         <GlyphDefs />
         <g ref={cameraRef} className={`scene tier-${tier}`}>
