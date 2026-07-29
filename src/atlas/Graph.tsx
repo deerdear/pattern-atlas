@@ -16,6 +16,7 @@ import { parsePatternId, scaleForId, type PatternId, type Scale } from '../data/
 import { footprintFor } from '../lib/footprint'
 import { NODE_RADIUS } from '../lib/glyph'
 import { splitmix32 } from '../lib/prng'
+import { churchElevation, hillHamlet, housePlan, houseRow, type Vignette } from '../lib/sketch'
 import { Edges } from './Edges'
 import { NodeGlyph, glyphId } from './NodeGlyph'
 import { highlightFor } from './glow'
@@ -69,6 +70,32 @@ const GlyphDefs = memo(function GlyphDefs() {
   )
 })
 
+/**
+ * Marginalia in the open country around the village: faint architectural
+ * vignettes, placed in the corners the quarter ring leaves empty.
+ */
+const SKETCH_PLACEMENTS: { v: Vignette; x: number; y: number; s: number }[] = [
+  { v: hillHamlet(1), x: 250, y: 180, s: 1.4 },
+  { v: housePlan(2), x: canvas.w - 230, y: 265, s: 1.25 },
+  { v: churchElevation(3), x: 235, y: canvas.h - 105, s: 1.35 },
+  { v: houseRow(4), x: canvas.w - 250, y: canvas.h - 110, s: 1.35 },
+]
+
+const Sketches = memo(function Sketches() {
+  return (
+    <>
+      {SKETCH_PLACEMENTS.map((p, i) => (
+        <path
+          key={i}
+          className="sketch"
+          d={p.v.d}
+          transform={`translate(${p.x} ${p.y}) scale(${p.s}) translate(${p.v.dx ?? 0} 0)`}
+        />
+      ))}
+    </>
+  )
+})
+
 /** The village quarters: one hedgerow hull + one label per category. */
 const Quarters = memo(function Quarters() {
   return (
@@ -84,7 +111,7 @@ const QuarterLabels = memo(function QuarterLabels() {
   return (
     <>
       {quarters.map((q) => (
-        <text key={q.label} className="quarter-label" x={q.cx} y={q.labelY} fontSize={26}>
+        <text key={q.label} className="quarter-label" x={q.cx} y={q.labelY} fontSize={30}>
           {q.label}
         </text>
       ))}
@@ -344,6 +371,9 @@ export default function Graph() {
       >
         <GlyphDefs />
         <g ref={cameraRef} className={`scene tier-${tier}`}>
+          <g className="sketches">
+            <Sketches />
+          </g>
           <g className="lanes">
             <Lanes />
           </g>

@@ -26,6 +26,26 @@
   cursor: grabbing;
 }
 
+/* --- marginalia: architectural sketches in the open country ------------- */
+
+.sketch {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.tier-town .sketch {
+  opacity: 0.16;
+}
+
+.tier-building .sketch {
+  opacity: 0.06;
+}
+
 /* --- village furniture: quarters, hedges, lanes ------------------------- */
 
 .quarter,

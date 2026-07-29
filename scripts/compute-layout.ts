@@ -49,7 +49,7 @@ interface LayoutNode extends SimulationNodeDatum {
 }
 
 // Canvas in abstract world units; the renderer fits it to the viewport.
-const CANVAS = { w: 1600, h: 1200 } as const
+const CANVAS = { w: 2000, h: 1500 } as const
 const MARGIN = 70 // town centers keep this far from the canvas edge
 const SEED = 0x9a7031 // arbitrary, fixed forever
 
@@ -167,8 +167,8 @@ const anchorOf = new Map<string, { x: number; y: number }>()
 quarterNames.forEach((name, i) => {
   const a = -Math.PI / 2 + (2 * Math.PI * i) / quarterNames.length
   anchorOf.set(name, {
-    x: CANVAS.w / 2 + 600 * Math.cos(a),
-    y: CANVAS.h / 2 + 440 * Math.sin(a),
+    x: CANVAS.w / 2 + 780 * Math.cos(a),
+    y: CANVAS.h / 2 + 580 * Math.sin(a),
   })
 })
 const categoryOf = new Map(patterns.map((p) => [p.id, p.category]))
