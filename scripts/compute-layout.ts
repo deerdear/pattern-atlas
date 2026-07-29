@@ -49,7 +49,7 @@ interface LayoutNode extends SimulationNodeDatum {
 }
 
 // Canvas in abstract world units; the renderer fits it to the viewport.
-const CANVAS = { w: 2000, h: 1500 } as const
+const CANVAS = { w: 2200, h: 1650 } as const
 const MARGIN = 70 // town centers keep this far from the canvas edge
 const SEED = 0x9a7031 // arbitrary, fixed forever
 
@@ -167,8 +167,8 @@ const anchorOf = new Map<string, { x: number; y: number }>()
 quarterNames.forEach((name, i) => {
   const a = -Math.PI / 2 + (2 * Math.PI * i) / quarterNames.length
   anchorOf.set(name, {
-    x: CANVAS.w / 2 + 780 * Math.cos(a),
-    y: CANVAS.h / 2 + 580 * Math.sin(a),
+    x: CANVAS.w / 2 + 870 * Math.cos(a),
+    y: CANVAS.h / 2 + 645 * Math.sin(a),
   })
 })
 const categoryOf = new Map(patterns.map((p) => [p.id, p.category]))
@@ -354,23 +354,84 @@ function hullFor(ids: readonly number[], pad: number, seed: number): Ring {
   return ring
 }
 
+// Must match the renderer's quarter-label font size (Graph.tsx).
+const LABEL_FS = 30
+
 const quarters = quarterNames.map((name, qi) => {
   const ids = towns.filter((p) => p.category === name).map((p) => p.id)
   const cx = ids.reduce((s, id) => s + positions.get(id)!.x, 0) / ids.length
   const cy = ids.reduce((s, id) => s + positions.get(id)!.y, 0) / ids.length
-  // Labels float clear of the glyphs, alternating above/below around the
-  // ring so neighboring quarters' names never stack.
+  // Long headings break at the book's own em dash, onto two lines.
+  const lines = name.toLowerCase().split(' — ')
+  // Labels start clear of the glyphs, alternating above/below around the
+  // ring; the separation pass below settles any remaining collisions.
   const ys = ids.map((id) => positions.get(id)!.y)
   const labelY =
-    qi % 2 === 0 ? Math.min(...ys) - 46 : Math.max(...ys) + 64
+    qi % 2 === 0
+      ? Math.min(...ys) - 46 - (lines.length - 1) * LABEL_FS * 1.15
+      : Math.max(...ys) + 64
   return {
     label: name.toLowerCase(),
+    lines,
     cx: round1(cx),
     cy: round1(cy),
-    labelY: round1(labelY),
+    labelX: cx,
+    labelY,
     hull: closedSplinePath(hullFor(ids, 40, qi * 0x1f3d)),
   }
 })
+
+// Deterministic label separation: labels are boxes; overlapping boxes push
+// apart (mostly vertically) with a weak spring back home, until no label
+// covers another.
+{
+  const box = (q: (typeof quarters)[number]) => {
+    const w = Math.max(...q.lines.map((l) => l.length)) * LABEL_FS * 0.56
+    const h = q.lines.length * LABEL_FS * 1.15
+    return { w, h }
+  }
+  const homes = quarters.map((q) => ({ x: q.labelX, y: q.labelY }))
+  for (let iter = 0; iter < 120; iter++) {
+    let moved = false
+    for (let i = 0; i < quarters.length; i++) {
+      for (let j = i + 1; j < quarters.length; j++) {
+        const a = quarters[i]!
+        const b = quarters[j]!
+        const ba = box(a)
+        const bb = box(b)
+        const pad = 16
+        // labelY is the first line's baseline; the box center sits below it.
+        const cyA = a.labelY + ba.h / 2 - LABEL_FS * 0.8
+        const cyB = b.labelY + bb.h / 2 - LABEL_FS * 0.8
+        const ox = (ba.w + bb.w) / 2 + pad - Math.abs(a.labelX - b.labelX)
+        const oy = (ba.h + bb.h) / 2 + pad - Math.abs(cyA - cyB)
+        if (ox <= 0 || oy <= 0) continue
+        moved = true
+        if (oy <= ox * 0.4) {
+          // Cheaper to separate vertically.
+          const dir = cyA <= cyB ? -1 : 1
+          a.labelY += (dir * oy) / 2
+          b.labelY -= (dir * oy) / 2
+        } else {
+          const dir = a.labelX <= b.labelX ? -1 : 1
+          a.labelX += (dir * ox) / 2
+          b.labelX -= (dir * ox) / 2
+        }
+      }
+    }
+    // Weak spring home keeps labels near their quarters.
+    for (let i = 0; i < quarters.length; i++) {
+      quarters[i]!.labelX += (homes[i]!.x - quarters[i]!.labelX) * 0.04
+      quarters[i]!.labelY += (homes[i]!.y - quarters[i]!.labelY) * 0.04
+    }
+    if (!moved && iter > 8) break
+  }
+  for (const q of quarters) {
+    const { w } = box(q)
+    q.labelX = round1(Math.min(Math.max(q.labelX, w / 2 + 20), CANVAS.w - w / 2 - 20))
+    q.labelY = round1(Math.min(Math.max(q.labelY, 50), CANVAS.h - 20))
+  }
+}
 
 const districtHulls = Object.fromEntries(
   townIds.map((townId) => {
@@ -468,8 +529,10 @@ export const parents: Readonly<Record<number, number>> =
  */
 export const quarters: readonly {
   label: string
+  lines: readonly string[]
   cx: number
   cy: number
+  labelX: number
   labelY: number
   hull: string
 }[] = ${JSON.stringify(quarters)}

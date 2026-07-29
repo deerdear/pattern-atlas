@@ -111,8 +111,12 @@ const QuarterLabels = memo(function QuarterLabels() {
   return (
     <>
       {quarters.map((q) => (
-        <text key={q.label} className="quarter-label" x={q.cx} y={q.labelY} fontSize={30}>
-          {q.label}
+        <text key={q.label} className="quarter-label" x={q.labelX} y={q.labelY} fontSize={30}>
+          {q.lines.map((line, i) => (
+            <tspan key={line} x={q.labelX} dy={i === 0 ? 0 : 34.5}>
+              {line}
+            </tspan>
+          ))}
         </text>
       ))}
     </>
