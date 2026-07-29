@@ -248,7 +248,8 @@
   pointer-events: all; /* the district name still hovers/opens its pattern */
 }
 
-.tier-building .node--buildings .footprint {
+.tier-building .node--buildings .footprint,
+.tier-building .node--buildings .label {
   display: inline;
 }
 
@@ -286,7 +287,7 @@
 }
 
 .tier-construction .node--construction .label {
-  display: none; /* hover reveals */
+  display: inline;
 }
 
 /* A lit thread (Neighborhood Glow) surfaces its neighbors even on tiers
@@ -299,6 +300,16 @@
 
 .node.lit .ctx-dot {
   display: inline;
+}
+
+/* The open pattern itself: visible at any tier, its name in full ink. */
+.node.selected {
+  display: inline;
+}
+
+.node.selected .label {
+  display: inline;
+  fill: var(--color-ink);
 }
 
 @media (prefers-reduced-motion: reduce) {

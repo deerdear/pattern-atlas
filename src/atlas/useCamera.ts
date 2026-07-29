@@ -6,9 +6,16 @@
 // building. Nothing else ever writes the transform; future programmatic
 // moves (Phase 3 centering) go through zoom.transform.
 
-import { useEffect, useState, type RefObject } from 'react'
+import { useCallback, useEffect, useRef, useState, type RefObject } from 'react'
 import { select } from 'd3-selection'
-import { zoom, zoomIdentity, type ZoomTransform } from 'd3-zoom'
+import 'd3-transition' // side effect: selection.transition()
+import {
+  zoom,
+  zoomIdentity,
+  zoomTransform,
+  type ZoomBehavior,
+  type ZoomTransform,
+} from 'd3-zoom'
 
 /** k thresholds where the map changes meaning. */
 export const BUILDING_K = 1.5
@@ -38,13 +45,25 @@ export function fitTransform(world: World, w: number, h: number): ZoomTransform 
   return zoomIdentity.translate(tx, ty).scale(k)
 }
 
+export interface Camera {
+  tier: LodTier
+  /**
+   * Animate the camera toward a world point: a named, interruptible
+   * transition (latest-wins; any user gesture interrupts it). Zooms IN to
+   * at least minK, never out. shiftX moves the focal point left of the
+   * viewport center (room for the card). Instant under reduced motion.
+   */
+  centerOn: (wx: number, wy: number, minK: number, shiftX?: number) => void
+}
+
 export function useCamera(
   svgRef: RefObject<SVGSVGElement | null>,
   cameraRef: RefObject<SVGGElement | null>,
   world: World,
   onTransform?: (t: ZoomTransform) => void,
-): LodTier {
+): Camera {
   const [tier, setTier] = useState<LodTier>('town')
+  const behaviorRef = useRef<ZoomBehavior<SVGSVGElement, unknown> | null>(null)
 
   useEffect(() => {
     const svg = svgRef.current
@@ -75,10 +94,15 @@ export function useCamera(
         onTransform?.(t)
         setTier(tierFor(t.k)) // same-value updates bail out render-free
       })
+      // A user gesture always wins immediately over an in-flight centering.
+      .on('start.interrupt', (event: { sourceEvent: Event | null }) => {
+        if (event.sourceEvent) select(svg).interrupt('atlas-center')
+      })
 
     const selection = select(svg)
     selection.call(behavior)
     selection.call(behavior.transform, fit)
+    behaviorRef.current = behavior
 
     // Safari pinch fires proprietary gesture events that would zoom the page.
     const suppress = (e: Event) => e.preventDefault()
@@ -86,9 +110,38 @@ export function useCamera(
 
     return () => {
       selection.on('.zoom', null)
+      behaviorRef.current = null
       svg.removeEventListener('gesturestart', suppress)
     }
   }, [svgRef, cameraRef, world, onTransform])
 
-  return tier
+  const centerOn = useCallback(
+    (wx: number, wy: number, minK: number, shiftX = 0) => {
+      const svg = svgRef.current
+      const behavior = behaviorRef.current
+      if (!svg || !behavior) return
+      const w = svg.clientWidth || 960
+      const h = svg.clientHeight || 720
+      const k = Math.min(Math.max(zoomTransform(svg).k, minK), MAX_K)
+      const target = zoomIdentity
+        .translate(w / 2 - shiftX, h / 2)
+        .scale(k)
+        .translate(-wx, -wy)
+      const reduce =
+        typeof window.matchMedia === 'function' &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      const selection = select(svg)
+      if (reduce) {
+        selection.call(behavior.transform, target)
+      } else {
+        selection
+          .transition('atlas-center')
+          .duration(650)
+          .call(behavior.transform, target)
+      }
+    },
+    [svgRef],
+  )
+
+  return { tier, centerOn }
 }

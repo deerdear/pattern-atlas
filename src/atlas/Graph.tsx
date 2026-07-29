@@ -53,6 +53,13 @@ const LABEL_SIZE: Record<Scale, number> = {
   construction: 3.2,
 }
 
+/** Minimum zoom the camera dives to when a pattern of this scale opens. */
+const SELECT_K: Record<Scale, number> = {
+  towns: 1.7,
+  buildings: 3.4,
+  construction: 5,
+}
+
 const TIER_NOTE: Record<LodTier, string> = {
   town: 'the town — zoom in on a district for its buildings',
   building: 'the buildings — zoom in for construction details',
@@ -266,7 +273,7 @@ export default function Graph() {
     }
   }, [])
 
-  const tier = useCamera(svgRef, cameraRef, world, onTransform)
+  const { tier, centerOn } = useCamera(svgRef, cameraRef, world, onTransform)
 
   // --- Neighborhood Glow, applied imperatively (refs + adjacency) ----------
   // Glow has one owner: an open card beats hover, always.
@@ -312,12 +319,26 @@ export default function Graph() {
     }
   }, [])
 
-  // The open card's thread stays lit; navigation cancels any pending hover.
+  // The open card's thread stays lit and its node reads darker; navigation
+  // cancels any pending hover and the camera dives toward the pattern.
+  const selectedEl = useRef<Element | null>(null)
   useEffect(() => {
     window.clearTimeout(hoverTimer.current)
     pendingId.current = null
     applyGlow(selected)
-  }, [selected, applyGlow])
+    selectedEl.current?.classList.remove('selected')
+    selectedEl.current = null
+    if (selected !== null) {
+      const el = nodeEls.current.get(selected)
+      if (el) {
+        el.classList.add('selected')
+        selectedEl.current = el
+      }
+      const { x, y } = positionFor(selected)
+      const wide = (svgRef.current?.clientWidth ?? 0) > 760
+      centerOn(x, y, SELECT_K[scaleForId(selected)], wide ? 190 : 0)
+    }
+  }, [selected, applyGlow, centerOn])
 
   // One pending ~50ms timer: cleared on every new hover, on pointerleave of
   // the SVG, and on navigation. While a card is open it owns the glow and
