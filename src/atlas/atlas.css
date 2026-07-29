@@ -26,25 +26,65 @@
   cursor: grabbing;
 }
 
-/* --- districts --------------------------------------------------------- */
+/* --- village furniture: quarters, hedges, lanes ------------------------- */
 
-.district {
+.quarter,
+.hedge {
   fill: none;
   stroke: var(--color-fade);
   stroke-width: 1px; /* non-scaling */
   pointer-events: none;
 }
 
-.tier-town .district {
-  opacity: 0.55;
+.tier-town .quarter {
+  opacity: 0.45;
 }
 
-.tier-building .district {
-  opacity: 0.3;
+.tier-building .quarter,
+.tier-construction .quarter {
+  opacity: 0.12;
 }
 
-.tier-construction .district {
+.hedge {
+  opacity: 0;
+}
+
+.tier-building .hedge {
+  opacity: 0.4;
+}
+
+.tier-construction .hedge {
   opacity: 0.15;
+}
+
+.lane {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-linecap: round;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.tier-town .lane {
+  opacity: 0.1;
+}
+
+.tier-building .lane {
+  opacity: 0.04;
+}
+
+.quarter-label {
+  fill: var(--color-fade);
+  text-anchor: middle;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+  display: none;
+}
+
+.tier-town .quarter-label {
+  display: inline;
 }
 
 /* --- edges (streets of each tier) -------------------------------------- */
@@ -60,7 +100,7 @@
 }
 
 .tier-town .edge-towns {
-  opacity: 0.12;
+  visibility: hidden; /* the lanes carry these threads at the village view */
 }
 
 .tier-town .edge-construction {
@@ -169,7 +209,9 @@
   pointer-events: none;
 }
 
-.tier-town .node--towns .label {
+/* Individual names are not listed — hovering a node reveals the names of
+   its whole lit thread, at any tier. */
+.glowing .node.lit .label {
   display: inline;
 }
 
@@ -186,8 +228,7 @@
   pointer-events: all; /* the district name still hovers/opens its pattern */
 }
 
-.tier-building .node--buildings .footprint,
-.tier-building .node--buildings .label {
+.tier-building .node--buildings .footprint {
   display: inline;
 }
 
@@ -225,7 +266,7 @@
 }
 
 .tier-construction .node--construction .label {
-  display: inline;
+  display: none; /* hover reveals */
 }
 
 /* A lit thread (Neighborhood Glow) surfaces its neighbors even on tiers

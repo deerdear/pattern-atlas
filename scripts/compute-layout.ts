@@ -31,7 +31,13 @@ import {
   type SimulationLinkDatum,
   type SimulationNodeDatum,
 } from 'd3-force'
-import { pointInPolygon, polygonCentroid, type Ring } from '../src/lib/geometry.ts'
+import {
+  closedSplinePath,
+  convexHull,
+  padRing,
+  pointInPolygon,
+  type Ring,
+} from '../src/lib/geometry.ts'
 import { splitmix32 } from '../src/lib/prng.ts'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -56,6 +62,7 @@ const match = ts.match(/= (\[[\s\S]*\]) satisfies/)
 if (!match) throw new Error('cannot parse src/data/patterns.ts')
 const patterns = JSON.parse(match[1]!) as {
   id: number
+  category: string
   broader: number[]
   narrower: number[]
 }[]
@@ -140,6 +147,9 @@ for (const p of construction) {
 for (const p of construction) townOf.set(p.id, townOf.get(buildingOf.get(p.id)!)!)
 
 // --- 2. Town layout + Voronoi districts ----------------------------------
+// The village reads as QUARTERS around a green: the book's own towns-scale
+// category headings become the quarters, each anchored on a ring around the
+// canvas center so same-category patterns settle together.
 const childCount = new Map<number, number>(towns.map((t) => [t.id, 0]))
 for (const p of patterns) {
   if (p.id > 94) {
@@ -147,6 +157,21 @@ for (const p of patterns) {
     childCount.set(t, (childCount.get(t) ?? 0) + 1)
   }
 }
+
+const quarterNames = [...new Set(towns.map((p) => p.category))].sort(
+  (a, b) =>
+    Math.min(...towns.filter((p) => p.category === a).map((p) => p.id)) -
+    Math.min(...towns.filter((p) => p.category === b).map((p) => p.id)),
+)
+const anchorOf = new Map<string, { x: number; y: number }>()
+quarterNames.forEach((name, i) => {
+  const a = -Math.PI / 2 + (2 * Math.PI * i) / quarterNames.length
+  anchorOf.set(name, {
+    x: CANVAS.w / 2 + 600 * Math.cos(a),
+    y: CANVAS.h / 2 + 440 * Math.sin(a),
+  })
+})
+const categoryOf = new Map(patterns.map((p) => [p.id, p.category]))
 
 const townNodes: LayoutNode[] = towns
   .map((p) => ({ id: p.id }))
@@ -163,8 +188,9 @@ const townLinks: SimulationLinkDatum<LayoutNode>[] = towns
 
 const seedRand = splitmix32(SEED)
 for (const n of townNodes) {
-  n.x = MARGIN + seedRand() * (CANVAS.w - 2 * MARGIN)
-  n.y = MARGIN + seedRand() * (CANVAS.h - 2 * MARGIN)
+  const anchor = anchorOf.get(categoryOf.get(n.id)!)!
+  n.x = anchor.x + (seedRand() - 0.5) * 120
+  n.y = anchor.y + (seedRand() - 0.5) * 120
 }
 
 const townSim = forceSimulation(townNodes)
@@ -174,15 +200,15 @@ const townSim = forceSimulation(townNodes)
     forceLink<LayoutNode, SimulationLinkDatum<LayoutNode>>(townLinks)
       .id((d) => d.id)
       .distance(130)
-      .strength(0.06),
+      .strength(0.025),
   )
-  .force('charge', forceManyBody().strength(-480).distanceMax(700))
-  .force('x', forceX(CANVAS.w / 2).strength(0.032))
-  .force('y', forceY(CANVAS.h / 2).strength(0.045))
+  .force('charge', forceManyBody().strength(-260).distanceMax(420))
+  .force('x', forceX<LayoutNode>((d) => anchorOf.get(categoryOf.get(d.id)!)!.x).strength(0.2))
+  .force('y', forceY<LayoutNode>((d) => anchorOf.get(categoryOf.get(d.id)!)!.y).strength(0.2))
   .force(
     'collide',
     forceCollide<LayoutNode>(
-      (d) => 42 + 11 * Math.sqrt(childCount.get(d.id) ?? 0),
+      (d) => 40 + 11 * Math.sqrt(childCount.get(d.id) ?? 0),
     ).iterations(2),
   )
   .stop()
@@ -232,7 +258,9 @@ function clampIntoCell(n: LayoutNode, cell: Ring, cx: number, cy: number) {
 const townIds = [...districts.keys()].sort((a, b) => a - b)
 for (const townId of townIds) {
   const cell = districts.get(townId)!
-  const centroid = polygonCentroid(cell)
+  // Children settle around the town itself, not the cell centroid — edge
+  // cells sprawl to the canvas rim and their centroids sit in open country.
+  const centroid = positions.get(townId)!
   const members = patterns
     .filter((p) => p.id > 94 && townOf.get(p.id) === townId)
     .sort((a, b) => a.id - b.id)
@@ -299,11 +327,97 @@ for (const townId of townIds) {
   for (const n of nodes) positions.set(n.id, { x: n.x!, y: n.y! })
 }
 
+// --- 4. Village furniture: quarter hulls, district hedges, lanes ---------
+// A ring for a member set: padded convex hull, or a seeded rough circle when
+// there are too few points to enclose anything.
+function hullFor(ids: readonly number[], pad: number, seed: number): Ring {
+  const pts: Ring = ids.map((id) => {
+    const p = positions.get(id)!
+    return [p.x, p.y] as const
+  })
+  if (pts.length >= 3) {
+    const hull = convexHull(pts)
+    if (hull.length >= 3) return padRing(hull, pad)
+  }
+  const cx = pts.reduce((s, p) => s + p[0], 0) / pts.length
+  const cy = pts.reduce((s, p) => s + p[1], 0) / pts.length
+  const rand = splitmix32(SEED ^ seed)
+  const ring: (readonly [number, number])[] = []
+  for (let i = 0; i < 8; i++) {
+    const a = (2 * Math.PI * i) / 8
+    const r = pad * (1.5 + rand() * 0.5)
+    ring.push([
+      round1(cx + r * Math.cos(a)),
+      round1(cy + r * Math.sin(a)),
+    ] as const)
+  }
+  return ring
+}
+
+const quarters = quarterNames.map((name, qi) => {
+  const ids = towns.filter((p) => p.category === name).map((p) => p.id)
+  const cx = ids.reduce((s, id) => s + positions.get(id)!.x, 0) / ids.length
+  const cy = ids.reduce((s, id) => s + positions.get(id)!.y, 0) / ids.length
+  // Labels float clear of the glyphs, alternating above/below around the
+  // ring so neighboring quarters' names never stack.
+  const ys = ids.map((id) => positions.get(id)!.y)
+  const labelY =
+    qi % 2 === 0 ? Math.min(...ys) - 46 : Math.max(...ys) + 64
+  return {
+    label: name.toLowerCase(),
+    cx: round1(cx),
+    cy: round1(cy),
+    labelY: round1(labelY),
+    hull: closedSplinePath(hullFor(ids, 40, qi * 0x1f3d)),
+  }
+})
+
+const districtHulls = Object.fromEntries(
+  townIds.map((townId) => {
+    const ids = [
+      townId,
+      ...patterns.filter((p) => p.id > 94 && townOf.get(p.id) === townId).map((p) => p.id),
+    ]
+    return [townId, closedSplinePath(hullFor(ids, 34, townId * 0x77))]
+  }),
+)
+
+// Lanes: the towns-scale threads aggregated quarter-to-quarter. Intra-quarter
+// threads stay local streets (invisible at the village view).
+const quarterIndex = new Map<number, number>()
+towns.forEach((p) => quarterIndex.set(p.id, quarterNames.indexOf(p.category)))
+const laneWeight = new Map<string, number>()
+for (const p of towns) {
+  for (const n of p.narrower) {
+    if (n > 94) continue
+    const a = quarterIndex.get(p.id)!
+    const b = quarterIndex.get(n)!
+    if (a === b) continue
+    const key = a < b ? `${a}-${b}` : `${b}-${a}`
+    laneWeight.set(key, (laneWeight.get(key) ?? 0) + 1)
+  }
+}
+// A village has a few lanes, not a lattice: only the strong threads draw.
+const lanes = [...laneWeight.entries()]
+  .filter(([, w]) => w >= 5)
+  .sort((x, y) => (x[0] < y[0] ? -1 : 1))
+  .map(([key, w]) => {
+    const [a, b] = key.split('-').map(Number) as [number, number]
+    return {
+      ax: quarters[a]!.cx,
+      ay: quarters[a]!.cy,
+      bx: quarters[b]!.cx,
+      by: quarters[b]!.cy,
+      w,
+    }
+  })
+
 // --- Emit -----------------------------------------------------------------
 if (positions.size !== patterns.length) {
   throw new Error(`positions for ${positions.size}/${patterns.length} patterns`)
 }
 console.log(`parent fallbacks: ${fallbacks}`)
+console.log(`quarters: ${quarters.length}, lanes: ${lanes.length}`)
 
 const positionsOut = Object.fromEntries(
   [...positions.entries()]
@@ -347,6 +461,31 @@ export const districts: Readonly<
  */
 export const parents: Readonly<Record<number, number>> =
   ${JSON.stringify(parentsOut)}
+
+/**
+ * The village quarters: one per towns-scale category heading, with its
+ * hedgerow hull (smoothed closed path) and label anchor.
+ */
+export const quarters: readonly {
+  label: string
+  cx: number
+  cy: number
+  labelY: number
+  hull: string
+}[] = ${JSON.stringify(quarters)}
+
+/** Hedgerow hull around each district's settlement (town + its children). */
+export const districtHulls: Readonly<Record<number, string>> =
+  ${JSON.stringify(districtHulls)}
+
+/** Quarter-to-quarter lanes: aggregated towns-scale threads with weights. */
+export const lanes: readonly {
+  ax: number
+  ay: number
+  bx: number
+  by: number
+  w: number
+}[] = ${JSON.stringify(lanes)}
 `
 writeFileSync(OUT_PATH, out)
 console.log(

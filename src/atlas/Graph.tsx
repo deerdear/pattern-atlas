@@ -9,12 +9,13 @@
 import { memo, useCallback, useEffect, useRef } from 'react'
 import { Link } from 'wouter'
 import type { ZoomTransform } from 'd3-zoom'
-import { canvas, districts } from '../data/layout'
+import { canvas, districtHulls, lanes, quarters } from '../data/layout'
 import { patterns } from '../data/patterns'
 import { positionFor } from '../data/position'
 import { scaleForId, type PatternId, type Scale } from '../data/schema'
 import { footprintFor } from '../lib/footprint'
 import { NODE_RADIUS } from '../lib/glyph'
+import { splitmix32 } from '../lib/prng'
 import { Edges } from './Edges'
 import { NodeGlyph, glyphId } from './NodeGlyph'
 import { highlightFor } from './glow'
@@ -68,18 +69,65 @@ const GlyphDefs = memo(function GlyphDefs() {
   )
 })
 
-/** The 94 district cells of the town plan. */
-const Districts = memo(function Districts() {
+/** The village quarters: one hedgerow hull + one label per category. */
+const Quarters = memo(function Quarters() {
   return (
     <>
-      {Object.entries(districts).map(([id, ring]) => (
-        <path
-          key={id}
-          className="district"
-          d={ring.map(([x, y], i) => `${i === 0 ? 'M' : 'L'}${x} ${y}`).join('') + 'Z'}
-          vectorEffect="non-scaling-stroke"
-        />
+      {quarters.map((q) => (
+        <path key={q.label} className="quarter" d={q.hull} vectorEffect="non-scaling-stroke" />
       ))}
+    </>
+  )
+})
+
+const QuarterLabels = memo(function QuarterLabels() {
+  return (
+    <>
+      {quarters.map((q) => (
+        <text key={q.label} className="quarter-label" x={q.cx} y={q.labelY} fontSize={26}>
+          {q.label}
+        </text>
+      ))}
+    </>
+  )
+})
+
+/** Hedges around each district's settlement, for the building tier. */
+const DistrictHedges = memo(function DistrictHedges() {
+  return (
+    <>
+      {Object.entries(districtHulls).map(([id, d]) => (
+        <path key={id} className="hedge" d={d} vectorEffect="non-scaling-stroke" />
+      ))}
+    </>
+  )
+})
+
+/**
+ * Quarter-to-quarter lanes: the towns-scale threads bundled into a few
+ * curved village lanes, weight = thread count. Each lane bows a little,
+ * seeded from its index — straight lines are the one thing no lane does.
+ */
+const Lanes = memo(function Lanes() {
+  return (
+    <>
+      {lanes.map((l, i) => {
+        const rand = splitmix32(0x1a8e ^ i)
+        const mx = (l.ax + l.bx) / 2
+        const my = (l.ay + l.by) / 2
+        const len = Math.hypot(l.bx - l.ax, l.by - l.ay) || 1
+        const bow = len * (0.16 + rand() * 0.14) * (rand() < 0.5 ? 1 : -1)
+        const cx = mx + (-(l.by - l.ay) / len) * bow
+        const cy = my + ((l.bx - l.ax) / len) * bow
+        return (
+          <path
+            key={i}
+            className="lane"
+            d={`M${l.ax} ${l.ay}Q${cx} ${cy} ${l.bx} ${l.by}`}
+            strokeWidth={0.8 + 0.45 * Math.sqrt(l.w)}
+          />
+        )
+      })}
     </>
   )
 })
@@ -267,8 +315,14 @@ export default function Graph() {
       >
         <GlyphDefs />
         <g ref={cameraRef} className={`scene tier-${tier}`}>
-          <g className="districts">
-            <Districts />
+          <g className="lanes">
+            <Lanes />
+          </g>
+          <g className="quarters">
+            <Quarters />
+          </g>
+          <g className="hedges">
+            <DistrictHedges />
           </g>
           <g ref={edgesRef} className="edges">
             <Edges />
@@ -276,6 +330,9 @@ export default function Graph() {
           <path ref={hiEdgeRef} className="edge-hi" />
           <g ref={nodesRef} className="nodes">
             <Nodes />
+          </g>
+          <g className="quarter-labels">
+            <QuarterLabels />
           </g>
         </g>
       </svg>

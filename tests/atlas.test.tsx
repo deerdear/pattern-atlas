@@ -21,10 +21,13 @@ describe('graph scene', () => {
     expect(edgeChunkCount).toBeLessThanOrEqual(8)
   })
 
-  it('draws the town plan: 94 districts, 110 footprints, a label per node', () => {
-    expect((html.match(/class="district"/g) ?? []).length).toBe(94)
+  it('draws the village: 15 quarters, 94 hedges, lanes, 110 footprints', () => {
+    expect((html.match(/class="quarter"/g) ?? []).length).toBe(15)
+    expect((html.match(/class="quarter-label"/g) ?? []).length).toBe(15)
+    expect((html.match(/class="hedge"/g) ?? []).length).toBe(94)
+    expect((html.match(/class="lane"/g) ?? []).length).toBeGreaterThan(20)
     expect((html.match(/class="footprint"/g) ?? []).length).toBe(110)
-    expect((html.match(/class="label"/g) ?? []).length).toBe(253)
+    expect((html.match(/class="label"/g) ?? []).length).toBe(253) // hover-revealed
   })
 
   it('renders the tier note and the legend', () => {
