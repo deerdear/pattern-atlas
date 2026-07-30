@@ -379,6 +379,86 @@
   opacity: 0.04;
 }
 
+/* --- the rail's scale filter --------------------------------------------
+
+   Picking a scale on the rail highlights that whole hierarchy at any zoom
+   and recedes the rest. Placed last: the filter beats the tier matrix. */
+
+.focus-towns .node:not(.node--towns),
+.focus-buildings .node:not(.node--buildings),
+.focus-construction .node:not(.node--construction) {
+  opacity: 0.18;
+}
+
+.focus-towns .node:not(.node--towns) .label,
+.focus-buildings .node:not(.node--buildings) .label,
+.focus-construction .node:not(.node--construction) .label {
+  display: none;
+}
+
+.focus-towns .node--towns,
+.focus-buildings .node--buildings,
+.focus-construction .node--construction {
+  display: inline;
+  color: var(--color-ink);
+  opacity: 1;
+}
+
+.focus-towns .node--towns use,
+.focus-buildings .node--buildings use,
+.focus-construction .node--construction use {
+  display: inline;
+}
+
+.focus-buildings .node--buildings .ctx-dot,
+.focus-construction .node--construction .ctx-dot {
+  display: none;
+}
+
+.focus-buildings .node--buildings .footprint {
+  display: inline;
+}
+
+/* Zoomed shallower than the focused scale, its glyphs grow to be seen. */
+.tier-town.focus-buildings .node--buildings use {
+  transform: scale(1.7);
+}
+
+.tier-town.focus-construction .node--construction use {
+  transform: scale(2.6);
+}
+
+.tier-building.focus-construction .node--construction use {
+  transform: scale(1.7);
+}
+
+/* The focused scale is hoverable and clickable at any tier. */
+.focus-towns .node--towns .hit,
+.focus-buildings .node--buildings .hit,
+.focus-construction .node--construction .hit {
+  pointer-events: all;
+}
+
+/* Its streets rise a little; the rest of the furniture recedes. */
+.focus-buildings .edge-buildings,
+.focus-construction .edge-construction {
+  opacity: 0.09;
+}
+
+.focus-buildings .quarter-label,
+.focus-construction .quarter-label {
+  opacity: 0.12;
+}
+
+.focus-buildings .quarter,
+.focus-construction .quarter {
+  opacity: 0.08;
+}
+
+.focus-construction .hedge {
+  opacity: 0.1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .node {
     transition: none;

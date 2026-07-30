@@ -6,7 +6,7 @@
 // the town plan first, a district's buildings as you approach, and the
 // construction details once you are close enough to touch a wall.
 
-import { memo, useCallback, useEffect, useRef, type ReactNode } from 'react'
+import { memo, useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import { Link, useLocation, useRoute } from 'wouter'
 import type { ZoomTransform } from 'd3-zoom'
 import { canvas, districtHulls, lanes, quarters } from '../data/layout'
@@ -20,7 +20,7 @@ import { churchElevation, hillHamlet, housePlan, houseRow, type Vignette } from 
 import { Edges } from './Edges'
 import { NodeGlyph, glyphId } from './NodeGlyph'
 import { highlightFor } from './glow'
-import { useCamera, type Camera, type LodTier, type World } from './useCamera'
+import { useCamera, type LodTier, type World } from './useCamera'
 import './atlas.css'
 
 const world: World = {
@@ -209,7 +209,11 @@ const Nodes = memo(function Nodes() {
   )
 })
 
-/** The three scales of the language, as a rail of icons to dive between. */
+/**
+ * The three scales of the language, as a rail of icons. Picking one is a
+ * FILTER, not a camera move: that hierarchy lights up everywhere on the
+ * map and the others recede; picking it again clears the filter.
+ */
 const TIER_ICONS: Record<LodTier, ReactNode> = {
   town: (
     <svg viewBox="0 0 22 22" aria-hidden="true">
@@ -230,23 +234,38 @@ const TIER_ICONS: Record<LodTier, ReactNode> = {
   ),
 }
 
-const TIER_ORDER: LodTier[] = ['town', 'building', 'construction']
+const RAIL: { tier: LodTier; scale: Scale }[] = [
+  { tier: 'town', scale: 'towns' },
+  { tier: 'building', scale: 'buildings' },
+  { tier: 'construction', scale: 'construction' },
+]
 
-function TierRail({ tier, zoomTier }: { tier: LodTier; zoomTier: Camera['zoomTier'] }) {
+function TierRail({
+  tier,
+  focus,
+  onPick,
+}: {
+  tier: LodTier
+  focus: Scale | null
+  onPick: (s: Scale) => void
+}) {
   return (
-    <nav className="tier-rail" aria-label="Dive to a scale of the language">
-      {TIER_ORDER.map((t) => (
-        <button
-          key={t}
-          type="button"
-          className={t === tier ? 'active' : undefined}
-          aria-pressed={t === tier}
-          onClick={() => zoomTier(t)}
-        >
-          {TIER_ICONS[t]}
-          <span>{t}</span>
-        </button>
-      ))}
+    <nav className="tier-rail" aria-label="Highlight one scale of the language">
+      {RAIL.map((r) => {
+        const active = focus ? focus === r.scale : tier === r.tier
+        return (
+          <button
+            key={r.tier}
+            type="button"
+            className={active ? 'active' : undefined}
+            aria-pressed={focus === r.scale}
+            onClick={() => onPick(r.scale)}
+          >
+            {TIER_ICONS[r.tier]}
+            <span>{r.tier}</span>
+          </button>
+        )
+      })}
     </nav>
   )
 }
@@ -315,7 +334,14 @@ export default function Graph() {
     }
   }, [])
 
-  const { tier, centerOn, zoomTier } = useCamera(svgRef, cameraRef, world, onTransform)
+  const { tier, centerOn } = useCamera(svgRef, cameraRef, world, onTransform)
+
+  // The rail's scale filter: highlight one hierarchy, fade the others.
+  const [focus, setFocus] = useState<Scale | null>(null)
+  const pickFocus = useCallback(
+    (s: Scale) => setFocus((cur) => (cur === s ? null : s)),
+    [],
+  )
 
   // --- Neighborhood Glow, applied imperatively (refs + adjacency) ----------
   // Glow has one owner: an open card beats hover, always.
@@ -437,7 +463,10 @@ export default function Graph() {
         onClick={onClick}
       >
         <GlyphDefs />
-        <g ref={cameraRef} className={`scene tier-${tier}`}>
+        <g
+          ref={cameraRef}
+          className={`scene tier-${tier}${focus ? ` focus-${focus}` : ''}`}
+        >
           <g className="sketches">
             <Sketches />
           </g>
@@ -468,8 +497,12 @@ export default function Graph() {
           <Link href="/patterns">pattern index</Link>
         </nav>
       </header>
-      <span className="tier-note">{TIER_NOTE[tier]}</span>
-      <TierRail tier={tier} zoomTier={zoomTier} />
+      <span className="tier-note">
+        {focus
+          ? `showing every ${focus === 'construction' ? 'construction detail' : focus.slice(0, -1)} pattern — pick the scale again to clear`
+          : TIER_NOTE[tier]}
+      </span>
+      <TierRail tier={tier} focus={focus} onPick={pickFocus} />
       <Legend />
     </div>
   )
