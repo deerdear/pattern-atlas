@@ -1,255 +1,1520 @@
 [
-  { "id": 1, "gist": "Nations are too big to feel. Let regions of a few million people steer their own life and land.", "reviewed": false },
-  { "id": 2, "gist": "Population piles up in a few giants while the land empties. Spread towns of every size across the whole region.", "reviewed": false },
-  { "id": 3, "gist": "City swallows country until neither is near. Interlock them as fingers, so farmland and street stay in reach.", "reviewed": false },
-  { "id": 4, "gist": "The best soil sits in valleys, exactly where building is easiest. Keep valleys for farming; build on the slopes.", "reviewed": false },
-  { "id": 5, "gist": "Suburbs smear town over country. Let houses gather loosely along country lanes, fields showing between.", "reviewed": false },
-  { "id": 6, "gist": "Small towns wither as the cities pull. Give country towns their own work and reasons to stay.", "reviewed": false },
-  { "id": 7, "gist": "Fenced-off countryside belongs to no one who walks it. Treat the land as a commons people may cross and tend.", "reviewed": false },
-  { "id": 8, "gist": "Big cities grind difference smooth. Let many small subcultures live side by side, each with ground of its own.", "reviewed": false },
-  { "id": 9, "gist": "Work exiled to districts leaves home hollow all day. Scatter workplaces through the places people live.", "reviewed": false },
-  { "id": 10, "gist": "The city's real riches concentrate where few can reach them. Keep dense, magnetic cores within reach of everyone.", "reviewed": false },
-  { "id": 11, "gist": "Cars win the long trip and ruin the short one. Bound small areas where feet and bikes come first.", "reviewed": false },
-  { "id": 12, "gist": "A voice vanishes in mass government. Keep political communities small enough that one person can still be heard.", "reviewed": false },
-  { "id": 13, "gist": "Ways of life pressed wall to wall wear each other down. Part subcultures with open land, not shared fences.", "reviewed": false },
-  { "id": 14, "gist": "People need a patch of city they can name as theirs. Make neighborhoods small enough to know by face.", "reviewed": false },
-  { "id": 15, "gist": "A neighborhood without an edge dissolves into the grid. Give it a boundary, crossed at gateways.", "reviewed": false },
-  { "id": 16, "gist": "Separate transit lines don't add up to freedom. Weave them into one web where changing is easy.", "reviewed": false },
-  { "id": 17, "gist": "Fast roads must exist, and destroy whatever they touch. Keep them to the edges of the areas they serve.", "reviewed": false },
-  { "id": 18, "gist": "Learning locked in schools narrows to schooling. Spread it through the city - workshops, museums, masters.", "reviewed": false },
-  { "id": 19, "gist": "Commerce clumps into centers far from daily life. Let shops settle at the natural spacing of need.", "reviewed": false },
-  { "id": 20, "gist": "Big buses on fixed routes fail the odd, real journey. Fill the gaps with small buses that come when called.", "reviewed": false },
-  { "id": 21, "gist": "High buildings lift people away from the life of the street. Keep dwellings within four stories of the ground.", "reviewed": false },
-  { "id": 22, "gist": "Parking quietly eats the town it serves. Cap the land any area gives to resting cars.", "reviewed": false },
-  { "id": 23, "gist": "Through-traffic tangles wherever roads cross freely. Carry it on parallel one-way roads that seldom meet.", "reviewed": false },
-  { "id": 24, "gist": "Places that hold a community's memory get bulldozed like any lot. Protect sacred sites and their approaches.", "reviewed": false },
-  { "id": 25, "gist": "Shorelines pass into private hands first. Keep every water's edge open for anyone to walk.", "reviewed": false },
-  { "id": 26, "gist": "A town built for one age of life strands all the others. Provide settings for every stage, birth to death.", "reviewed": false },
-  { "id": 27, "gist": "Places quietly built around one gender's day exclude half of life. Shape each place for the worlds of both.", "reviewed": false },
-  { "id": 28, "gist": "A center placed dead-center leaves no quiet side. Set the dense nucleus off toward the liveliest edge.", "reviewed": false },
-  { "id": 29, "gist": "Uniform density serves no one's real wants. Let density fall away in rings from each center.", "reviewed": false },
-  { "id": 30, "gist": "Facilities scattered evenly never make a place. Cluster them into nodes a short walk apart.", "reviewed": false },
-  { "id": 31, "gist": "People want somewhere to see and be seen. Give each community a short strolling spine.", "reviewed": false },
-  { "id": 32, "gist": "Shops strung along traffic arteries serve cars, not people. Give shopping its own short street across the road.", "reviewed": false },
-  { "id": 33, "gist": "Night spots scattered through town die alone. Gather the late places so the night has a heart.", "reviewed": false },
-  { "id": 34, "gist": "Transfers punish the rider at every seam. Make interchanges tight, walkable, and ringed with small life.", "reviewed": false },
-  { "id": 35, "gist": "Tracts of one household type breed monocultures. Mix homes for singles, families, and the old in every place.", "reviewed": false },
-  { "id": 36, "gist": "One street-face is forced on host and hermit alike. Let homes sort themselves from loud fronts to quiet depths.", "reviewed": false },
-  { "id": 37, "gist": "Houses in ranks face nobody. Gather a handful around common ground they hold together.", "reviewed": false },
-  { "id": 38, "gist": "Where land runs short, detached houses waste it and towers erase it. Build rows, each with its own door and garden.", "reviewed": false },
-  { "id": 39, "gist": "Density usually means stacking strangers. Terrace homes up a shared hill, each opening to the sky.", "reviewed": false },
-  { "id": 40, "gist": "Old people gathered into enclaves disappear from life. Settle elders' dwellings through every neighborhood.", "reviewed": false },
-  { "id": 41, "gist": "A workplace standing alone isolates its workers. Group workshops around shared courts and a common table.", "reviewed": false },
-  { "id": 42, "gist": "Industry banished to the far edge severs work from town. Run it in narrow, buffered ribbons close by.", "reviewed": false },
-  { "id": 43, "gist": "A walled university teaches only its own. Open it as a marketplace of courses anyone may enter.", "reviewed": false },
-  { "id": 44, "gist": "Government at a distance goes deaf. Give each small community a town hall of its own, close to daily paths.", "reviewed": false },
-  { "id": 45, "gist": "Civic energy dies waiting for permission and rent. String cheap ground for community projects around the hall.", "reviewed": false },
-  { "id": 46, "gist": "A market under one owner flattens to a store. Roof over many tiny shops, each stall its own master.", "reviewed": false },
-  { "id": 47, "gist": "Medicine waits at the end of sickness. Make health places that teach and keep people well.", "reviewed": false },
-  { "id": 48, "gist": "Districts of pure work fall dead at night. Thread dwellings between the workplaces.", "reviewed": false },
-  { "id": 49, "gist": "Straight residential streets invite through-traffic. Loop the local roads so only neighbors bother.", "reviewed": false },
-  { "id": 50, "gist": "Crossroads multiply the ways two cars can meet. Join minor roads in staggered T's.", "reviewed": false },
-  { "id": 51, "gist": "Local streets don't need a river of asphalt. Set paving stones in grass and let the street be ground.", "reviewed": false },
-  { "id": 52, "gist": "Paths shadowing every road give walkers fumes and fear. Run paths as their own net, crossing roads at right angles.", "reviewed": false },
-  { "id": 53, "gist": "You should feel it when you enter a community. Mark each way in with a gateway.", "reviewed": false },
-  { "id": 54, "gist": "Crossings are drawn for the car's convenience. Raise and narrow them so walkers cross on their own terms.", "reviewed": false },
-  { "id": 55, "gist": "Fast roads shove walkers into the gutter. Lift the walk above the roadway where the two must share.", "reviewed": false },
-  { "id": 56, "gist": "Cycling fails without its own ways and a place at the door. Weave bike paths through, racks at every goal.", "reviewed": false },
-  { "id": 57, "gist": "The city is built as if children didn't live there. Open safe ways for them through its real life.", "reviewed": false },
-  { "id": 58, "gist": "A town with no license for madness goes grim. Keep ground where carnival can happen.", "reviewed": false },
-  { "id": 59, "gist": "Work pressed against noise never rests. Give buildings quiet backs onto green, away from the street.", "reviewed": false },
-  { "id": 60, "gist": "A green too far away might as well not exist. Put open grass within a few minutes of every door.", "reviewed": false },
-  { "id": 61, "gist": "Vast plazas make a crowd feel like nobody. Keep public squares small enough to feel peopled.", "reviewed": false },
-  { "id": 62, "gist": "People climb to take in their world whole. Keep a few high places to look out from.", "reviewed": false },
-  { "id": 63, "gist": "Music and dancing retreat indoors and behind tickets. Raise bandstands where anyone may join the dance.", "reviewed": false },
-  { "id": 64, "gist": "The city's water runs buried in pipes. Bring streams and pools back where people can touch them.", "reviewed": false },
-  { "id": 65, "gist": "Birth happens far away, managed among strangers. Make places to be born within the community's own life.", "reviewed": false },
-  { "id": 66, "gist": "The sacred exposed all at once is cheapened. Approach holy ground through nested thresholds.", "reviewed": false },
-  { "id": 67, "gist": "All-private lots leave nowhere to be together. Hold common land between the houses.", "reviewed": false },
-  { "id": 68, "gist": "A child alone in a fenced yard has no one to play with. Link the play spaces so children can find each other.", "reviewed": false },
-  { "id": 69, "gist": "Outdoors there is nowhere to linger without buying. Build a roofed open room that belongs to everyone.", "reviewed": false },
-  { "id": 70, "gist": "Death is removed from town until it seems not to happen. Weave small grave sites into the community's ground.", "reviewed": false },
-  { "id": 71, "gist": "Swimming means a drive and a fee. Keep still water near home, its edge graded from paddling to depth.", "reviewed": false },
-  { "id": 72, "gist": "Exercise exiled to stadiums becomes a spectacle. Sprinkle courts and pools where people already pass.", "reviewed": false },
-  { "id": 73, "gist": "A finished playground leaves nothing to do. Give children raw ground and loose stuff to build with.", "reviewed": false },
-  { "id": 74, "gist": "Towns scrubbed clean of animals teach that life is elsewhere. Make room for beasts in the ordinary fabric.", "reviewed": false },
-  { "id": 75, "gist": "The nuclear household stands alone against everything. House larger constellations of lives together.", "reviewed": false },
-  { "id": 76, "gist": "One open plan grinds parents and children together. Give each their realm, with a commons between.", "reviewed": false },
-  { "id": 77, "gist": "A couple's house is more than a shared bedroom. Make one realm together and room to be apart.", "reviewed": false },
-  { "id": 78, "gist": "A person alone needs little space but all of life in it. Make one room grown rich - alcoves for each act.", "reviewed": false },
-  { "id": 79, "gist": "No one can settle in rooms they may not touch. Give every household a home of its own to alter.", "reviewed": false },
-  { "id": 80, "gist": "Work under absent owners deadens the day. Favor workshops and offices the workers own and run.", "reviewed": false },
-  { "id": 81, "gist": "Services swell into bureaucracies that serve themselves. Break them into small teams facing their people.", "reviewed": false },
-  { "id": 82, "gist": "Groups that must work together drift when floors apart. Place connected offices within a short walk.", "reviewed": false },
-  { "id": 83, "gist": "Telling is a poor way to learn a craft. Arrange work so beginners labor beside masters.", "reviewed": false },
-  { "id": 84, "gist": "Teenagers are parked in classrooms at the edge of life. Give them real roles and a society of their own.", "reviewed": false },
-  { "id": 85, "gist": "Small children vanish into big remote schools. Keep their schools tiny - a few rooms on an ordinary street.", "reviewed": false },
-  { "id": 86, "gist": "Every child sometimes needs a household not their own. Keep a homelike refuge open in each neighborhood.", "reviewed": false },
-  { "id": 87, "gist": "Chain shops repeat the same face everywhere. Favor shops whose owner stands behind the counter.", "reviewed": false },
-  { "id": 88, "gist": "The street has no front porch. Let cafes spill their tables onto the walk.", "reviewed": false },
-  { "id": 89, "gist": "Daily essentials sit a drive away. Keep a grocery on the corner, at walking distance.", "reviewed": false },
-  { "id": 90, "gist": "Strangers need a loud warm room to drink and sing in. Keep a public hall where the whole town mixes.", "reviewed": false },
-  { "id": 91, "gist": "Travelers are warehoused in numbered cells. Make inns where guests share the fire and the table.", "reviewed": false },
-  { "id": 92, "gist": "Waiting at a bare pole is a small daily insult. Make each bus stop a little place - bench, shelter, news.", "reviewed": false },
-  { "id": 93, "gist": "Eating in the street is treated as disorder. Set food stands where the paths cross.", "reviewed": false },
-  { "id": 94, "gist": "Falling asleep in public is treated as a crime. Make spots where a nap is safe and carries no shame.", "reviewed": false },
-  { "id": 95, "gist": "One big box swallows every function whole. Break large programs into a family of small linked buildings.", "reviewed": false },
-  { "id": 96, "gist": "Height gets set by ego and economics. Size each building's stories to its neighbors and the ground.", "reviewed": false },
-  { "id": 97, "gist": "A skin of parked cars deadens any building. Tuck parking behind or beneath, never facing the life.", "reviewed": false },
-  { "id": 98, "gist": "In a maze of corridors nobody knows where they are. Nest movement into named realms, each with one clear door.", "reviewed": false },
-  { "id": 99, "gist": "A complex of equals has no heart. Let one building stand as the head among the others.", "reviewed": false },
-  { "id": 100, "gist": "Buildings fed by corridors turn their backs on the world. Serve them from outdoor streets instead.", "reviewed": false },
-  { "id": 101, "gist": "A building the public must cross should not feel private. Make its passage a real street under a roof.", "reviewed": false },
-  { "id": 102, "gist": "A row of doors, and no telling which is whose. Shape entrances as a visible family, alike and distinct.", "reviewed": false },
-  { "id": 103, "gist": "Seas of parking repel every other use. Break lots into pockets of a handful of cars, screened by green.", "reviewed": false },
-  { "id": 104, "gist": "Builders seize the loveliest spot and destroy it by building there. Build on the worst ground and heal it.", "reviewed": false },
-  { "id": 105, "gist": "Outdoor land north of a building lives in its shadow. Keep the open space to the south, the building behind.", "reviewed": false },
-  { "id": 106, "gist": "Space left over between buildings belongs to no one. Shape the outdoors as rooms with a form of their own.", "reviewed": false },
-  { "id": 107, "gist": "Deep buildings go dark and dead at the core. Build in narrow wings so daylight reaches every room.", "reviewed": false },
-  { "id": 108, "gist": "Slivers of space between buildings are dead on arrival. Let buildings join walls and share their edges.", "reviewed": false },
-  { "id": 109, "gist": "A compact plan crowds everyone onto one spot. Stretch the small house long and thin, rooms in a chain.", "reviewed": false },
-  { "id": 110, "gist": "A hidden entrance makes every arrival a search. Give the building one main door, plain from the approach.", "reviewed": false },
-  { "id": 111, "gist": "Front gardens are display; back gardens, exile. Set the garden half-hidden at the side, private but alive.", "reviewed": false },
-  { "id": 112, "gist": "Street to front door in one step jars the arrival. Interpose a passage of changed light, level, and view.", "reviewed": false },
-  { "id": 113, "gist": "The car arrives at a tacked-on slab. Make the drive-up a real part of the house's entrance.", "reviewed": false },
-  { "id": 114, "gist": "Outdoor spaces exposed on all sides give no rest. Give each a back, opening toward some larger space.", "reviewed": false },
-  { "id": 115, "gist": "Sealed courtyards go silent and unused. Give courts a path through, a view out, and the sun.", "reviewed": false },
-  { "id": 116, "gist": "One flat lid makes a building read as a box. Step the roofs down in a cascade from the tallest heart.", "reviewed": false },
-  { "id": 117, "gist": "A roof hidden behind parapets shelters no one's heart. Let the roof show, and bring its edges low.", "reviewed": false },
-  { "id": 118, "gist": "Flat roofs hold acres of unused sky. Make some of them gardens people walk out onto.", "reviewed": false },
-  { "id": 119, "gist": "The building's edge sheds both rain and people. Run arcades along it, a public path under cover.", "reviewed": false },
-  { "id": 120, "gist": "Paths drawn on plans get cut across on foot. Lay paths between the goals people actually walk.", "reviewed": false },
-  { "id": 121, "gist": "A path that is only a channel forbids stopping. Swell it in the middle where people can pause.", "reviewed": false },
-  { "id": 122, "gist": "Buildings set back behind lawns quit the street. Bring their fronts to the path, each one its own.", "reviewed": false },
-  { "id": 123, "gist": "An empty plaza depresses; a packed one repels. Size public ground so a modest crowd makes it live.", "reviewed": false },
-  { "id": 124, "gist": "A public space lives or dies at its rim. Ring it with pockets of activity facing in.", "reviewed": false },
-  { "id": 125, "gist": "People perch where they can watch the passing scene. Make broad steps that face the action.", "reviewed": false },
-  { "id": 126, "gist": "An empty middle gives no reason to stay. Put something rough at the center to gather around.", "reviewed": false },
-  { "id": 127, "gist": "One flat plan dumps guests into private depths. Grade the rooms from public front to intimate back.", "reviewed": false },
-  { "id": 128, "gist": "Main rooms facing away from the sun stay cold all day. Put the daily rooms on the building's bright side.", "reviewed": false },
-  { "id": 129, "gist": "A common room at the end of a corridor stays empty. Put shared space at the crossing of everyone's paths.", "reviewed": false },
-  { "id": 130, "gist": "Arrival deserves more than a door in a wall. Make the entrance a room, half inside and half out.", "reviewed": false },
-  { "id": 131, "gist": "Corridors move bodies and kill encounters. Let rooms open into rooms, movement passing through life.", "reviewed": false },
-  { "id": 132, "gist": "Long dim passages oppress everyone who walks them. Keep passages short, daylit, and wide as rooms.", "reviewed": false },
-  { "id": 133, "gist": "A stair shut in a shaft is only plumbing for people. Open it to the room - every descent an entrance.", "reviewed": false },
-  { "id": 134, "gist": "A view stared at all day goes stale. Reveal the best view briefly, at a turn, in passing.", "reviewed": false },
-  { "id": 135, "gist": "Uniform brightness flattens a building's inner life. Alternate pools of light with darker ground between.", "reviewed": false },
-  { "id": 136, "gist": "A marriage squeezed into a bedroom thins out. Give the couple a realm of the house that is theirs.", "reviewed": false },
-  { "id": 137, "gist": "Children fitted into adult rooms are always trespassing. Give them a territory running from bed to outdoors.", "reviewed": false },
-  { "id": 138, "gist": "Waking against the light leaves the body behind the day. Place beds where morning sun can reach them.", "reviewed": false },
-  { "id": 139, "gist": "The cook is exiled to a galley while life happens elsewhere. Make one big room where cooking and living share.", "reviewed": false },
-  { "id": 140, "gist": "Indoors you miss the street; on the street you have no seat. Make a half-private terrace beside the life.", "reviewed": false },
-  { "id": 141, "gist": "No one can be shared all day long. Give each member of the household a room of their own, however small.", "reviewed": false },
-  { "id": 142, "gist": "One sitting room must serve every mood, and serves none. Scatter sitting places from formal to nook.", "reviewed": false },
-  { "id": 143, "gist": "A child alone behind a bedroom door is far away. Cluster children's beds in alcoves off a shared space.", "reviewed": false },
-  { "id": 144, "gist": "Bathing is chopped into hurried utility stalls. Make one generous room for water, steam, and bodies.", "reviewed": false },
-  { "id": 145, "gist": "Every household hauls bulky things with nowhere to keep them. Build real storage for the big stuff.", "reviewed": false },
-  { "id": 146, "gist": "Office walls freeze yesterday's org chart. Make workspace that regroups as easily as the teams do.", "reviewed": false },
-  { "id": 147, "gist": "Without a common table there is no common life. Make shared meals the regular heart of any group.", "reviewed": false },
-  { "id": 148, "gist": "People massed in open halls go numb. Let work happen in groups of a handful, each with its own place.", "reviewed": false },
-  { "id": 149, "gist": "Arrival meets a barrier manned by a gatekeeper. Make reception a hearth - warm, seated, unhurried.", "reviewed": false },
-  { "id": 150, "gist": "Waiting rooms hold people hostage to a clock. Fold waiting into life - a window, a cafe, something to watch.", "reviewed": false },
-  { "id": 151, "gist": "Big rooms breed big, dull meetings. Make most meeting places small enough for real talk.", "reviewed": false },
-  { "id": 152, "gist": "A sealed office isolates; an open desk exposes. Give workers rooms half open to the flow.", "reviewed": false },
-  { "id": 153, "gist": "A house sized for one moment of life goes obsolete. Build in rooms that can be let out or taken back.", "reviewed": false },
-  { "id": 154, "gist": "A teenager has outgrown the nest but not the family. Give them a cottage-room at the household's edge.", "reviewed": false },
-  { "id": 155, "gist": "The old must choose between dependence and distance. Build small cottages right beside the family house.", "reviewed": false },
-  { "id": 156, "gist": "Work that discards its elders wastes their ripeness. Let work deepen with age into something one keeps.", "reviewed": false },
-  { "id": 157, "gist": "Work banished from home becomes invisible to children. Keep a workshop where the house meets the street.", "reviewed": false },
-  { "id": 158, "gist": "One internal stair makes every upstairs tenant a lodger. Give upper rooms their own open stairs from outside.", "reviewed": false },
-  { "id": 159, "gist": "A room lit from one side glares and shadows every face. Give each room daylight from two directions.", "reviewed": false },
-  { "id": 160, "gist": "An edge that is only a line repels lingering. Thicken the building's edge into a place to inhabit.", "reviewed": false },
-  { "id": 161, "gist": "The sunny spot outside goes to waste without a reason to sit. Make the sun's place a destination.", "reviewed": false },
-  { "id": 162, "gist": "The north side of a building breeds damp and gloom. Slope it low, and give it the uses that need no sun.", "reviewed": false },
-  { "id": 163, "gist": "A garden with no walls cannot hold a gathering. Build an outdoor room - enclosed, part-roofed, open-aired.", "reviewed": false },
-  { "id": 164, "gist": "A street no window watches feels abandoned. Let rooms lean out and keep an eye on the passing life.", "reviewed": false },
-  { "id": 165, "gist": "Sealed frontages make the street a corridor of strangers. Open ground floors directly to the walk.", "reviewed": false },
-  { "id": 166, "gist": "Inside and outside meet at a hard line. Wrap the building in galleries where the two mix.", "reviewed": false },
-  { "id": 167, "gist": "A narrow balcony is a shelf nobody uses. Make balconies deep enough to hold a table and two chairs.", "reviewed": false },
-  { "id": 168, "gist": "A house hovering above its site never touches down. Step the building to the soil in terraces and thresholds.", "reviewed": false },
-  { "id": 169, "gist": "Grading a slope flat erases the land's form. Terrace the hillside and let building follow its lines.", "reviewed": false },
-  { "id": 170, "gist": "Ornamental planting feeds no one. Plant fruit trees where their harvest falls into common hands.", "reviewed": false },
-  { "id": 171, "gist": "Trees planted as decoration stand apart from life. Shape the places under and among them for people.", "reviewed": false },
-  { "id": 172, "gist": "A manicured garden enslaves its keeper. Let the garden grow half wild, tended but not tamed.", "reviewed": false },
-  { "id": 173, "gist": "A garden open to every noise never rests. Wall it, and pierce the wall with openings.", "reviewed": false },
-  { "id": 174, "gist": "A bare path offers no reason to walk slowly. Build trellised walks where vines make the roof.", "reviewed": false },
-  { "id": 175, "gist": "Garden and house meet only through a door. Add a glass room where warmth and growing things overlap.", "reviewed": false },
-  { "id": 176, "gist": "A garden with no still corner is never truly entered. Place one quiet seat where a person can sit alone.", "reviewed": false },
-  { "id": 177, "gist": "Food comes from nowhere anyone has seen. Keep a vegetable plot within every household's reach.", "reviewed": false },
-  { "id": 178, "gist": "Waste flushed away breaks the soil's cycle. Return what rots to the ground that feeds you.", "reviewed": false },
-  { "id": 179, "gist": "One open room forces everyone into one activity. Carve small alcoves off it where two can withdraw.", "reviewed": false },
-  { "id": 180, "gist": "People drift to windows, then find no reason to stay. Make the window itself a place to inhabit.", "reviewed": false },
-  { "id": 181, "gist": "Heat without flame gathers no one. Keep a fire as the live center the household circles.", "reviewed": false },
-  { "id": 182, "gist": "Meals eaten under a flat glare scatter quickly. Set a heavy table in its own pool of light.", "reviewed": false },
-  { "id": 183, "gist": "An exposed desk distracts; a closed cell entombs. Wrap each workspace in half-open enclosure.", "reviewed": false },
-  { "id": 184, "gist": "A kitchen laid out by diagram makes the cook trek. Ring stove, sink, and counter within a step of each other.", "reviewed": false },
-  { "id": 185, "gist": "Chairs backed against the walls kill conversation. Draw seats into a rough circle, partly enclosed.", "reviewed": false },
-  { "id": 186, "gist": "Sleep is rationed one room per person, always apart. Make it possible to sleep near others without shame.", "reviewed": false },
-  { "id": 187, "gist": "The marriage bed is bought as furniture. Build it as a place - enclosed, particular, the couple's own.", "reviewed": false },
-  { "id": 188, "gist": "A whole room spent on a bed serves the bed, not sleep. Tuck the bed into an alcove scaled to it.", "reviewed": false },
-  { "id": 189, "gist": "Dressing happens in the leftover corners of bedrooms. Give it a lit niche of its own between bed and bath.", "reviewed": false },
-  { "id": 190, "gist": "One ceiling height flattens every social shade. Vary heights with the intimacy of the rooms.", "reviewed": false },
-  { "id": 191, "gist": "Clever geometries fight the body's sense of shelter. Keep rooms roughly rectangular, ceilings gently vaulted.", "reviewed": false },
-  { "id": 192, "gist": "A window onto a blank wall wastes the gaze. Aim windows at life - street, garden, coming and going.", "reviewed": false },
-  { "id": 193, "gist": "A full wall seals rooms apart; none at all merges them. Build half-open walls that join while dividing.", "reviewed": false },
-  { "id": 194, "gist": "Inner rooms go blind without borrowed light. Cut windows between rooms as well as to the world.", "reviewed": false },
-  { "id": 195, "gist": "Stairs squeezed to a code minimum pinch the whole house. Give the staircase a volume it can live in.", "reviewed": false },
-  { "id": 196, "gist": "A door in mid-wall shreds the room with paths. Hang doors near corners, leaving the body of the room whole.", "reviewed": false },
-  { "id": 197, "gist": "Thin walls hold nothing and belong to no one. Thicken them until they carry shelves, seats, and sills.", "reviewed": false },
-  { "id": 198, "gist": "Storage lands wherever plans have slack. Use closets as thick, quieting walls between rooms.", "reviewed": false },
-  { "id": 199, "gist": "Counter work in shadow makes the kitchen a chore. Run the working counter along the sunny wall.", "reviewed": false },
-  { "id": 200, "gist": "Things sealed in cupboards disappear from use. Keep the daily things on open shelves, one row deep.", "reviewed": false },
-  { "id": 201, "gist": "The small stuff of the day needs a landing place. Run a waist-high shelf around the room's edge.", "reviewed": false },
-  { "id": 202, "gist": "Loose chairs pushed to the wall never invite. Build seats into the fabric at the natural resting spots.", "reviewed": false },
-  { "id": 203, "gist": "Children crave small dark dens adults can't enter. Leave cave-like spaces built at their scale.", "reviewed": false },
-  { "id": 204, "gist": "A home with no hiding place keeps no secrets. Leave one concealed spot for the things that matter most.", "reviewed": false },
-  { "id": 205, "gist": "Structure imposed first squeezes life into its grid. Let the social spaces come first and the frame follow.", "reviewed": false },
-  { "id": 206, "gist": "A skeleton with cladding hung on it wastes both. Let the walls and vaults themselves do the carrying.", "reviewed": false },
-  { "id": 207, "gist": "Industrial materials resist the hand and age badly. Build with stuff that is good to touch and easy to mend.", "reviewed": false },
-  { "id": 208, "gist": "A building can't be perfected on paper first. Raise a light frame, then stiffen it step by step as you build.", "reviewed": false },
-  { "id": 209, "gist": "Roofs drawn after the plan end up fighting it. Lay out the roofs with the wings, as one act.", "reviewed": false },
-  { "id": 210, "gist": "Floors poured as abstract slabs ignore the rooms below. Shape each floor and ceiling to the spaces it covers.", "reviewed": false },
-  { "id": 211, "gist": "A wall that is only a skin can hold no places. Thicken the outer walls as you build the alcoves into them.", "reviewed": false },
-  { "id": 212, "gist": "A room's corners are where its loads want to land. Set columns at the corners of every social space.", "reviewed": false },
-  { "id": 213, "gist": "A uniform grid of columns ignores how load gathers. Space them closer where floors below bear more.", "reviewed": false },
-  { "id": 214, "gist": "A column meeting loose ground wanders and cracks. Root each one into its own footing like a tooth.", "reviewed": false },
-  { "id": 215, "gist": "Deep foundations cost more than the rooms above. Float the ground floor on a simple ballasted slab.", "reviewed": false },
-  { "id": 216, "gist": "Solid columns are heavy, costly, and mute. Build hollow box columns you can fill and shape on site.", "reviewed": false },
-  { "id": 217, "gist": "Walls meeting roof need a continuous collar. Run a perimeter beam around every floor and eave.", "reviewed": false },
-  { "id": 218, "gist": "Walls stacked as heavy block are dead weight. Build them as two skins filled to become one membrane.", "reviewed": false },
-  { "id": 219, "gist": "Flat spans demand steel and heavy beams. Span floors as shallow vaults that carry load by shape.", "reviewed": false },
-  { "id": 220, "gist": "Roof shapes get chosen like hats, by fashion. Vault the roof along the lines the forces actually take.", "reviewed": false },
-  { "id": 221, "gist": "Standard openings ignore what each room needs. Place and size every door and window where life asks.", "reviewed": false },
-  { "id": 222, "gist": "A high sill cuts the seated off from the ground outside. Bring sills low so the world stays in view.", "reviewed": false },
-  { "id": 223, "gist": "Glass flush in a thin wall makes a harsh bright hole. Set windows deep, with splayed reveals to soften light.", "reviewed": false },
-  { "id": 224, "gist": "Every threshold crossed at full stride feels the same. Make doorways to intimate places low enough to notice.", "reviewed": false },
-  { "id": 225, "gist": "Frames tacked on as trim split from the wall. Make each frame by thickening the wall's own edge.", "reviewed": false },
-  { "id": 226, "gist": "A thin freestanding column is an obstacle. Make columns thick enough to lean against - small places.", "reviewed": false },
-  { "id": 227, "gist": "The joint is where column and beam want to fail. Thicken the connections with braces and capitals.", "reviewed": false },
-  { "id": 228, "gist": "A stair needs support without a cage around it. Carry it on a vault and keep the space beneath.", "reviewed": false },
-  { "id": 229, "gist": "Services buried in the structure fail out of reach. Run ducts in open chases you can always get at.", "reviewed": false },
-  { "id": 230, "gist": "Blown air heats the room and leaves the body cold. Warm with surfaces that shine their heat on skin.", "reviewed": false },
-  { "id": 231, "gist": "Under a plain roof the attic stays dark and dead. Punch dormers through so the roof space becomes rooms.", "reviewed": false },
-  { "id": 232, "gist": "A roof that just stops meets the sky abruptly. Finish its edges and ridges with caps that mark the meeting.", "reviewed": false },
-  { "id": 233, "gist": "One flooring everywhere says every room is the same. Change the floor from hard public to soft private ground.", "reviewed": false },
-  { "id": 234, "gist": "Flush outer skins let water find every seam. Lap the outside materials like scales, always shedding down.", "reviewed": false },
-  { "id": 235, "gist": "Hard cold inner surfaces keep the hand away. Finish rooms in soft warm coats that take the touch.", "reviewed": false },
-  { "id": 236, "gist": "A sealed pane turns the world into weatherproof TV. Fit windows that swing their whole frame open.", "reviewed": false },
-  { "id": 237, "gist": "A blind door divides; a glass one fails to shelter. Make doors solid, with a glazed eye to see through.", "reviewed": false },
-  { "id": 238, "gist": "Raw sun through plate glass glares and burns. Filter the light at its edge - vines, lattice, small panes.", "reviewed": false },
-  { "id": 239, "gist": "One big sheet of glass flattens the world to a picture. Divide the window into small panes that bring it near.", "reviewed": false },
-  { "id": 240, "gist": "Where materials meet, raw joints open and crack. Cover the meeting lines with simple, honest trim.", "reviewed": false },
-  { "id": 241, "gist": "Benches placed by diagram sit empty. Put seats exactly where sun, view, and passing life converge.", "reviewed": false },
-  { "id": 242, "gist": "The threshold invites lingering but offers no seat. Put a bench at the front door, half in the street's life.", "reviewed": false },
-  { "id": 243, "gist": "A fence only divides. Build low walls wide enough to sit on, so the boundary gathers people.", "reviewed": false },
-  { "id": 244, "gist": "Hard materials can't make soft, movable shade. Use canvas - awnings and roofs that open with the season.", "reviewed": false },
-  { "id": 245, "gist": "Flowers at ground level pass underfoot unseen. Raise them in beds and pots to sill and hand height.", "reviewed": false },
-  { "id": 246, "gist": "A bare new wall stands apart from its ground. Let climbing plants knit the building into the place.", "reviewed": false },
-  { "id": 247, "gist": "Sealed paving kills the ground beneath it. Lay stones with earth in the cracks, so life comes through.", "reviewed": false },
-  { "id": 248, "gist": "Hard glazed surfaces refuse the print of use. Fire soft tile and brick that wear smooth underfoot.", "reviewed": false },
-  { "id": 249, "gist": "Decoration sprayed anywhere cheapens what it touches. Put ornament at the seams, where things meet.", "reviewed": false },
-  { "id": 250, "gist": "Cool tones drain a room even in full sun. Choose colors that make the light itself feel warm.", "reviewed": false },
-  { "id": 251, "gist": "Matching chair sets pretend all bodies are alike. Gather different chairs, each right for someone.", "reviewed": false },
-  { "id": 252, "gist": "Uniform lighting flattens a room to a diagram. Hang low lamps that make pools of light over each place.", "reviewed": false },
-  { "id": 253, "gist": "Decor bought to impress says nothing about you. Keep the things your own life has marked and made dear.", "reviewed": false }
+  {
+    "id": 1,
+    "gist": "Nations are too big to feel. Let regions of a few million people steer their own life and land.",
+    "reviewed": true,
+    "reviewedHash": "4d04fb4725d076fd4f67e741502c3d4e4b36478a343c1aaf5db98b9393966d9e"
+  },
+  {
+    "id": 2,
+    "gist": "Population piles up in a few giants while the land empties. Spread towns of every size across the whole region.",
+    "reviewed": true,
+    "reviewedHash": "8136381c5261cfa236bb820da00f27fcaeb84593041a3eb9e2369fc0723d1d80"
+  },
+  {
+    "id": 3,
+    "gist": "City swallows country until neither is near. Interlock them as fingers, so farmland and street stay in reach.",
+    "reviewed": true,
+    "reviewedHash": "030a0226b4c5a511ca5cf8d46d1b2d9c24d138a343db93c8f2f457f906ba42de"
+  },
+  {
+    "id": 4,
+    "gist": "The best soil sits in valleys, exactly where building is easiest. Keep valleys for farming; build on the slopes.",
+    "reviewed": true,
+    "reviewedHash": "86725a945d2e4d2f5f4de63675726f8f6633f618d031c35472fb957fbffb016d"
+  },
+  {
+    "id": 5,
+    "gist": "Suburbs smear town over country. Let houses gather loosely along country lanes, fields showing between.",
+    "reviewed": true,
+    "reviewedHash": "dbf65866dd8335b7197cc070ae610356ffd5519677d150e30897b8e7196b7bb9"
+  },
+  {
+    "id": 6,
+    "gist": "Small towns wither as the cities pull. Give country towns their own work and reasons to stay.",
+    "reviewed": true,
+    "reviewedHash": "b73aac50d062ed332ae2bc50af49ac3befc4e18b586c6eaa63ecacf349dce07d"
+  },
+  {
+    "id": 7,
+    "gist": "Fenced-off countryside belongs to no one who walks it. Treat the land as a commons people may cross and tend.",
+    "reviewed": true,
+    "reviewedHash": "9b9c8c49cb299af1d28f56e4632b77d54687fda5dba6103fc54fd3badeb0f4b7"
+  },
+  {
+    "id": 8,
+    "gist": "Big cities grind difference smooth. Let many small subcultures live side by side, each with ground of its own.",
+    "reviewed": true,
+    "reviewedHash": "d50745d0e734863bf5f87ba421b0de5bacbab78a83831bbb73c9ba9910093d0e"
+  },
+  {
+    "id": 9,
+    "gist": "Work exiled to districts leaves home hollow all day. Scatter workplaces through the places people live.",
+    "reviewed": true,
+    "reviewedHash": "7de5a5f8cee6a9366bbbf03e9def8eecb66b3fdb75188a42b3593186e4184396"
+  },
+  {
+    "id": 10,
+    "gist": "The city's real riches concentrate where few can reach them. Keep dense, magnetic cores within reach of everyone.",
+    "reviewed": true,
+    "reviewedHash": "d1aaecfcdd453f0c0fe701336d0ff34ff81592a8b6cd0b7f1c20517fca10ba9a"
+  },
+  {
+    "id": 11,
+    "gist": "Cars win the long trip and ruin the short one. Bound small areas where feet and bikes come first.",
+    "reviewed": true,
+    "reviewedHash": "181d4ea31c5fa5a55b8bd5167686fe3dd494931cbda11765f8ecfbd0345e5519"
+  },
+  {
+    "id": 12,
+    "gist": "A voice vanishes in mass government. Keep political communities small enough that one person can still be heard.",
+    "reviewed": true,
+    "reviewedHash": "19b43a0c44baafad88ece2858dd9b6243012b82f686b9ab6ceb9a5b39f3f1fc7"
+  },
+  {
+    "id": 13,
+    "gist": "Ways of life pressed wall to wall wear each other down. Part subcultures with open land, not shared fences.",
+    "reviewed": true,
+    "reviewedHash": "bfe078d96f788d1a2ae9380bcfc47d2f997b0e6ed134ca94fce1e4d801a67b6b"
+  },
+  {
+    "id": 14,
+    "gist": "People need a patch of city they can name as theirs. Make neighborhoods small enough to know by face.",
+    "reviewed": true,
+    "reviewedHash": "4c1924c2621194415cf31e3e685f8ddf3bbdc381f2097ae34c09df62c0b1d9f3"
+  },
+  {
+    "id": 15,
+    "gist": "A neighborhood without an edge dissolves into the grid. Give it a boundary, crossed at gateways.",
+    "reviewed": true,
+    "reviewedHash": "39fb2d662de6a2e79caf066095180b21c0bdcfc6cd493767ce0ed749644b298e"
+  },
+  {
+    "id": 16,
+    "gist": "Separate transit lines don't add up to freedom. Weave them into one web where changing is easy.",
+    "reviewed": true,
+    "reviewedHash": "f0ffad835d5ce191ba9912c179474334369ca2b0b5e53f5b82d739ba9684b5c2"
+  },
+  {
+    "id": 17,
+    "gist": "Fast roads must exist, and destroy whatever they touch. Keep them to the edges of the areas they serve.",
+    "reviewed": true,
+    "reviewedHash": "496a12d0331fa76478a95250d1b24d492cf9e4733034dbe2d4610b8bb176c240"
+  },
+  {
+    "id": 18,
+    "gist": "Learning locked in schools narrows to schooling. Spread it through the city — workshops, museums, masters.",
+    "reviewed": true,
+    "reviewedHash": "7b5afea0a69f5293e714237b9a1c87f19d8887d0bfe412c01d73ac642dd16191"
+  },
+  {
+    "id": 19,
+    "gist": "Commerce clumps into centers far from daily life. Let shops settle at the natural spacing of need.",
+    "reviewed": true,
+    "reviewedHash": "dc38190f308a85a57b0ee956bc9b498d8e11694efc985f5870c8d1da9aeccddc"
+  },
+  {
+    "id": 20,
+    "gist": "Big buses on fixed routes fail the odd, real journey. Fill the gaps with small buses that come when called.",
+    "reviewed": true,
+    "reviewedHash": "feed86f0c2d44035116772cdab7deccadcb285bffc49282233f60da3708d2a0a"
+  },
+  {
+    "id": 21,
+    "gist": "High buildings lift people away from the life of the street. Keep dwellings within four stories of the ground.",
+    "reviewed": true,
+    "reviewedHash": "b301e02a9dd74934afc0d91ed6422013d403a02657bc263178b3a9b8c6b263b4"
+  },
+  {
+    "id": 22,
+    "gist": "Parking quietly eats the town it serves. Cap the land any area gives to resting cars.",
+    "reviewed": true,
+    "reviewedHash": "286046acdf6ad680de77b4134dd047a23b1993d7cc3b612956bb6ea00cc39327"
+  },
+  {
+    "id": 23,
+    "gist": "Through-traffic tangles wherever roads cross freely. Carry it on parallel one-way roads that seldom meet.",
+    "reviewed": true,
+    "reviewedHash": "bb9f9e855b1a5ce153bfbfc9878681752d585c53260b33910c5b69d6b3af6242"
+  },
+  {
+    "id": 24,
+    "gist": "Places that hold a community's memory get bulldozed like any lot. Protect sacred sites and their approaches.",
+    "reviewed": true,
+    "reviewedHash": "b7b052158e16e02929bc9a452da57fa6a43e4211c88f4092ffb4b76a1761ecf9"
+  },
+  {
+    "id": 25,
+    "gist": "Shorelines pass into private hands first. Keep every water's edge open for anyone to walk.",
+    "reviewed": true,
+    "reviewedHash": "bbdecd5de5a170e7aead059dea1f86269fecc2f99844431899057e88c9f6b39c"
+  },
+  {
+    "id": 26,
+    "gist": "A town built for one age of life strands all the others. Provide settings for every stage, birth to death.",
+    "reviewed": true,
+    "reviewedHash": "656c2712e57ede6c129bdecf27d78cda1fe253ed775870a8d572f7abf8280712"
+  },
+  {
+    "id": 27,
+    "gist": "Places quietly built around one gender's day exclude half of life. Shape each place for the worlds of both.",
+    "reviewed": true,
+    "reviewedHash": "0a752cb4c451544efe380b031962f84b1e028e1b467e07a677852894df791b9f"
+  },
+  {
+    "id": 28,
+    "gist": "A center placed dead-center leaves no quiet side. Set the dense nucleus off toward the liveliest edge.",
+    "reviewed": true,
+    "reviewedHash": "3c1c24b89edc04587ea8a3bbb77905e871cd10c98abc1c932919b18d597a8f85"
+  },
+  {
+    "id": 29,
+    "gist": "Uniform density serves no one's real wants. Let density fall away in rings from each center.",
+    "reviewed": true,
+    "reviewedHash": "4a70a073ae473ecfe3a1d964c3c32c4b7b7f6463d7f9c16a54299c9805da7a4b"
+  },
+  {
+    "id": 30,
+    "gist": "Facilities scattered evenly never make a place. Cluster them into nodes a short walk apart.",
+    "reviewed": true,
+    "reviewedHash": "e534825e6878008dc0bba9941d207a8730ff2df9abd35aa16910cc76665dcc5f"
+  },
+  {
+    "id": 31,
+    "gist": "People want somewhere to see and be seen. Give each community a short strolling spine.",
+    "reviewed": true,
+    "reviewedHash": "33a2cf76af913ca262a409854d94742cd801f65cc480beb4489866a1c69034d9"
+  },
+  {
+    "id": 32,
+    "gist": "Shops strung along traffic arteries serve cars, not people. Give shopping its own short street across the road.",
+    "reviewed": true,
+    "reviewedHash": "5123dd16d3c1811dbbad6d7ef9d6c096fde5e980265925aeb7aefa425d32a273"
+  },
+  {
+    "id": 33,
+    "gist": "Night spots scattered through town die alone. Gather the late places so the night has a heart.",
+    "reviewed": true,
+    "reviewedHash": "e74b05df58a7c1a703a1243dff24715d0cb6296e95cad234aa8218a449a92e88"
+  },
+  {
+    "id": 34,
+    "gist": "Transfers punish the rider at every seam. Make interchanges tight, walkable, and ringed with small life.",
+    "reviewed": true,
+    "reviewedHash": "9abd26c4a893331f16b196b2a331e994d7b97f895de078b1ed2315bcc8cf89d0"
+  },
+  {
+    "id": 35,
+    "gist": "Tracts of one household type breed monocultures. Mix homes for singles, families, and the old in every place.",
+    "reviewed": true,
+    "reviewedHash": "1eb2f46a3e5379f07dd0b4768b2230c0f3499498ebab8b4671e68ac1fec4a0da"
+  },
+  {
+    "id": 36,
+    "gist": "One street-face is forced on host and hermit alike. Let homes sort themselves from loud fronts to quiet depths.",
+    "reviewed": true,
+    "reviewedHash": "d0021f174ca1def8b2b0fc8f48e0c95cc96389d4cdee4ab89363a03f85a0abeb"
+  },
+  {
+    "id": 37,
+    "gist": "Houses in ranks face nobody. Gather a handful around common ground they hold together.",
+    "reviewed": true,
+    "reviewedHash": "4e8b81b88ff4576a7da490ba59f8c55100831d8fffb7a40e0556494c73e51293"
+  },
+  {
+    "id": 38,
+    "gist": "Where land runs short, detached houses waste it and towers erase it. Build rows, each with its own door and garden.",
+    "reviewed": true,
+    "reviewedHash": "ec1ada000b1ea38e2095a04a5bb2bf613bdf7dd4a0a3932d7b28da2bca6fd639"
+  },
+  {
+    "id": 39,
+    "gist": "Density usually means stacking strangers. Terrace homes up a shared hill, each opening to the sky.",
+    "reviewed": true,
+    "reviewedHash": "646baeb51daed5ba02b88bd5425f346245d93dbcf469611c64c93348af083fd6"
+  },
+  {
+    "id": 40,
+    "gist": "Old people gathered into enclaves disappear from life. Settle elders' dwellings through every neighborhood.",
+    "reviewed": true,
+    "reviewedHash": "2d415070a79f410d494d1ccddc8cd21ce55cf7152d7ea6dba03c2b069404817c"
+  },
+  {
+    "id": 41,
+    "gist": "A workplace standing alone isolates its workers. Group workshops around shared courts and a common table.",
+    "reviewed": true,
+    "reviewedHash": "5036ea40238b53ae132484806893dccb05b136480bbc4e4ef56dac06e03beae3"
+  },
+  {
+    "id": 42,
+    "gist": "Industry banished to the far edge severs work from town. Run it in narrow, buffered ribbons close by.",
+    "reviewed": true,
+    "reviewedHash": "261c96bd0fd721e66b4bef9892e1daf983a9cf4b0c64467f6fd2ddaa025cc276"
+  },
+  {
+    "id": 43,
+    "gist": "A walled university teaches only its own. Open it as a marketplace of courses anyone may enter.",
+    "reviewed": true,
+    "reviewedHash": "df2efe3c2c06440ca1c34f42f6f57d85f50a860135221ad7877fd2014550af44"
+  },
+  {
+    "id": 44,
+    "gist": "Government at a distance goes deaf. Give each small community a town hall of its own, close to daily paths.",
+    "reviewed": true,
+    "reviewedHash": "667d30285b733c332bbde6fd3154f67d0b173321449160678dfce693f106f088"
+  },
+  {
+    "id": 45,
+    "gist": "Civic energy dies waiting for permission and rent. String cheap ground for community projects around the hall.",
+    "reviewed": true,
+    "reviewedHash": "8387224058015dd98357685655bae98f3ad52deb816841e97deaa4f6e8a61209"
+  },
+  {
+    "id": 46,
+    "gist": "A market under one owner flattens to a store. Roof over many tiny shops, each stall its own master.",
+    "reviewed": true,
+    "reviewedHash": "86e7f174c54a45ac169184e270c1c79bb336e0aa6785160037d12933909d012a"
+  },
+  {
+    "id": 47,
+    "gist": "Medicine waits at the end of sickness. Make health places that teach and keep people well.",
+    "reviewed": true,
+    "reviewedHash": "7fa4d162ff5c04883e1158df723c83beb5d607073662495e27243e58083c08ae"
+  },
+  {
+    "id": 48,
+    "gist": "Districts of pure work fall dead at night. Thread dwellings between the workplaces.",
+    "reviewed": true,
+    "reviewedHash": "f38555ead54e2a3c6290b5eb48a53f47f11b7d80a698c7fa39849a42bcf23a41"
+  },
+  {
+    "id": 49,
+    "gist": "Straight residential streets invite through-traffic. Loop the local roads so only neighbors bother.",
+    "reviewed": true,
+    "reviewedHash": "de89b881ebd32d57bceca741683b8c839adbaf182a4bc5f5a7f2408b8e0fb45a"
+  },
+  {
+    "id": 50,
+    "gist": "Crossroads multiply the ways two cars can meet. Join minor roads in staggered T's.",
+    "reviewed": true,
+    "reviewedHash": "c522a0461864e88ba6e64599c18d260ba011198121531835c881fe7b37c5a462"
+  },
+  {
+    "id": 51,
+    "gist": "Local streets don't need a river of asphalt. Set paving stones in grass and let the street be ground.",
+    "reviewed": true,
+    "reviewedHash": "eaacf79203dc1e14463b9c6221754c5d4f6fba0ccaa82b364157d8a6aaf5c34e"
+  },
+  {
+    "id": 52,
+    "gist": "Paths shadowing every road give walkers fumes and fear. Run paths as their own net, crossing roads at right angles.",
+    "reviewed": true,
+    "reviewedHash": "4c5424e570c2c790e5db74ed529b1e0652f806f728a4fa246554ca03c3701f1b"
+  },
+  {
+    "id": 53,
+    "gist": "You should feel it when you enter a community. Mark each way in with a gateway.",
+    "reviewed": true,
+    "reviewedHash": "ff832d7ab83609d58a832055c5d96a6e9a7318f7681c1002f28849c3ce515fbe"
+  },
+  {
+    "id": 54,
+    "gist": "Crossings are drawn for the car's convenience. Raise and narrow them so walkers cross on their own terms.",
+    "reviewed": true,
+    "reviewedHash": "4ebc6571e1bea74303fe9b76e5d23fd9a9ba09dac40d0c66a491d5e3c6582713"
+  },
+  {
+    "id": 55,
+    "gist": "Fast roads shove walkers into the gutter. Lift the walk above the roadway where the two must share.",
+    "reviewed": true,
+    "reviewedHash": "8d0582bf1bc6e09c7c752089d73f75a9acabe598a3299734425168bfa8bc92e5"
+  },
+  {
+    "id": 56,
+    "gist": "Cycling fails without its own ways and a place at the door. Weave bike paths through, racks at every goal.",
+    "reviewed": true,
+    "reviewedHash": "22d2e145f8131d2a21f4faef31c1aa6d024fdd64db001f6f3f3c20cb35b5c7d6"
+  },
+  {
+    "id": 57,
+    "gist": "The city is built as if children didn't live there. Open safe ways for them through its real life.",
+    "reviewed": true,
+    "reviewedHash": "63e989d6a5dc3265feb8aa346a12b55f25f0806291c6f03b7bdbb2dc6de841e7"
+  },
+  {
+    "id": 58,
+    "gist": "A town with no license for madness goes grim. Keep ground where carnival can happen.",
+    "reviewed": true,
+    "reviewedHash": "8e47ee6020da127009dac71dbc356cd34db4d8c192881e0cfc915ade65e2fc04"
+  },
+  {
+    "id": 59,
+    "gist": "Work pressed against noise never rests. Give buildings quiet backs onto green, away from the street.",
+    "reviewed": true,
+    "reviewedHash": "3054f1582f4fff2a171b6d3aa6da8ddcb391f7152522b6b5b94159b6d318459d"
+  },
+  {
+    "id": 60,
+    "gist": "A green too far away might as well not exist. Put open grass within a few minutes of every door.",
+    "reviewed": true,
+    "reviewedHash": "97dbf9064bd552894fd839dac0357432b80caabaf9c50e36ac23287665863344"
+  },
+  {
+    "id": 61,
+    "gist": "Vast plazas make a crowd feel like nobody. Keep public squares small enough to feel peopled.",
+    "reviewed": true,
+    "reviewedHash": "1399096f6e16686c515fb1d5df1d22d5c5441bd298add14bcd33fe83c470c83e"
+  },
+  {
+    "id": 62,
+    "gist": "People climb to take in their world whole. Keep a few high places to look out from.",
+    "reviewed": true,
+    "reviewedHash": "a84f5b135a7463d5a48525fc4ecda1fb173f41c95d6ca99a453442fefd154426"
+  },
+  {
+    "id": 63,
+    "gist": "Music and dancing retreat indoors and behind tickets. Raise bandstands where anyone may join the dance.",
+    "reviewed": true,
+    "reviewedHash": "2cb3d766cb6f175af804e9e627cce3e8f8cc02e3ba930ff230a50ec4ddd734a4"
+  },
+  {
+    "id": 64,
+    "gist": "The city's water runs buried in pipes. Bring streams and pools back where people can touch them.",
+    "reviewed": true,
+    "reviewedHash": "7c1db7e2361e8de3e1e265719ee3580869a474d20fb73ba9af8e3080b19c3a96"
+  },
+  {
+    "id": 65,
+    "gist": "Birth happens far away, managed among strangers. Make places to be born within the community's own life.",
+    "reviewed": true,
+    "reviewedHash": "71c57e5c745a2325d9d8fd29a5c6b5f8fdaddfeeae07e7dca0fc35b20978d17f"
+  },
+  {
+    "id": 66,
+    "gist": "The sacred exposed all at once is cheapened. Approach holy ground through nested thresholds.",
+    "reviewed": true,
+    "reviewedHash": "c069f63a0c735b78111ad7f07162619435a3e4b4e7ffbb81a99a400eb9e25667"
+  },
+  {
+    "id": 67,
+    "gist": "All-private lots leave nowhere to be together. Hold common land between the houses.",
+    "reviewed": true,
+    "reviewedHash": "a57f8ee0bfa10c2017a866fff3edb10166f2bec9570e3436d43588155c669468"
+  },
+  {
+    "id": 68,
+    "gist": "A child alone in a fenced yard has no one to play with. Link the play spaces so children can find each other.",
+    "reviewed": true,
+    "reviewedHash": "83773c3291dbe2e2ed1c402c0f547664e995de6f6bc8a23fd077c86685119e0c"
+  },
+  {
+    "id": 69,
+    "gist": "Outdoors there is nowhere to linger without buying. Build a roofed open room that belongs to everyone.",
+    "reviewed": true,
+    "reviewedHash": "50a91711d60a450327587d2a97b88421fe62ae546b57102fa5cfa55dd7e9423d"
+  },
+  {
+    "id": 70,
+    "gist": "Death is removed from town until it seems not to happen. Weave small grave sites into the community's ground.",
+    "reviewed": true,
+    "reviewedHash": "c8d8b92b59ade7a40302678eed861660eb5e947309bacc0cd94b9354cfb334f3"
+  },
+  {
+    "id": 71,
+    "gist": "Swimming means a drive and a fee. Keep still water near home, its edge graded from paddling to depth.",
+    "reviewed": true,
+    "reviewedHash": "2db92a19bdfaae28d566f4b16bbf5293d85358f15eec118f4b133770d44f5a44"
+  },
+  {
+    "id": 72,
+    "gist": "Exercise exiled to stadiums becomes a spectacle. Sprinkle courts and pools where people already pass.",
+    "reviewed": true,
+    "reviewedHash": "75216560c44dcfa09496d07aa651bcf9ff4c8529d3cf47fe26b0f533cb1c5e5d"
+  },
+  {
+    "id": 73,
+    "gist": "A finished playground leaves nothing to do. Give children raw ground and loose stuff to build with.",
+    "reviewed": true,
+    "reviewedHash": "a31ae8e79e976632a121bc4a1825ef10c803db52aa81118d58584b569ae0c322"
+  },
+  {
+    "id": 74,
+    "gist": "Towns scrubbed clean of animals teach that life is elsewhere. Make room for beasts in the ordinary fabric.",
+    "reviewed": true,
+    "reviewedHash": "a141725c6590e84187befd547a037bc8ffd418d211485f8800b2ee7dabc426d3"
+  },
+  {
+    "id": 75,
+    "gist": "The nuclear household stands alone against everything. House larger constellations of lives together.",
+    "reviewed": true,
+    "reviewedHash": "ccec2b6aab8dc5e85da6c836ac700b31f70d40f8332d28d488eba6dc1dd78d51"
+  },
+  {
+    "id": 76,
+    "gist": "One open plan grinds parents and children together. Give each their realm, with a commons between.",
+    "reviewed": true,
+    "reviewedHash": "1eebdcb0948ada6007f8852192dbc702d192722ffb07f6a4597b0f3255cd17a7"
+  },
+  {
+    "id": 77,
+    "gist": "A couple's house is more than a shared bedroom. Make one realm together and room to be apart.",
+    "reviewed": true,
+    "reviewedHash": "4735a0167a0c1b64e82e7e28fdc4a3af160cfd43877aed0cd15033cbd7afce80"
+  },
+  {
+    "id": 78,
+    "gist": "A person alone needs little space but all of life in it. Make one room grown rich — alcoves for each act.",
+    "reviewed": true,
+    "reviewedHash": "a031c5782cb00d4bfe71dfabe15f2b66b6d4803205c9292d4f4aac71ad930876"
+  },
+  {
+    "id": 79,
+    "gist": "No one can settle in rooms they may not touch. Give every household a home of its own to alter.",
+    "reviewed": true,
+    "reviewedHash": "f8241a1ec52ce0fdb4a3ffadd639fa5666abee005d460be6b312eaa9f6aeb2c8"
+  },
+  {
+    "id": 80,
+    "gist": "Work under absent owners deadens the day. Favor workshops and offices the workers own and run.",
+    "reviewed": true,
+    "reviewedHash": "364d0f753e4e37e125e5e8838b8e755eddee705cf214ecbe49b7638fcbd5bf83"
+  },
+  {
+    "id": 81,
+    "gist": "Services swell into bureaucracies that serve themselves. Break them into small teams facing their people.",
+    "reviewed": true,
+    "reviewedHash": "9d5d079baac91f389e8c56433da3d9e374981112b68979a4acd9a103221a0a04"
+  },
+  {
+    "id": 82,
+    "gist": "Groups that must work together drift when floors apart. Place connected offices within a short walk.",
+    "reviewed": true,
+    "reviewedHash": "fc81f61017971bbf0bbc890baee98492cbe4b2bac468596fb94271142eebcdb7"
+  },
+  {
+    "id": 83,
+    "gist": "Telling is a poor way to learn a craft. Arrange work so beginners labor beside masters.",
+    "reviewed": true,
+    "reviewedHash": "21b538a5fda2539e87396401c95db4a4ebc376fc57b086232b2250ed10755aa2"
+  },
+  {
+    "id": 84,
+    "gist": "Teenagers are parked in classrooms at the edge of life. Give them real roles and a society of their own.",
+    "reviewed": true,
+    "reviewedHash": "8a7ad1f3277a1942602a52ff398c2ab1e8731c3bf886f1905b62bd07adaced10"
+  },
+  {
+    "id": 85,
+    "gist": "Small children vanish into big remote schools. Keep their schools tiny — a few rooms on an ordinary street.",
+    "reviewed": true,
+    "reviewedHash": "c3f55b42d1500e82a3ef51cb59a1eaf23933dd16739ccb4f4738524af3f65e8d"
+  },
+  {
+    "id": 86,
+    "gist": "Every child sometimes needs a household not their own. Keep a homelike refuge open in each neighborhood.",
+    "reviewed": true,
+    "reviewedHash": "46ff9ebc0b27fb1ce5ed8796b71f7cc5561497808af061031fdc3f94359041b6"
+  },
+  {
+    "id": 87,
+    "gist": "Chain shops repeat the same face everywhere. Favor shops whose owner stands behind the counter.",
+    "reviewed": true,
+    "reviewedHash": "1812284c1ce8a5671a4240d30286bcf04ab6b0f3cde92e9413898f1f1915d5c2"
+  },
+  {
+    "id": 88,
+    "gist": "The street has no front porch. Let cafes spill their tables onto the walk.",
+    "reviewed": true,
+    "reviewedHash": "1d0ceaa62287efa7b3b9ef4bdba1290b43fe3c20e7c8a355fde0433f2c613a3d"
+  },
+  {
+    "id": 89,
+    "gist": "Daily essentials sit a drive away. Keep a grocery on the corner, at walking distance.",
+    "reviewed": true,
+    "reviewedHash": "6b9bf1da70e7b021fcde5a3e2b13ce258a0be7ed8c3eb91d74882199e9e87714"
+  },
+  {
+    "id": 90,
+    "gist": "Strangers need a loud warm room to drink and sing in. Keep a public hall where the whole town mixes.",
+    "reviewed": true,
+    "reviewedHash": "9e56c35428632d24327c1e58e7ae3e508bc56ce178b954f18553ad6a18dbee5f"
+  },
+  {
+    "id": 91,
+    "gist": "Travelers are warehoused in numbered cells. Make inns where guests share the fire and the table.",
+    "reviewed": true,
+    "reviewedHash": "2ac78b101fd5795a737228da0bf1e575b716f18ef242ce360b7363183b3fa371"
+  },
+  {
+    "id": 92,
+    "gist": "Waiting at a bare pole is a small daily insult. Make each bus stop a little place — bench, shelter, news.",
+    "reviewed": true,
+    "reviewedHash": "efb9f9750047cbf0ece8cb2f141ac0991f7fa9f868bee6ee41a790e29edcb4b2"
+  },
+  {
+    "id": 93,
+    "gist": "Eating in the street is treated as disorder. Set food stands where the paths cross.",
+    "reviewed": true,
+    "reviewedHash": "9fb7465ee211d091ad1a55c5be717d831e12ad9964a8dd31412349b71467650d"
+  },
+  {
+    "id": 94,
+    "gist": "Falling asleep in public is treated as a crime. Make spots where a nap is safe and carries no shame.",
+    "reviewed": true,
+    "reviewedHash": "e64b1cfd03dd401e046229f08fb3e3d91a607b30f0d4e7cdb1e4fad8ac54e3c7"
+  },
+  {
+    "id": 95,
+    "gist": "One big box swallows every function whole. Break large programs into a family of small linked buildings.",
+    "reviewed": true,
+    "reviewedHash": "80e373442e567e92d044ff609f4d77af692ca1eb2d551356e0825d5b2cf921a7"
+  },
+  {
+    "id": 96,
+    "gist": "Height chosen by ego or economics ignores the town. Keep buildings low, their stories in step with the four-story limit.",
+    "reviewed": true,
+    "reviewedHash": "531a89d2787b0233f6b82037610f0a1a67100cb530f4f36e4e4c0684e1f962e3"
+  },
+  {
+    "id": 97,
+    "gist": "A skin of parked cars deadens any building. Tuck parking behind or beneath, never facing the life.",
+    "reviewed": true,
+    "reviewedHash": "b8f696124264b06e652710e71079f6332b51d28f9ee5201e8087d44e3c41d8e5"
+  },
+  {
+    "id": 98,
+    "gist": "In a maze of corridors nobody knows where they are. Nest movement into named realms, each with one clear door.",
+    "reviewed": true,
+    "reviewedHash": "66dbc9792d35a78e1a3cf29febb68655b8715ddb8ae7c3e9f5ec2c678fd92340"
+  },
+  {
+    "id": 99,
+    "gist": "A complex of equals has no heart. Let one building stand as the head among the others.",
+    "reviewed": true,
+    "reviewedHash": "3a921143ed7d6bd7b334b3bac52313de7b90b26dd3495ab5cbcf28d9c8117133"
+  },
+  {
+    "id": 100,
+    "gist": "Buildings fed by corridors turn their backs on the world. Serve them from outdoor streets instead.",
+    "reviewed": true,
+    "reviewedHash": "f4589d41d278303bcd135c94c0c78794a2c89737748fbde92c33696509b22119"
+  },
+  {
+    "id": 101,
+    "gist": "A building the public must cross should not feel private. Make its passage a real street under a roof.",
+    "reviewed": true,
+    "reviewedHash": "d7aa9a66783432de76228a6547325a511500ac57ac1cdd9aadc98d1e85e00489"
+  },
+  {
+    "id": 102,
+    "gist": "A row of doors, and no telling which is whose. Shape entrances as a visible family, alike and distinct.",
+    "reviewed": true,
+    "reviewedHash": "1bdc7a1fe95195e6d197db48c2951f90a4bfc80f2b18b8a993d27db471bc6dbd"
+  },
+  {
+    "id": 103,
+    "gist": "Seas of parking repel every other use. Break lots into pockets of a handful of cars, screened by green.",
+    "reviewed": true,
+    "reviewedHash": "bd5ca0f2a61e0e62ac34d4e3cf5f4c785fd2eb7fb7ab556421a3a7f3252a79aa"
+  },
+  {
+    "id": 104,
+    "gist": "Builders seize the loveliest spot and destroy it by building there. Build on the worst ground and heal it.",
+    "reviewed": true,
+    "reviewedHash": "0898d8c78055a6b1e85831fac9f1ae2faaa473e7cac590afa821045a7452514c"
+  },
+  {
+    "id": 105,
+    "gist": "Outdoor land north of a building lives in its shadow. Keep the open space to the south, the building behind.",
+    "reviewed": true,
+    "reviewedHash": "164f0bba0e6d05e19a156cb66e1a2576fd8ee5287041269f365c0714d0ad23c8"
+  },
+  {
+    "id": 106,
+    "gist": "Space left over between buildings belongs to no one. Shape the outdoors as rooms with a form of their own.",
+    "reviewed": true,
+    "reviewedHash": "bd5c7ac7dd854833007587adf027f436d3bc0ca8905cf144fa19e2e1f3c2ac7c"
+  },
+  {
+    "id": 107,
+    "gist": "Deep buildings go dark and dead at the core. Build in narrow wings so daylight reaches every room.",
+    "reviewed": true,
+    "reviewedHash": "892857ef0c703a97303ab63219cf0d33dfd9e5820b7bf4d351e5adb6b7b48349"
+  },
+  {
+    "id": 108,
+    "gist": "Slivers of space between buildings are dead on arrival. Let buildings join walls and share their edges.",
+    "reviewed": true,
+    "reviewedHash": "61dd7ac9be252dc97bee32bd4b42e4c8f2673bc12cd758f3f81f59b0973e2d18"
+  },
+  {
+    "id": 109,
+    "gist": "A compact plan crowds everyone onto one spot. Stretch the small house long and thin, rooms in a chain.",
+    "reviewed": true,
+    "reviewedHash": "7193185ec786ec05cc411a6483f0d82134e38a0a9adc9ee302fc7629bbae4931"
+  },
+  {
+    "id": 110,
+    "gist": "A hidden entrance makes every arrival a search. Give the building one main door, plain from the approach.",
+    "reviewed": true,
+    "reviewedHash": "f9a24159b07a9682592cbf5f7f5f6a2fd7e502f6f63891815467faba28122a12"
+  },
+  {
+    "id": 111,
+    "gist": "Front gardens are display; back gardens, exile. Set the garden half-hidden at the side, private but alive.",
+    "reviewed": true,
+    "reviewedHash": "c56d79ea37e2a10019774211f8e56ba32ddb12be08afb62227af74fb1bd0e885"
+  },
+  {
+    "id": 112,
+    "gist": "Street to front door in one step jars the arrival. Interpose a passage of changed light, level, and view.",
+    "reviewed": true,
+    "reviewedHash": "e3c61167ef8e57f0546788b015bb3923ff8e290542e046ae8bf6265af342ff5f"
+  },
+  {
+    "id": 113,
+    "gist": "The car arrives at a tacked-on slab. Make the drive-up a real part of the house's entrance.",
+    "reviewed": true,
+    "reviewedHash": "20d0720ea999af2e7d1d202e94faa91bcd50639f87be7d8e56dfa072602f01bb"
+  },
+  {
+    "id": 114,
+    "gist": "Outdoor spaces exposed on all sides give no rest. Give each a back, opening toward some larger space.",
+    "reviewed": true,
+    "reviewedHash": "47b6c0d47b762114eeb10695c75bf1ebcfa9251c04a48407a1703774d942e2e7"
+  },
+  {
+    "id": 115,
+    "gist": "Sealed courtyards go silent and unused. Give courts a path through, a view out, and the sun.",
+    "reviewed": true,
+    "reviewedHash": "c37a45952dffa484832e5ec1e9eb9a0787fca3d61ed32ed8212f504e4fe60754"
+  },
+  {
+    "id": 116,
+    "gist": "One flat lid makes a building read as a box. Step the roofs down in a cascade from the tallest heart.",
+    "reviewed": true,
+    "reviewedHash": "8a06988bc00c4f29c750444c880e16014cc7602ed1ae0dbe01f8e9d2f1e07436"
+  },
+  {
+    "id": 117,
+    "gist": "A roof hidden behind parapets shelters no one's heart. Let the roof show, and bring its edges low.",
+    "reviewed": true,
+    "reviewedHash": "1fc65466af26ee7b7ba3b9504c903b258c2cbd11be18fe054ead45bad28c7671"
+  },
+  {
+    "id": 118,
+    "gist": "Flat roofs hold acres of unused sky. Make some of them gardens people walk out onto.",
+    "reviewed": true,
+    "reviewedHash": "96c794b9c610d6d036ade699e567defeef00d79721d5716798023bed889462c8"
+  },
+  {
+    "id": 119,
+    "gist": "The building's edge sheds both rain and people. Run arcades along it, a public path under cover.",
+    "reviewed": true,
+    "reviewedHash": "099225b574c534480786b9b49e5d8ab2c5beaf43d9aab9a5b3d3f3e8ce86bf46"
+  },
+  {
+    "id": 120,
+    "gist": "Paths drawn on plans get cut across on foot. Lay paths between the goals people actually walk.",
+    "reviewed": true,
+    "reviewedHash": "3e35ebda7b06a81e11313a21df81a6c039b3b69d94bf74bfdfed5b22f37c623a"
+  },
+  {
+    "id": 121,
+    "gist": "A path that is only a channel forbids stopping. Swell it in the middle where people can pause.",
+    "reviewed": true,
+    "reviewedHash": "b9451ee72f827f728e9a4309ad0f9263fbf1cb1411809bc455ff0495565c3e23"
+  },
+  {
+    "id": 122,
+    "gist": "Buildings set back behind lawns quit the street. Bring their fronts to the path, each one its own.",
+    "reviewed": true,
+    "reviewedHash": "4fc523671088e8370af3f7db396447fdb923f2c5c041fcf072ccbdf4254384d7"
+  },
+  {
+    "id": 123,
+    "gist": "An empty plaza depresses; a packed one repels. Size public ground so a modest crowd makes it live.",
+    "reviewed": true,
+    "reviewedHash": "cbabdc0208d01f5cedf21ae90506d430b592eb1eda565812a8667e434ce7f5c7"
+  },
+  {
+    "id": 124,
+    "gist": "A public space lives or dies at its rim. Ring it with pockets of activity facing in.",
+    "reviewed": true,
+    "reviewedHash": "ae2c4f80ea2cb1b129197032b00f4624dcc573406a13329e3216859855bc9c68"
+  },
+  {
+    "id": 125,
+    "gist": "People perch where they can watch the passing scene. Make broad steps that face the action.",
+    "reviewed": true,
+    "reviewedHash": "06764bbca616a74102fb552b1b476d381a7c73cbc5ab6e122a44210be02dcd8b"
+  },
+  {
+    "id": 126,
+    "gist": "An empty middle gives no reason to stay. Put something rough at the center to gather around.",
+    "reviewed": true,
+    "reviewedHash": "39b471afce8d80fc835fadfdd4039946a492defb13db0477a742ed638eacc3e7"
+  },
+  {
+    "id": 127,
+    "gist": "One flat plan dumps guests into private depths. Grade the rooms from public front to intimate back.",
+    "reviewed": true,
+    "reviewedHash": "781e5c4fbb209e737ff24817192946a36284d4f21fea31abf89514036835c612"
+  },
+  {
+    "id": 128,
+    "gist": "Main rooms facing away from the sun stay cold all day. Put the daily rooms on the building's bright side.",
+    "reviewed": true,
+    "reviewedHash": "77d5df8a5c05d84f632348b472e51d26f98668503176fdbcdb098af914c86095"
+  },
+  {
+    "id": 129,
+    "gist": "A common room at the end of a corridor stays empty. Put shared space at the crossing of everyone's paths.",
+    "reviewed": true,
+    "reviewedHash": "20de3b7492ca42dd29705b2950d1e38bde4dc1df6af0a20ffd69d8ccde2392c3"
+  },
+  {
+    "id": 130,
+    "gist": "Arrival deserves more than a door in a wall. Make the entrance a room, half inside and half out.",
+    "reviewed": true,
+    "reviewedHash": "e92c7451f015f5ea71c82ad3c327aa8ad560f78881d7c54dba761767d0328c21"
+  },
+  {
+    "id": 131,
+    "gist": "Corridors move bodies and kill encounters. Let rooms open into rooms, movement passing through life.",
+    "reviewed": true,
+    "reviewedHash": "a18442d1ffb4a472894d72fe0c10dd2826774fba68b986993510d6ee355d2ce1"
+  },
+  {
+    "id": 132,
+    "gist": "Long dim passages oppress everyone who walks them. Keep passages short, daylit, and wide as rooms.",
+    "reviewed": true,
+    "reviewedHash": "d39cde1bb9c2a8672e37f209de801b1e0b2f97fefbf900369d95692c12a0dde8"
+  },
+  {
+    "id": 133,
+    "gist": "A stair shut in a shaft is only plumbing for people. Open it to the room — every descent an entrance.",
+    "reviewed": true,
+    "reviewedHash": "2e36b43d2fa704114b8b4a4e6d2f3ea61324e0daf2237d7b0d74322ef6e11f96"
+  },
+  {
+    "id": 134,
+    "gist": "A view stared at all day goes stale. Reveal the best view briefly, at a turn, in passing.",
+    "reviewed": true,
+    "reviewedHash": "433feee8f5470f4e278ca5034f9a3b3c22cdc0d2da63a7f6faaf16c14cb02265"
+  },
+  {
+    "id": 135,
+    "gist": "Uniform brightness flattens a building's inner life. Alternate pools of light with darker ground between.",
+    "reviewed": true,
+    "reviewedHash": "22a77d1d2151bb9b75fd4fa05f966b112e6856a67812e289d5d1de75367c4c2a"
+  },
+  {
+    "id": 136,
+    "gist": "A marriage squeezed into a bedroom thins out. Give the couple a realm of the house that is theirs.",
+    "reviewed": true,
+    "reviewedHash": "80e395c207e3846e11b6dd5b61e1d9e86d6a607cd0fb30efacbc941ab2b85e6f"
+  },
+  {
+    "id": 137,
+    "gist": "Children fitted into adult rooms are always trespassing. Give them a territory running from bed to outdoors.",
+    "reviewed": true,
+    "reviewedHash": "28cb5e9ce640c859a23c32f51a8c6c4c939b215a2e8877c3e680ee7e9e9ab78f"
+  },
+  {
+    "id": 138,
+    "gist": "Waking against the light leaves the body behind the day. Place beds where morning sun can reach them.",
+    "reviewed": true,
+    "reviewedHash": "f6323e79cd397e13329d01f4703f94401d5f11d1ee77dfe1d694337b4b85b9f1"
+  },
+  {
+    "id": 139,
+    "gist": "The cook is exiled to a galley while life happens elsewhere. Make one big room where cooking and living share.",
+    "reviewed": true,
+    "reviewedHash": "dc3e12631adcc73bf42f7c35e0c5292a593bee1e384350cb01afa3da051fea67"
+  },
+  {
+    "id": 140,
+    "gist": "Indoors you miss the street; on the street you have no seat. Make a half-private terrace beside the life.",
+    "reviewed": true,
+    "reviewedHash": "23f8766b4823a7d7b5176dac5cce2fa98b84d7e54f64134aed05aef125b4915e"
+  },
+  {
+    "id": 141,
+    "gist": "No one can be shared all day long. Give each member of the household a room of their own, however small.",
+    "reviewed": true,
+    "reviewedHash": "c14f279827b95b75908c8acc980acd1c3a3451071277aad847a286615b930d1d"
+  },
+  {
+    "id": 142,
+    "gist": "One sitting room must serve every mood, and serves none. Scatter sitting places from formal to nook.",
+    "reviewed": true,
+    "reviewedHash": "a79e6ea18b5b9d320069487025b252a49afe5b5ad4eec3b132379419be099ca7"
+  },
+  {
+    "id": 143,
+    "gist": "A child alone behind a bedroom door is far away. Cluster children's beds in alcoves off a shared space.",
+    "reviewed": true,
+    "reviewedHash": "130331c5329974bd269d05414c50853eb3f44bb9ae8157a5c287bd5a10423c50"
+  },
+  {
+    "id": 144,
+    "gist": "Bathing is chopped into hurried utility stalls. Make one generous room for water, steam, and bodies.",
+    "reviewed": true,
+    "reviewedHash": "c2e494d1faff0920d2ca1dd5bae54f7dc749807e8e367e1ac61651e6ccce729d"
+  },
+  {
+    "id": 145,
+    "gist": "Every household hauls bulky things with nowhere to keep them. Build real storage for the big stuff.",
+    "reviewed": true,
+    "reviewedHash": "22ad73fc14ac0514cd216c7ca36211b6849b9c390bd493e0ba62f5fa8f676610"
+  },
+  {
+    "id": 146,
+    "gist": "Office walls freeze yesterday's org chart. Make workspace that regroups as easily as the teams do.",
+    "reviewed": true,
+    "reviewedHash": "81b07b804604d13fe4d22adb5e62d252d024dda0a4ecbfb0fc8fa65d5172d10c"
+  },
+  {
+    "id": 147,
+    "gist": "Without a common table there is no common life. Make shared meals the regular heart of any group.",
+    "reviewed": true,
+    "reviewedHash": "bd389f35090c86bbcdceddf91483fd7699434b30739f7d1e7ffaca03ff2a9026"
+  },
+  {
+    "id": 148,
+    "gist": "People massed in open halls go numb. Let work happen in groups of a handful, each with its own place.",
+    "reviewed": true,
+    "reviewedHash": "a760484cee0d24e9efd970ad6ffd43be0256ba170732373c5b282a63cc9efa0c"
+  },
+  {
+    "id": 149,
+    "gist": "Arrival meets a barrier manned by a gatekeeper. Make reception a hearth — warm, seated, unhurried.",
+    "reviewed": true,
+    "reviewedHash": "b0176b59fd92bae873faf9a3c7f3102953798ea4e3f4f90a298aaacd5875834c"
+  },
+  {
+    "id": 150,
+    "gist": "Waiting rooms hold people hostage to a clock. Fold waiting into life — a window, a cafe, something to watch.",
+    "reviewed": true,
+    "reviewedHash": "6255ff041d25cd1f648b6d5e40f015c0c14f570d8b4a0612af6c697415d44003"
+  },
+  {
+    "id": 151,
+    "gist": "Big rooms breed big, dull meetings. Make most meeting places small enough for real talk.",
+    "reviewed": true,
+    "reviewedHash": "80cd14278eae1c38f27389a41af6ab9597257053a92f9627336d33d8ee445f5c"
+  },
+  {
+    "id": 152,
+    "gist": "A sealed office isolates; an open desk exposes. Give workers rooms half open to the flow.",
+    "reviewed": true,
+    "reviewedHash": "e0ad347825477fdb7af935bf732446f03d4ef0faa793d21eb4aafe40a0631b11"
+  },
+  {
+    "id": 153,
+    "gist": "A house sized for one moment of life goes obsolete. Build in rooms that can be let out or taken back.",
+    "reviewed": true,
+    "reviewedHash": "e44dce22e67fa61200785d785c8f8f8d3e27ba09393f1b8c6d6cc3a1a7776285"
+  },
+  {
+    "id": 154,
+    "gist": "A teenager has outgrown the nest but not the family. Give them a cottage-room at the household's edge.",
+    "reviewed": true,
+    "reviewedHash": "a2807ea0489de519da3fba632164ea3134dee7bad794d8e36379ceba9fd8684e"
+  },
+  {
+    "id": 155,
+    "gist": "The old must choose between dependence and distance. Build small cottages right beside the family house.",
+    "reviewed": true,
+    "reviewedHash": "ef073df09749f95bbe6f7596b1bae5ecd20c5cfc17fbfba332e97e22d52de69b"
+  },
+  {
+    "id": 156,
+    "gist": "Work that discards its elders wastes their ripeness. Let work deepen with age into something one keeps.",
+    "reviewed": true,
+    "reviewedHash": "0fbe1f36f54a4f114866e401cd92bca7632b892936e1baeafcbd308933a2a571"
+  },
+  {
+    "id": 157,
+    "gist": "Work banished from home becomes invisible to children. Keep a workshop where the house meets the street.",
+    "reviewed": true,
+    "reviewedHash": "0c14b00eaf753694f785312e8bd84fe2f7557057fd7f202d4609a2d5a5baa38b"
+  },
+  {
+    "id": 158,
+    "gist": "One internal stair makes every upstairs tenant a lodger. Give upper rooms their own open stairs from outside.",
+    "reviewed": true,
+    "reviewedHash": "67f51302250fc52f72666ea846489f9a1788e4b32326d0740124a56d16e7bf99"
+  },
+  {
+    "id": 159,
+    "gist": "A room lit from one side glares and shadows every face. Give each room daylight from two directions.",
+    "reviewed": true,
+    "reviewedHash": "fb9a51e6f3d77ea60570983f0064b8a34d21fb09218d86393a189050c71f0b74"
+  },
+  {
+    "id": 160,
+    "gist": "An edge that is only a line repels lingering. Thicken the building's edge into a place to inhabit.",
+    "reviewed": true,
+    "reviewedHash": "748b29168436993a3ef487188cc50806aad6053828680192383dcdcd0e6b25d2"
+  },
+  {
+    "id": 161,
+    "gist": "The sunny spot outside goes to waste without a reason to sit. Make the sun's place a destination.",
+    "reviewed": true,
+    "reviewedHash": "937be01744148baf581d7ba581e14f5b025d445973803e3ad29096a1f512bfc3"
+  },
+  {
+    "id": 162,
+    "gist": "The north side of a building breeds damp and gloom. Slope it low, and give it the uses that need no sun.",
+    "reviewed": true,
+    "reviewedHash": "f404d48fdb402a16736ebe812beae700750572a4041fa348dc16e595d2144d2a"
+  },
+  {
+    "id": 163,
+    "gist": "A garden with no walls cannot hold a gathering. Build an outdoor room — enclosed, part-roofed, open-aired.",
+    "reviewed": true,
+    "reviewedHash": "14cc82cd3f888a6cd4ffd7087995c8ec6f428790f258ab512f5f88d32c54c5a3"
+  },
+  {
+    "id": 164,
+    "gist": "A street no window watches feels abandoned. Let rooms lean out and keep an eye on the passing life.",
+    "reviewed": true,
+    "reviewedHash": "2947868638f2a7be058c8493fd10f0603a39b6da824fc3701eb98feb90b96a1b"
+  },
+  {
+    "id": 165,
+    "gist": "Sealed frontages make the street a corridor of strangers. Open ground floors directly to the walk.",
+    "reviewed": true,
+    "reviewedHash": "08c017e174d69c4996585423e59a9368f67c4aba4e43b5c4f4dd0ebdabf719df"
+  },
+  {
+    "id": 166,
+    "gist": "Inside and outside meet at a hard line. Wrap the building in galleries where the two mix.",
+    "reviewed": true,
+    "reviewedHash": "0724009a28de8a9967b0a82db5dc6f899f7cf4b77c6d8b048e2c1dc81bea360e"
+  },
+  {
+    "id": 167,
+    "gist": "A narrow balcony is a shelf nobody uses. Make balconies deep enough to hold a table and two chairs.",
+    "reviewed": true,
+    "reviewedHash": "7d20f0cccbf6092c521f2fea17390509e30d478520a31b23b859e785124fb7e9"
+  },
+  {
+    "id": 168,
+    "gist": "A house hovering above its site never touches down. Step the building to the soil in terraces and thresholds.",
+    "reviewed": true,
+    "reviewedHash": "1b5430866003f3782313fc80a30e7de3423522033a39a32f808da7a66b86b193"
+  },
+  {
+    "id": 169,
+    "gist": "Grading a slope flat erases the land's form. Terrace the hillside and let building follow its lines.",
+    "reviewed": true,
+    "reviewedHash": "2fdc1d3a72703fe65d552991425352d730208dbc98d2a043ee1e48e1dfde573f"
+  },
+  {
+    "id": 170,
+    "gist": "Ornamental planting feeds no one. Plant fruit trees where their harvest falls into common hands.",
+    "reviewed": true,
+    "reviewedHash": "2dde8af208c8816e23ce7c1267ebffbb70d138f7ffdd611ab1fca4a14ecf76a1"
+  },
+  {
+    "id": 171,
+    "gist": "Trees planted as decoration stand apart from life. Shape the places under and among them for people.",
+    "reviewed": true,
+    "reviewedHash": "834090d773057235687075d7d2a2ca56242d60a9495e84e2e70de083dcc93f80"
+  },
+  {
+    "id": 172,
+    "gist": "A manicured garden enslaves its keeper. Let the garden grow half wild, tended but not tamed.",
+    "reviewed": true,
+    "reviewedHash": "0da22f900f6c0defba61ba7002d9e31c3791482dc4bd44205b6b81051cd1eb2f"
+  },
+  {
+    "id": 173,
+    "gist": "A garden open to every noise never rests. Wall it, and pierce the wall with openings.",
+    "reviewed": true,
+    "reviewedHash": "d7cdcefa10584e32e4b62866fc8adac74ac3a8d12674a503bf833775af87d784"
+  },
+  {
+    "id": 174,
+    "gist": "A bare path offers no reason to walk slowly. Build trellised walks where vines make the roof.",
+    "reviewed": true,
+    "reviewedHash": "1666d11a037a945a0980237e3f97685100810d4e80572f99087231033650020f"
+  },
+  {
+    "id": 175,
+    "gist": "Garden and house meet only through a door. Add a glass room where warmth and growing things overlap.",
+    "reviewed": true,
+    "reviewedHash": "869d4ff2450c4cd498d86871cfd5a714e8f74c84c5e58766bb22979056b6b4ab"
+  },
+  {
+    "id": 176,
+    "gist": "A garden with no still corner is never truly entered. Place one quiet seat where a person can sit alone.",
+    "reviewed": true,
+    "reviewedHash": "ea3d3a9511eb0a7e8cb7ca234f248de6c6448c0e2376938becb6affc10e3428c"
+  },
+  {
+    "id": 177,
+    "gist": "Food comes from nowhere anyone has seen. Keep a vegetable plot within every household's reach.",
+    "reviewed": true,
+    "reviewedHash": "a1c985afee0540f4f73d9e75f31d4b5d29e54162ba4616f5fa391607c9b366ad"
+  },
+  {
+    "id": 178,
+    "gist": "Waste flushed away breaks the soil's cycle. Return what rots to the ground that feeds you.",
+    "reviewed": true,
+    "reviewedHash": "5d479e9be7096fa5b813eaf5c04f17e61e5181510a69144539e0e372b7427334"
+  },
+  {
+    "id": 179,
+    "gist": "One open room forces everyone into one activity. Carve small alcoves off it where two can withdraw.",
+    "reviewed": true,
+    "reviewedHash": "c055a2da9ec23043db669a526cfbf2a1fd3a9136353a748a70391976ec4ac956"
+  },
+  {
+    "id": 180,
+    "gist": "People drift to windows, then find no reason to stay. Make the window itself a place to inhabit.",
+    "reviewed": true,
+    "reviewedHash": "d99933352d97cd8a36dbcb21162222cc09d9e40cc491fc34570a4e3618366adc"
+  },
+  {
+    "id": 181,
+    "gist": "Heat without flame gathers no one. Keep a fire as the live center the household circles.",
+    "reviewed": true,
+    "reviewedHash": "0ff613d59bec80a36edfaff2e7bbff528aa7f020e1e5ad5844db84b130ea1673"
+  },
+  {
+    "id": 182,
+    "gist": "Meals eaten under a flat glare scatter quickly. Set a heavy table in its own pool of light.",
+    "reviewed": true,
+    "reviewedHash": "4c6b33921e2f18d4193309dd9349b3c3a2639e8aca83d8caf11b4696ce9c0366"
+  },
+  {
+    "id": 183,
+    "gist": "An exposed desk distracts; a closed cell entombs. Wrap each workspace in half-open enclosure.",
+    "reviewed": true,
+    "reviewedHash": "ba407cd8809e6f5660df9e6ccb50b20728141f034359217c9d8a9cba800e5b8f"
+  },
+  {
+    "id": 184,
+    "gist": "A kitchen laid out by diagram makes the cook trek. Ring stove, sink, and counter within a step of each other.",
+    "reviewed": true,
+    "reviewedHash": "1f864f36abc708ad9c8b7271ecb941c1c61ee6cc8ec7f19e51efc26fec6767c0"
+  },
+  {
+    "id": 185,
+    "gist": "Chairs backed against the walls kill conversation. Draw seats into a rough circle, partly enclosed.",
+    "reviewed": true,
+    "reviewedHash": "9de216000c1407f6e473168b64e737d8cda7486ad26ca34202e9d1f8fc7e1af4"
+  },
+  {
+    "id": 186,
+    "gist": "Sleep is rationed one room per person, always apart. Make it possible to sleep near others without shame.",
+    "reviewed": true,
+    "reviewedHash": "1ae0df492049195ad6383d910356ff0b18e6dccdf384b3ebeb241de6992ad44d"
+  },
+  {
+    "id": 187,
+    "gist": "The marriage bed is bought as furniture. Build it as a place — enclosed, particular, the couple's own.",
+    "reviewed": true,
+    "reviewedHash": "0cdf5bd0144c0e5f2d0ca32d9b48b0af756d644d587a7f3b375933613c147501"
+  },
+  {
+    "id": 188,
+    "gist": "A whole room spent on a bed serves the bed, not sleep. Tuck the bed into an alcove scaled to it.",
+    "reviewed": true,
+    "reviewedHash": "20a00aec821a387a9f6e530decd425137ed69c0006c258b479338d62ae8bd8e5"
+  },
+  {
+    "id": 189,
+    "gist": "Dressing happens in the leftover corners of bedrooms. Give it a lit niche of its own between bed and bath.",
+    "reviewed": true,
+    "reviewedHash": "7e7672953b349a47b69e062cca34beabe1416771f2dda7772bfe9cd5544035f1"
+  },
+  {
+    "id": 190,
+    "gist": "One ceiling height flattens every social shade. Vary heights with the intimacy of the rooms.",
+    "reviewed": true,
+    "reviewedHash": "ca0d9ad8cc94cd388077828ea64e62545d43e9670582cfc6bee31ce00a611e01"
+  },
+  {
+    "id": 191,
+    "gist": "Clever geometries fight the body's sense of shelter. Keep rooms roughly rectangular, ceilings gently vaulted.",
+    "reviewed": true,
+    "reviewedHash": "d221926e0e7efa33c674f73dcea0060cc7597cb671726eec57cb65b36df3c7fd"
+  },
+  {
+    "id": 192,
+    "gist": "A window onto a blank wall wastes the gaze. Aim windows at life — street, garden, coming and going.",
+    "reviewed": true,
+    "reviewedHash": "95e0694a132f90eb29fdf27d7d66310564cee2662e710f95a198fb5b997d4d0c"
+  },
+  {
+    "id": 193,
+    "gist": "A full wall seals rooms apart; none at all merges them. Build half-open walls that join while dividing.",
+    "reviewed": true,
+    "reviewedHash": "5c34e35bac7537df85a9c27d16b7b1c0858a838255ae3d46695cc81e1720a870"
+  },
+  {
+    "id": 194,
+    "gist": "Inner rooms go blind without borrowed light. Cut windows between rooms as well as to the world.",
+    "reviewed": true,
+    "reviewedHash": "a01becd68497fcebcff035737492667d7eca9b3c4f2dc87b3c297fb76de2c8a4"
+  },
+  {
+    "id": 195,
+    "gist": "Stairs squeezed to a code minimum pinch the whole house. Give the staircase a volume it can live in.",
+    "reviewed": true,
+    "reviewedHash": "454c54ae7a740d32347b623a4fac7f29116e0e3b5e28831db0a76ba948ddd0b1"
+  },
+  {
+    "id": 196,
+    "gist": "A door in mid-wall shreds the room with paths. Hang doors near corners, leaving the body of the room whole.",
+    "reviewed": true,
+    "reviewedHash": "d7a9b7bca4e43000cc9b1a73c3ec589c853c4ba718a9852207b89976e4160b3a"
+  },
+  {
+    "id": 197,
+    "gist": "Thin walls hold nothing and belong to no one. Thicken them until they carry shelves, seats, and sills.",
+    "reviewed": true,
+    "reviewedHash": "6d507ed78ff31df0eef3a6f1b1da87cbd6a36361b03c480d2bdabddc98c1d413"
+  },
+  {
+    "id": 198,
+    "gist": "Storage lands wherever plans have slack. Use closets as thick, quieting walls between rooms.",
+    "reviewed": true,
+    "reviewedHash": "38480c809dd888fddcf7466e9a1c4e5959b6a3ea3f9c8d9e7804287107b92a77"
+  },
+  {
+    "id": 199,
+    "gist": "Counter work in shadow makes the kitchen a chore. Run the working counter along the sunny wall.",
+    "reviewed": true,
+    "reviewedHash": "2006685de93c80f132ec9ab9b0bfa51fe9e890fcf977e5a48e4a42d256977b4b"
+  },
+  {
+    "id": 200,
+    "gist": "Things sealed in cupboards disappear from use. Keep the daily things on open shelves, one row deep.",
+    "reviewed": true,
+    "reviewedHash": "78a1056d3e0a55baa6c8a27271299bf222f34ff9b465b420141827385f26052c"
+  },
+  {
+    "id": 201,
+    "gist": "The small stuff of the day needs a landing place. Run a waist-high shelf around the room's edge.",
+    "reviewed": true,
+    "reviewedHash": "a9e82fb72416b7d6252470486d19eda8eff3267d348297837a593475979d855f"
+  },
+  {
+    "id": 202,
+    "gist": "Loose chairs pushed to the wall never invite. Build seats into the fabric at the natural resting spots.",
+    "reviewed": true,
+    "reviewedHash": "b1aff7dc73f962251ec18b32a7a003158b3a8e7922590e67b57f3f26df7b3eb4"
+  },
+  {
+    "id": 203,
+    "gist": "Children crave small dark dens adults can't enter. Leave cave-like spaces built at their scale.",
+    "reviewed": true,
+    "reviewedHash": "7c56245ff05245bfa967cd35037959b632c7fec5729e914e75b3eee2457a79e9"
+  },
+  {
+    "id": 204,
+    "gist": "A home with no hiding place keeps no secrets. Leave one concealed spot for the things that matter most.",
+    "reviewed": true,
+    "reviewedHash": "bcd13b0cfcd3779e83a000d38665d5e909f96d8e72aacca7d0184ae80f4ef065"
+  },
+  {
+    "id": 205,
+    "gist": "Structure imposed first squeezes life into its grid. Let the social spaces come first and the frame follow.",
+    "reviewed": true,
+    "reviewedHash": "d89e2953314f91fe1883ef97354420b4ad49f9053ced92ddb7c61d5d982a9c90"
+  },
+  {
+    "id": 206,
+    "gist": "A skeleton with cladding hung on it wastes both. Let the walls and vaults themselves do the carrying.",
+    "reviewed": true,
+    "reviewedHash": "bb4ad1359289683d53949e62f7a6ef5a0002f237dea7aa16e72091fd5f49c3ae"
+  },
+  {
+    "id": 207,
+    "gist": "Industrial materials resist the hand and age badly. Build with stuff that is good to touch and easy to mend.",
+    "reviewed": true,
+    "reviewedHash": "d3ccaba6ec77d597e0371a4f2c4d1b0db1be1a12a1dc9094065abff26d5509d9"
+  },
+  {
+    "id": 208,
+    "gist": "A building can't be perfected on paper first. Raise a light frame, then stiffen it step by step as you build.",
+    "reviewed": true,
+    "reviewedHash": "a02f68d66a6f5d6ee9c554db89fbbe023b145f70cad5168e5a070b3825a9bff5"
+  },
+  {
+    "id": 209,
+    "gist": "Roofs drawn after the plan end up fighting it. Lay out the roofs with the wings, as one act.",
+    "reviewed": true,
+    "reviewedHash": "24becbf502b737a9826be6a472a44c0d5edede899b2b59f971a9585bcf7c8ec3"
+  },
+  {
+    "id": 210,
+    "gist": "Floors poured as abstract slabs ignore the rooms below. Shape each floor and ceiling to the spaces it covers.",
+    "reviewed": true,
+    "reviewedHash": "dcbdae6114f0747646d68fc113aa05044d14b0ce5eb447668f52a315d07f47e2"
+  },
+  {
+    "id": 211,
+    "gist": "A wall that is only a skin can hold no places. Thicken the outer walls as you build the alcoves into them.",
+    "reviewed": true,
+    "reviewedHash": "8f2b4451a9e6aa099916535ff40523e86a5e78d76e19ef3dd2e61cef5b1ffb9f"
+  },
+  {
+    "id": 212,
+    "gist": "A room's corners are where its loads want to land. Set columns at the corners of every social space.",
+    "reviewed": true,
+    "reviewedHash": "2bbcb729e65c168feabb1c0baf68945c582801ff25e6a63d0a1257dfcad2933c"
+  },
+  {
+    "id": 213,
+    "gist": "A uniform grid of columns ignores how load gathers. Set them closer on the lower floors, which carry the most.",
+    "reviewed": true,
+    "reviewedHash": "dbd792c01d79f8d70b378a8c61ceb480e14d112f47249ea55bc96d52ba95eecb"
+  },
+  {
+    "id": 214,
+    "gist": "A column meeting loose ground wanders and cracks. Root each one into its own footing like a tooth.",
+    "reviewed": true,
+    "reviewedHash": "0388a3f657353876d3c7a80ed57b324c007fa3edeb36858e59b24fffa636dd81"
+  },
+  {
+    "id": 215,
+    "gist": "Deep foundations cost more than the rooms above. Float the ground floor on a simple ballasted slab.",
+    "reviewed": true,
+    "reviewedHash": "934f407311ff04113b5b165a781be51dc5278f1e839cc049b965d624d084766b"
+  },
+  {
+    "id": 216,
+    "gist": "Solid columns are heavy, costly, and mute. Build hollow box columns you can fill and shape on site.",
+    "reviewed": true,
+    "reviewedHash": "33f5743087f26a226d097e93fe523f2ed4d1c6ad21efb944fca18392adadc3cc"
+  },
+  {
+    "id": 217,
+    "gist": "Walls meeting roof need a continuous collar. Run a perimeter beam around every floor and eave.",
+    "reviewed": true,
+    "reviewedHash": "d28c53d0b34489a71e4f9538b81ca34851c95d1e2f35be7dd8f049802e120af3"
+  },
+  {
+    "id": 218,
+    "gist": "Walls stacked as heavy block are dead weight. Build them as two skins filled to become one membrane.",
+    "reviewed": true,
+    "reviewedHash": "394b98ca49f593b91dedef6933beb182c5c6bd82b428adb0e0747139d378c58c"
+  },
+  {
+    "id": 219,
+    "gist": "Flat spans demand steel and heavy beams. Span floors as shallow vaults that carry load by shape.",
+    "reviewed": true,
+    "reviewedHash": "f4325345cc20d332d297630b3bf36ca5a6f9582fe0ffcbc1f91142d26a272b1a"
+  },
+  {
+    "id": 220,
+    "gist": "Roof shapes get chosen like hats, by fashion. Vault the roof along the lines the forces actually take.",
+    "reviewed": true,
+    "reviewedHash": "95a26c331a05cfb36f2a945e93f1d04146cc2d5f0b222181dc38490b296931af"
+  },
+  {
+    "id": 221,
+    "gist": "Standard openings ignore what each room needs. Place and size every door and window where life asks.",
+    "reviewed": true,
+    "reviewedHash": "731eb21ab95226adebcae4d2fab72dfb1f58ba021472e63e190e9169967b30b3"
+  },
+  {
+    "id": 222,
+    "gist": "A high sill cuts the seated off from the ground outside. Bring sills low so the world stays in view.",
+    "reviewed": true,
+    "reviewedHash": "f17ccd8f0fda082eb2b7b1ca7f91eb05ae704d9e30c055272fb6324dbbc30765"
+  },
+  {
+    "id": 223,
+    "gist": "Glass flush in a thin wall makes a harsh bright hole. Set windows deep, with splayed reveals to soften light.",
+    "reviewed": true,
+    "reviewedHash": "df64b3635b041c91f4f63bc900b8066546c71b4283615e3b10ada60e9be2daee"
+  },
+  {
+    "id": 224,
+    "gist": "Every threshold crossed at full stride feels the same. Make doorways to intimate places low enough to notice.",
+    "reviewed": true,
+    "reviewedHash": "5d17fbd7d33909c9f4a65c203d99be4e4347467dba43a4b0d0df6e1117571bd2"
+  },
+  {
+    "id": 225,
+    "gist": "Frames tacked on as trim split from the wall. Make each frame by thickening the wall's own edge.",
+    "reviewed": true,
+    "reviewedHash": "e3fdeaa8d89be7e340de4821f14d8cbc77afb4f440856d105869e14b6b79516e"
+  },
+  {
+    "id": 226,
+    "gist": "A thin freestanding column is an obstacle. Make columns thick enough to lean against — small places.",
+    "reviewed": true,
+    "reviewedHash": "deb33312d36336c506feff56b338a9ef56a7553fe9689293778db23bbf78c680"
+  },
+  {
+    "id": 227,
+    "gist": "The joint is where column and beam want to fail. Thicken the connections with braces and capitals.",
+    "reviewed": true,
+    "reviewedHash": "9aa1f7c0e9166320c3fe1573237a894581d62623112fd35130169573dd282f0c"
+  },
+  {
+    "id": 228,
+    "gist": "A stair needs support without a cage around it. Carry it on a vault and keep the space beneath.",
+    "reviewed": true,
+    "reviewedHash": "4ff27b502d1ecbf75f73fd774219bd55621322fb3ff5823d302c86c95ad0298c"
+  },
+  {
+    "id": 229,
+    "gist": "Services buried in the structure fail out of reach. Run ducts in open chases you can always get at.",
+    "reviewed": true,
+    "reviewedHash": "676539669e1b63d6c6787f6b36c93173a0bd7dd97423a1127250ffc58e7d3330"
+  },
+  {
+    "id": 230,
+    "gist": "Blown air heats the room and leaves the body cold. Warm with surfaces that shine their heat on skin.",
+    "reviewed": true,
+    "reviewedHash": "3bbf2d0f5199d9ca1cc6b75c121c59d10bbc9249b0d2986ea509c4e12486928b"
+  },
+  {
+    "id": 231,
+    "gist": "Under a plain roof the attic stays dark and dead. Punch dormers through so the roof space becomes rooms.",
+    "reviewed": true,
+    "reviewedHash": "f44c72abd73497f26248646cd6e5d7f75bfb3e44aa95fefebecf69c3ff13b3e8"
+  },
+  {
+    "id": 232,
+    "gist": "A roof that just stops meets the sky abruptly. Finish its edges and ridges with caps that mark the meeting.",
+    "reviewed": true,
+    "reviewedHash": "66c9d2922e6cf7c4f711651a7bc29de59d01080ea26a9cf6860f1c9f06a0c129"
+  },
+  {
+    "id": 233,
+    "gist": "One flooring everywhere says every room is the same. Change the floor from hard public to soft private ground.",
+    "reviewed": true,
+    "reviewedHash": "5f15b7560f4f2a806b312f76d39a44707efb1f630ee62e1ed9f31ce0bf33e203"
+  },
+  {
+    "id": 234,
+    "gist": "Flush outer skins let water find every seam. Lap the outside materials like scales, always shedding down.",
+    "reviewed": true,
+    "reviewedHash": "55beb00f3f502778d11ab13d8fc4923c7fb59c54ce5bb00b004691a8bee73df3"
+  },
+  {
+    "id": 235,
+    "gist": "Hard cold inner surfaces keep the hand away. Finish rooms in soft warm coats that take the touch.",
+    "reviewed": true,
+    "reviewedHash": "475d604f3ab0c32e1524d3d1508626c2d35c2ac86bbf9342872abcd97c60313e"
+  },
+  {
+    "id": 236,
+    "gist": "A sealed pane turns the world into weatherproof TV. Fit windows that swing their whole frame open.",
+    "reviewed": true,
+    "reviewedHash": "cc180d754011e1116bd82c3f8cd66d48f1a44a8b82bf57112f4ed66568ba6cd4"
+  },
+  {
+    "id": 237,
+    "gist": "A blind door divides; a glass one fails to shelter. Make doors solid, with a glazed eye to see through.",
+    "reviewed": true,
+    "reviewedHash": "e1cee17de12eb8de4bd8a1558ad80be2cfbfb7744715edb079855cb5bba8bbe2"
+  },
+  {
+    "id": 238,
+    "gist": "Raw sun through plate glass glares and burns. Filter the light at its edge — vines, lattice, small panes.",
+    "reviewed": true,
+    "reviewedHash": "86f1e840e17392bdc7f24dc8e4d09a929c9e99d3b959cf5f8c56524e8c697f5a"
+  },
+  {
+    "id": 239,
+    "gist": "One big sheet of glass flattens the world to a picture. Divide the window into small panes that bring it near.",
+    "reviewed": true,
+    "reviewedHash": "12a156147ea5f17bd1b8e9e0340d60cb2621be041aebb46113c31069afa1e7a9"
+  },
+  {
+    "id": 240,
+    "gist": "Where materials meet, raw joints open and crack. Cover the meeting lines with simple, honest trim.",
+    "reviewed": true,
+    "reviewedHash": "027261143966a23402882fdd1a983918aa9385608abbafef5d1483ffbcdfd8d6"
+  },
+  {
+    "id": 241,
+    "gist": "Benches placed by diagram sit empty. Put seats exactly where sun, view, and passing life converge.",
+    "reviewed": true,
+    "reviewedHash": "c1aa3e867d97a3ea03c3f632b5effcf8b1974f774a1e17bcb84e91d4748af277"
+  },
+  {
+    "id": 242,
+    "gist": "The threshold invites lingering but offers no seat. Put a bench at the front door, half in the street's life.",
+    "reviewed": true,
+    "reviewedHash": "d28ec3bcb6315b49b46ee264873786a6e9d65fd8e672b011c834cee50d2942f4"
+  },
+  {
+    "id": 243,
+    "gist": "A fence only divides. Build low walls wide enough to sit on, so the boundary gathers people.",
+    "reviewed": true,
+    "reviewedHash": "01f724b4ee7b4be1ec5de169daecd2478e86b488d25478b237d93f6e92b8fb1f"
+  },
+  {
+    "id": 244,
+    "gist": "Hard materials can't make soft, movable shade. Use canvas — awnings and roofs that open with the season.",
+    "reviewed": true,
+    "reviewedHash": "0079cf723ac7b6bbfede301aa3c66662c3b367b9f30a06a677f251aef43f8999"
+  },
+  {
+    "id": 245,
+    "gist": "Flowers at ground level pass underfoot unseen. Raise them in beds and pots to sill and hand height.",
+    "reviewed": true,
+    "reviewedHash": "26893c9c42b7af4ef6ce75459cd41d1e38de7b405a2b3e967f41b95b14f2b37b"
+  },
+  {
+    "id": 246,
+    "gist": "A bare new wall stands apart from its ground. Let climbing plants knit the building into the place.",
+    "reviewed": true,
+    "reviewedHash": "9fe6ae9eafe71bfd51a8ccf3decd4ef1b1b6bb27f1cbb83e45cdae0e1f3b5faa"
+  },
+  {
+    "id": 247,
+    "gist": "Sealed paving kills the ground beneath it. Lay stones with earth in the cracks, so life comes through.",
+    "reviewed": true,
+    "reviewedHash": "02a867e72cd8320f62781c05f10ceb2c25b5ef3e993ac33584fc658472f23833"
+  },
+  {
+    "id": 248,
+    "gist": "Hard glazed surfaces refuse the print of use. Fire soft tile and brick that wear smooth underfoot.",
+    "reviewed": true,
+    "reviewedHash": "0026fde1a1d75c521f7270363430d4d9f33521d0b423e7991509d2ea97c75e31"
+  },
+  {
+    "id": 249,
+    "gist": "Decoration sprayed anywhere cheapens what it touches. Put ornament at the seams, where things meet.",
+    "reviewed": true,
+    "reviewedHash": "5503dd09191caac520f311f2248525252c17b81b4cc92f4f690e56afbce32e4b"
+  },
+  {
+    "id": 250,
+    "gist": "Cool tones drain a room even in full sun. Choose colors that make the light itself feel warm.",
+    "reviewed": true,
+    "reviewedHash": "25bc1c783c723a78d31e6c8a22a8cc1d0e67df6787ba56e484e33ca99494bb26"
+  },
+  {
+    "id": 251,
+    "gist": "Matching chair sets pretend all bodies are alike. Gather different chairs, each right for someone.",
+    "reviewed": true,
+    "reviewedHash": "1f7add09a4e81d630a3cbc3b248a613207e888d565f55120bf801ba7953f2ade"
+  },
+  {
+    "id": 252,
+    "gist": "Uniform lighting flattens a room to a diagram. Hang low lamps that make pools of light over each place.",
+    "reviewed": true,
+    "reviewedHash": "9f9a2bed197af33d3c2e2c504e7847ed801c29c471f5cd9351e849ea412338c5"
+  },
+  {
+    "id": 253,
+    "gist": "Decor bought to impress says nothing about you. Keep the things your own life has marked and made dear.",
+    "reviewed": true,
+    "reviewedHash": "46216e3331d845915ce3389f9ecc137de4878c5b381bf7d6170043ee71de6322"
+  }
 ]

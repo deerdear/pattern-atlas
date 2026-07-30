@@ -6,7 +6,7 @@
 // Regenerate with: npm run data:layout
 
 export const layoutInputHash =
-  'ba10cb29b28da9a05c4d0ab8cd0926d20cfc9011e95de50f9905dedace10ad47'
+  'ee761564cff56bef450bfc27f53b0019abd4674d35af025db7f0dc3f34a03674'
 
 /** World canvas the layout was baked on. */
 export const canvas = { w: 2200, h: 1650 } as const

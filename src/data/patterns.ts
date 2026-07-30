@@ -11,6 +11,7 @@ export const patterns = [
     "name": "Independent Regions",
     "confidence": 2,
     "category": "Network of Lattices",
+    "gist": "Nations are too big to feel. Let regions of a few million people steer their own life and land.",
     "broader": [],
     "narrower": [
       2,
@@ -22,6 +23,7 @@ export const patterns = [
     "name": "The Distribution of Towns",
     "confidence": 0,
     "category": "Regional Policies",
+    "gist": "Population piles up in a few giants while the land empties. Spread towns of every size across the whole region.",
     "broader": [
       1
     ],
@@ -37,6 +39,7 @@ export const patterns = [
     "name": "City Country Fingers",
     "confidence": 2,
     "category": "Regional Policies",
+    "gist": "City swallows country until neither is near. Interlock them as fingers, so farmland and street stay in reach.",
     "broader": [
       2
     ],
@@ -57,6 +60,7 @@ export const patterns = [
     "name": "Agricultural Valleys",
     "confidence": 1,
     "category": "Regional Policies",
+    "gist": "The best soil sits in valleys, exactly where building is easiest. Keep valleys for farming; build on the slopes.",
     "broader": [
       1,
       2,
@@ -71,6 +75,7 @@ export const patterns = [
     "name": "Lace of Country Streets",
     "confidence": 0,
     "category": "Regional Policies",
+    "gist": "Suburbs smear town over country. Let houses gather loosely along country lanes, fields showing between.",
     "broader": [
       3
     ],
@@ -86,6 +91,7 @@ export const patterns = [
     "name": "Country Towns",
     "confidence": 1,
     "category": "Regional Policies",
+    "gist": "Small towns wither as the cities pull. Give country towns their own work and reasons to stay.",
     "broader": [
       2
     ],
@@ -100,6 +106,7 @@ export const patterns = [
     "name": "The Countryside",
     "confidence": 1,
     "category": "Regional Policies",
+    "gist": "Fenced-off countryside belongs to no one who walks it. Treat the land as a commons people may cross and tend.",
     "broader": [
       2,
       3,
@@ -120,6 +127,7 @@ export const patterns = [
     "name": "Mosaic of Subcultures",
     "confidence": 2,
     "category": "City Policies",
+    "gist": "Big cities grind difference smooth. Let many small subcultures live side by side, each with ground of its own.",
     "broader": [
       3
     ],
@@ -141,6 +149,7 @@ export const patterns = [
     "name": "Scattered Work",
     "confidence": 2,
     "category": "City Policies",
+    "gist": "Work exiled to districts leaves home hollow all day. Scatter workplaces through the places people live.",
     "broader": [
       8,
       27,
@@ -162,6 +171,7 @@ export const patterns = [
     "name": "Magic of the City",
     "confidence": 0,
     "category": "City Policies",
+    "gist": "The city's real riches concentrate where few can reach them. Keep dense, magnetic cores within reach of everyone.",
     "broader": [
       3,
       8,
@@ -185,6 +195,7 @@ export const patterns = [
     "name": "Local Transport Areas",
     "confidence": 2,
     "category": "City Policies",
+    "gist": "Cars win the long trip and ruin the short one. Bound small areas where feet and bikes come first.",
     "broader": [
       3,
       8,
@@ -210,6 +221,7 @@ export const patterns = [
     "name": "Community of 7000",
     "confidence": 1,
     "category": "Communities",
+    "gist": "A voice vanishes in mass government. Keep political communities small enough that one person can still be heard.",
     "broader": [
       6,
       8
@@ -236,6 +248,7 @@ export const patterns = [
     "name": "Subculture Boundary",
     "confidence": 1,
     "category": "Communities",
+    "gist": "Ways of life pressed wall to wall wear each other down. Part subcultures with open land, not shared fences.",
     "broader": [
       8,
       9,
@@ -268,6 +281,7 @@ export const patterns = [
     "name": "Identifiable Neighborhood",
     "confidence": 2,
     "category": "Communities",
+    "gist": "People need a patch of city they can name as theirs. Make neighborhoods small enough to know by face.",
     "broader": [
       5,
       8,
@@ -301,6 +315,7 @@ export const patterns = [
     "name": "Neighborhood Boundary",
     "confidence": 1,
     "category": "Communities",
+    "gist": "A neighborhood without an edge dissolves into the grid. Give it a boundary, crossed at gateways.",
     "broader": [
       9,
       12,
@@ -331,6 +346,7 @@ export const patterns = [
     "name": "Web of Public Transport",
     "confidence": 1,
     "category": "Community Networking",
+    "gist": "Separate transit lines don't add up to freedom. Weave them into one web where changing is easy.",
     "broader": [
       3,
       10,
@@ -347,6 +363,7 @@ export const patterns = [
     "name": "Ring Roads",
     "confidence": 0,
     "category": "Community Networking",
+    "gist": "Fast roads must exist, and destroy whatever they touch. Keep them to the edges of the areas they serve.",
     "broader": [
       3,
       11,
@@ -366,6 +383,7 @@ export const patterns = [
     "name": "Network of Learning",
     "confidence": 1,
     "category": "Community Networking",
+    "gist": "Learning locked in schools narrows to schooling. Spread it through the city — workshops, museums, masters.",
     "broader": [
       40
     ],
@@ -384,6 +402,7 @@ export const patterns = [
     "name": "Web of Shopping",
     "confidence": 1,
     "category": "Community Networking",
+    "gist": "Commerce clumps into centers far from daily life. Let shops settle at the natural spacing of need.",
     "broader": [
       8,
       9,
@@ -403,6 +422,7 @@ export const patterns = [
     "name": "Mini-Buses",
     "confidence": 1,
     "category": "Community Networking",
+    "gist": "Big buses on fixed routes fail the odd, real journey. Fill the gaps with small buses that come when called.",
     "broader": [
       11,
       16
@@ -418,6 +438,7 @@ export const patterns = [
     "name": "Four-Story Limit",
     "confidence": 2,
     "category": "Community Policies",
+    "gist": "High buildings lift people away from the life of the street. Keep dwellings within four stories of the ground.",
     "broader": [
       3,
       5,
@@ -438,6 +459,7 @@ export const patterns = [
     "name": "Nine Per Cent Parking",
     "confidence": 2,
     "category": "Community Policies",
+    "gist": "Parking quietly eats the town it serves. Cap the land any area gives to resting cars.",
     "broader": [
       11,
       12,
@@ -453,6 +475,7 @@ export const patterns = [
     "name": "Parallel Roads",
     "confidence": 0,
     "category": "Community Policies",
+    "gist": "Through-traffic tangles wherever roads cross freely. Carry it on parallel one-way roads that seldom meet.",
     "broader": [
       11,
       13,
@@ -478,6 +501,7 @@ export const patterns = [
     "name": "Sacred Sites",
     "confidence": 1,
     "category": "Community Policies",
+    "gist": "Places that hold a community's memory get bulldozed like any lot. Protect sacred sites and their approaches.",
     "broader": [
       13,
       28,
@@ -497,6 +521,7 @@ export const patterns = [
     "name": "Access to Water",
     "confidence": 1,
     "category": "Community Policies",
+    "gist": "Shorelines pass into private hands first. Keep every water's edge open for anyone to walk.",
     "broader": [
       13,
       17,
@@ -516,6 +541,7 @@ export const patterns = [
     "name": "Life Cycle",
     "confidence": 1,
     "category": "Community Policies",
+    "gist": "A town built for one age of life strands all the others. Provide settings for every stage, birth to death.",
     "broader": [
       6,
       12,
@@ -550,6 +576,7 @@ export const patterns = [
     "name": "Men and Women",
     "confidence": 0,
     "category": "Community Policies",
+    "gist": "Places quietly built around one gender's day exclude half of life. Shape each place for the worlds of both.",
     "broader": [
       12,
       14,
@@ -566,6 +593,7 @@ export const patterns = [
     "name": "Eccentric Nucleus",
     "confidence": 1,
     "category": "Local Centers",
+    "gist": "A center placed dead-center leaves no quiet side. Set the dense nucleus off toward the liveliest edge.",
     "broader": [
       10,
       12,
@@ -587,6 +615,7 @@ export const patterns = [
     "name": "Density Rings",
     "confidence": 1,
     "category": "Local Centers",
+    "gist": "Uniform density serves no one's real wants. Let density fall away in rings from each center.",
     "broader": [
       8,
       12,
@@ -610,6 +639,7 @@ export const patterns = [
     "name": "Activity Nodes",
     "confidence": 2,
     "category": "Local Centers",
+    "gist": "Facilities scattered evenly never make a place. Cluster them into nodes a short walk apart.",
     "broader": [
       12,
       13,
@@ -646,6 +676,7 @@ export const patterns = [
     "name": "Promenade",
     "confidence": 2,
     "category": "Local Centers",
+    "gist": "People want somewhere to see and be seen. Give each community a short strolling spine.",
     "broader": [
       8,
       10,
@@ -679,6 +710,7 @@ export const patterns = [
     "name": "Shopping Street",
     "confidence": 1,
     "category": "Local Centers",
+    "gist": "Shops strung along traffic arteries serve cars, not people. Give shopping its own short street across the road.",
     "broader": [
       10,
       15,
@@ -705,6 +737,7 @@ export const patterns = [
     "name": "Night Life",
     "confidence": 1,
     "category": "Local Centers",
+    "gist": "Night spots scattered through town die alone. Gather the late places so the night has a heart.",
     "broader": [
       10,
       12,
@@ -725,6 +758,7 @@ export const patterns = [
     "name": "Interchange",
     "confidence": 0,
     "category": "Local Centers",
+    "gist": "Transfers punish the rider at every seam. Make interchanges tight, walkable, and ringed with small life.",
     "broader": [
       11,
       16,
@@ -748,6 +782,7 @@ export const patterns = [
     "name": "Household Mix",
     "confidence": 1,
     "category": "Housing Clusters",
+    "gist": "Tracts of one household type breed monocultures. Mix homes for singles, families, and the old in every place.",
     "broader": [
       14,
       26,
@@ -768,6 +803,7 @@ export const patterns = [
     "name": "Degrees of Publicness",
     "confidence": 2,
     "category": "Housing Clusters",
+    "gist": "One street-face is forced on host and hermit alike. Let homes sort themselves from loud fronts to quiet depths.",
     "broader": [
       14,
       29,
@@ -790,6 +826,7 @@ export const patterns = [
     "name": "House Cluster",
     "confidence": 2,
     "category": "Housing Clusters",
+    "gist": "Houses in ranks face nobody. Gather a handful around common ground they hold together.",
     "broader": [
       5,
       7,
@@ -827,6 +864,7 @@ export const patterns = [
     "name": "Row Houses",
     "confidence": 1,
     "category": "Housing Clusters",
+    "gist": "Where land runs short, detached houses waste it and towers erase it. Build rows, each with its own door and garden.",
     "broader": [
       29,
       36,
@@ -855,6 +893,7 @@ export const patterns = [
     "name": "Housing Hill",
     "confidence": 0,
     "category": "Housing Clusters",
+    "gist": "Density usually means stacking strangers. Terrace homes up a shared hill, each opening to the sky.",
     "broader": [
       21,
       29,
@@ -879,6 +918,7 @@ export const patterns = [
     "name": "Old People Everywhere",
     "confidence": 2,
     "category": "Housing Clusters",
+    "gist": "Old people gathered into enclaves disappear from life. Settle elders' dwellings through every neighborhood.",
     "broader": [
       14,
       26,
@@ -900,6 +940,7 @@ export const patterns = [
     "name": "Work Community",
     "confidence": 2,
     "category": "Work Communities",
+    "gist": "A workplace standing alone isolates its workers. Group workshops around shared courts and a common table.",
     "broader": [
       9,
       13,
@@ -940,6 +981,7 @@ export const patterns = [
     "name": "Industrial Ribbon",
     "confidence": 1,
     "category": "Work Communities",
+    "gist": "Industry banished to the far edge severs work from town. Run it in narrow, buffered ribbons close by.",
     "broader": [
       9,
       13,
@@ -957,6 +999,7 @@ export const patterns = [
     "name": "University as a Marketplace",
     "confidence": 0,
     "category": "Work Communities",
+    "gist": "A walled university teaches only its own. Open it as a marketplace of courses anyone may enter.",
     "broader": [
       18,
       30,
@@ -980,6 +1023,7 @@ export const patterns = [
     "name": "Local Town Hall",
     "confidence": 1,
     "category": "Work Communities",
+    "gist": "Government at a distance goes deaf. Give each small community a town hall of its own, close to daily paths.",
     "broader": [
       12,
       26,
@@ -1000,6 +1044,7 @@ export const patterns = [
     "name": "Necklace of Community Projects",
     "confidence": 0,
     "category": "Work Communities",
+    "gist": "Civic energy dies waiting for permission and rent. String cheap ground for community projects around the hall.",
     "broader": [
       43,
       44,
@@ -1020,6 +1065,7 @@ export const patterns = [
     "name": "Market of Many Shops",
     "confidence": 2,
     "category": "Work Communities",
+    "gist": "A market under one owner flattens to a store. Roof over many tiny shops, each stall its own master.",
     "broader": [
       19,
       32
@@ -1039,6 +1085,7 @@ export const patterns = [
     "name": "Health Center",
     "confidence": 1,
     "category": "Work Communities",
+    "gist": "Medicine waits at the end of sickness. Make health places that teach and keep people well.",
     "broader": [
       26,
       30
@@ -1060,6 +1107,7 @@ export const patterns = [
     "name": "Housing In Between",
     "confidence": 2,
     "category": "Work Communities",
+    "gist": "Districts of pure work fall dead at night. Thread dwellings between the workplaces.",
     "broader": [
       13,
       14,
@@ -1081,6 +1129,7 @@ export const patterns = [
     "name": "Looped Local Roads",
     "confidence": 2,
     "category": "Local Networking",
+    "gist": "Straight residential streets invite through-traffic. Loop the local roads so only neighbors bother.",
     "broader": [
       11,
       14,
@@ -1104,6 +1153,7 @@ export const patterns = [
     "name": "T Junctions",
     "confidence": 1,
     "category": "Local Networking",
+    "gist": "Crossroads multiply the ways two cars can meet. Join minor roads in staggered T's.",
     "broader": [
       23,
       49
@@ -1118,6 +1168,7 @@ export const patterns = [
     "name": "Green Streets",
     "confidence": 2,
     "category": "Local Networking",
+    "gist": "Local streets don't need a river of asphalt. Set paving stones in grass and let the street be ground.",
     "broader": [
       7,
       11,
@@ -1147,6 +1198,7 @@ export const patterns = [
     "name": "Network of Paths and Cars",
     "confidence": 2,
     "category": "Local Networking",
+    "gist": "Paths shadowing every road give walkers fumes and fear. Run paths as their own net, crossing roads at right angles.",
     "broader": [
       11,
       23,
@@ -1172,6 +1224,7 @@ export const patterns = [
     "name": "Main Gateways",
     "confidence": 2,
     "category": "Local Networking",
+    "gist": "You should feel it when you enter a community. Mark each way in with a gateway.",
     "broader": [
       14,
       15,
@@ -1194,6 +1247,7 @@ export const patterns = [
     "name": "Road Crossing",
     "confidence": 0,
     "category": "Local Networking",
+    "gist": "Crossings are drawn for the car's convenience. Raise and narrow them so walkers cross on their own terms.",
     "broader": [
       23,
       32,
@@ -1215,6 +1269,7 @@ export const patterns = [
     "name": "Raised Walk",
     "confidence": 1,
     "category": "Local Networking",
+    "gist": "Fast roads shove walkers into the gutter. Lift the walk above the roadway where the two must share.",
     "broader": [
       23,
       36,
@@ -1234,6 +1289,7 @@ export const patterns = [
     "name": "Bike Paths and Racks",
     "confidence": 1,
     "category": "Local Networking",
+    "gist": "Cycling fails without its own ways and a place at the door. Weave bike paths through, racks at every goal.",
     "broader": [
       11,
       49,
@@ -1253,6 +1309,7 @@ export const patterns = [
     "name": "Children in the City",
     "confidence": 0,
     "category": "Local Networking",
+    "gist": "The city is built as if children didn't live there. Open safe ways for them through its real life.",
     "broader": [
       18,
       23,
@@ -1283,6 +1340,7 @@ export const patterns = [
     "name": "Carnival",
     "confidence": 0,
     "category": "Community Recreation",
+    "gist": "A town with no license for madness goes grim. Keep ground where carnival can happen.",
     "broader": [
       10,
       31,
@@ -1302,6 +1360,7 @@ export const patterns = [
     "name": "Quiet Backs",
     "confidence": 1,
     "category": "Community Recreation",
+    "gist": "Work pressed against noise never rests. Give buildings quiet backs onto green, away from the street.",
     "broader": [
       9,
       15,
@@ -1325,6 +1384,7 @@ export const patterns = [
     "name": "Accessible Green",
     "confidence": 2,
     "category": "Community Recreation",
+    "gist": "A green too far away might as well not exist. Put open grass within a few minutes of every door.",
     "broader": [
       13,
       14,
@@ -1352,6 +1412,7 @@ export const patterns = [
     "name": "Small Public Squares",
     "confidence": 2,
     "category": "Community Recreation",
+    "gist": "Vast plazas make a crowd feel like nobody. Keep public squares small enough to feel peopled.",
     "broader": [
       14,
       29,
@@ -1384,6 +1445,7 @@ export const patterns = [
     "name": "High Places",
     "confidence": 1,
     "category": "Community Recreation",
+    "gist": "People climb to take in their world whole. Keep a few high places to look out from.",
     "broader": [
       12,
       21,
@@ -1402,6 +1464,7 @@ export const patterns = [
     "name": "Dancing in the Street",
     "confidence": 1,
     "category": "Community Recreation",
+    "gist": "Music and dancing retreat indoors and behind tickets. Raise bandstands where anyone may join the dance.",
     "broader": [
       10,
       31,
@@ -1423,6 +1486,7 @@ export const patterns = [
     "name": "Pools and Streams",
     "confidence": 1,
     "category": "Community Recreation",
+    "gist": "The city's water runs buried in pipes. Bring streams and pools back where people can touch them.",
     "broader": [
       13,
       15,
@@ -1444,6 +1508,7 @@ export const patterns = [
     "name": "Birth Places",
     "confidence": 0,
     "category": "Community Recreation",
+    "gist": "Birth happens far away, managed among strangers. Make places to be born within the community's own life.",
     "broader": [
       12,
       14,
@@ -1464,6 +1529,7 @@ export const patterns = [
     "name": "Holy Ground",
     "confidence": 1,
     "category": "Community Recreation",
+    "gist": "The sacred exposed all at once is cheapened. Approach holy ground through nested thresholds.",
     "broader": [
       24,
       26,
@@ -1483,6 +1549,7 @@ export const patterns = [
     "name": "Common Land",
     "confidence": 2,
     "category": "Local Recreation",
+    "gist": "All-private lots leave nowhere to be together. Hold common land between the houses.",
     "broader": [
       37,
       38,
@@ -1514,6 +1581,7 @@ export const patterns = [
     "name": "Connected Play",
     "confidence": 1,
     "category": "Local Recreation",
+    "gist": "A child alone in a fenced yard has no one to play with. Link the play spaces so children can find each other.",
     "broader": [
       35,
       39,
@@ -1535,6 +1603,7 @@ export const patterns = [
     "name": "Public Outdoor Room",
     "confidence": 2,
     "category": "Local Recreation",
+    "gist": "Outdoors there is nowhere to linger without buying. Build a roofed open room that belongs to everyone.",
     "broader": [
       15,
       45,
@@ -1570,6 +1639,7 @@ export const patterns = [
     "name": "Grave Sites",
     "confidence": 1,
     "category": "Local Recreation",
+    "gist": "Death is removed from town until it seems not to happen. Weave small grave sites into the community's ground.",
     "broader": [
       14,
       15,
@@ -1590,6 +1660,7 @@ export const patterns = [
     "name": "Still Water",
     "confidence": 1,
     "category": "Local Recreation",
+    "gist": "Swimming means a drive and a fee. Keep still water near home, its edge graded from paddling to depth.",
     "broader": [
       13,
       25,
@@ -1619,6 +1690,7 @@ export const patterns = [
     "name": "Local Sports",
     "confidence": 1,
     "category": "Local Recreation",
+    "gist": "Exercise exiled to stadiums becomes a spectacle. Sprinkle courts and pools where people already pass.",
     "broader": [
       15,
       41,
@@ -1643,6 +1715,7 @@ export const patterns = [
     "name": "Adventure Playground",
     "confidence": 0,
     "category": "Local Recreation",
+    "gist": "A finished playground leaves nothing to do. Give children raw ground and loose stuff to build with.",
     "broader": [
       15,
       57,
@@ -1664,6 +1737,7 @@ export const patterns = [
     "name": "Animals",
     "confidence": 0,
     "category": "Local Recreation",
+    "gist": "Towns scrubbed clean of animals teach that life is elsewhere. Make room for beasts in the ordinary fabric.",
     "broader": [
       51,
       57,
@@ -1682,6 +1756,7 @@ export const patterns = [
     "name": "The Family",
     "confidence": 1,
     "category": "Social Institutions — Families",
+    "gist": "The nuclear household stands alone against everything. House larger constellations of lives together.",
     "broader": [
       26,
       35,
@@ -1714,6 +1789,7 @@ export const patterns = [
     "name": "House for a Small Family",
     "confidence": 1,
     "category": "Social Institutions — Families",
+    "gist": "One open plan grinds parents and children together. Give each their realm, with a commons between.",
     "broader": [
       35,
       37,
@@ -1739,6 +1815,7 @@ export const patterns = [
     "name": "House for a Couple",
     "confidence": 1,
     "category": "Social Institutions — Families",
+    "gist": "A couple's house is more than a shared bedroom. Make one realm together and room to be apart.",
     "broader": [
       35,
       37,
@@ -1759,6 +1836,7 @@ export const patterns = [
     "name": "House for One Person",
     "confidence": 1,
     "category": "Social Institutions — Families",
+    "gist": "A person alone needs little space but all of life in it. Make one room grown rich — alcoves for each act.",
     "broader": [
       35,
       37,
@@ -1786,6 +1864,7 @@ export const patterns = [
     "name": "Your Own Home",
     "confidence": 2,
     "category": "Social Institutions — Families",
+    "gist": "No one can settle in rooms they may not touch. Give every household a home of its own to alter.",
     "broader": [
       26,
       37,
@@ -1811,6 +1890,7 @@ export const patterns = [
     "name": "Self-Governing Workshops and Offices",
     "confidence": 2,
     "category": "Social Institutions — Workgroups",
+    "gist": "Work under absent owners deadens the day. Favor workshops and offices the workers own and run.",
     "broader": [
       9,
       41,
@@ -1837,6 +1917,7 @@ export const patterns = [
     "name": "Small Services Without Red Tape",
     "confidence": 1,
     "category": "Social Institutions — Workgroups",
+    "gist": "Services swell into bureaucracies that serve themselves. Break them into small teams facing their people.",
     "broader": [
       41,
       43,
@@ -1865,6 +1946,7 @@ export const patterns = [
     "name": "Office Connections",
     "confidence": 1,
     "category": "Social Institutions — Workgroups",
+    "gist": "Groups that must work together drift when floors apart. Place connected offices within a short walk.",
     "broader": [
       21,
       41,
@@ -1883,6 +1965,7 @@ export const patterns = [
     "name": "Master and Apprentices",
     "confidence": 1,
     "category": "Social Institutions — Workgroups",
+    "gist": "Telling is a poor way to learn a craft. Arrange work so beginners labor beside masters.",
     "broader": [
       18,
       26,
@@ -1905,6 +1988,7 @@ export const patterns = [
     "name": "Teenage Society",
     "confidence": 0,
     "category": "Social Institutions — Workgroups",
+    "gist": "Teenagers are parked in classrooms at the edge of life. Give them real roles and a society of their own.",
     "broader": [
       13,
       18,
@@ -1926,6 +2010,7 @@ export const patterns = [
     "name": "Shopfront Schools",
     "confidence": 0,
     "category": "Social Institutions — Workgroups",
+    "gist": "Small children vanish into big remote schools. Keep their schools tiny — a few rooms on an ordinary street.",
     "broader": [
       18,
       26,
@@ -1946,6 +2031,7 @@ export const patterns = [
     "name": "Children's Home",
     "confidence": 1,
     "category": "Social Institutions — Workgroups",
+    "gist": "Every child sometimes needs a household not their own. Keep a homelike refuge open in each neighborhood.",
     "broader": [
       18,
       26,
@@ -1970,6 +2056,7 @@ export const patterns = [
     "name": "Individually Owned Shops",
     "confidence": 2,
     "category": "Social Institutions — Local Gathering",
+    "gist": "Chain shops repeat the same face everywhere. Favor shops whose owner stands behind the counter.",
     "broader": [
       30,
       32,
@@ -1995,6 +2082,7 @@ export const patterns = [
     "name": "Street Cafe",
     "confidence": 2,
     "category": "Social Institutions — Local Gathering",
+    "gist": "The street has no front porch. Let cafes spill their tables onto the walk.",
     "broader": [
       14,
       30,
@@ -2021,6 +2109,7 @@ export const patterns = [
     "name": "Corner Grocery",
     "confidence": 1,
     "category": "Social Institutions — Local Gathering",
+    "gist": "Daily essentials sit a drive away. Keep a grocery on the corner, at walking distance.",
     "broader": [
       14,
       19,
@@ -2041,6 +2130,7 @@ export const patterns = [
     "name": "Beer Hall",
     "confidence": 0,
     "category": "Social Institutions — Local Gathering",
+    "gist": "Strangers need a loud warm room to drink and sing in. Keep a public hall where the whole town mixes.",
     "broader": [
       15,
       30,
@@ -2060,6 +2150,7 @@ export const patterns = [
     "name": "Traveler's Inn",
     "confidence": 1,
     "category": "Social Institutions — Local Gathering",
+    "gist": "Travelers are warehoused in numbered cells. Make inns where guests share the fire and the table.",
     "broader": [
       10,
       30,
@@ -2083,6 +2174,7 @@ export const patterns = [
     "name": "Bus Stop",
     "confidence": 1,
     "category": "Social Institutions — Local Gathering",
+    "gist": "Waiting at a bare pole is a small daily insult. Make each bus stop a little place — bench, shelter, news.",
     "broader": [
       20,
       34,
@@ -2103,6 +2195,7 @@ export const patterns = [
     "name": "Food Stands",
     "confidence": 1,
     "category": "Social Institutions — Local Gathering",
+    "gist": "Eating in the street is treated as disorder. Set food stands where the paths cross.",
     "broader": [
       30,
       41,
@@ -2124,6 +2217,7 @@ export const patterns = [
     "name": "Sleeping in Public",
     "confidence": 0,
     "category": "Social Institutions — Local Gathering",
+    "gist": "Falling asleep in public is treated as a crime. Make spots where a nap is safe and carries no shame.",
     "broader": [
       34,
       60,
@@ -2146,6 +2240,7 @@ export const patterns = [
     "name": "Building Complex",
     "confidence": 2,
     "category": "Group of Buildings",
+    "gist": "One big box swallows every function whole. Break large programs into a family of small linked buildings.",
     "broader": [
       21,
       38,
@@ -2193,6 +2288,7 @@ export const patterns = [
     "name": "Number of Stories",
     "confidence": 1,
     "category": "Group of Buildings",
+    "gist": "Height chosen by ego or economics ignores the town. Keep buildings low, their stories in step with the four-story limit.",
     "broader": [
       21,
       95
@@ -2216,6 +2312,7 @@ export const patterns = [
     "name": "Shielded Parking",
     "confidence": 1,
     "category": "Group of Buildings",
+    "gist": "A skin of parked cars deadens any building. Tuck parking behind or beneath, never facing the life.",
     "broader": [
       11,
       13,
@@ -2245,6 +2342,7 @@ export const patterns = [
     "name": "Circulation Realms",
     "confidence": 2,
     "category": "Group of Buildings",
+    "gist": "In a maze of corridors nobody knows where they are. Nest movement into named realms, each with one clear door.",
     "broader": [
       37,
       53,
@@ -2273,6 +2371,7 @@ export const patterns = [
     "name": "Main Building",
     "confidence": 1,
     "category": "Group of Buildings",
+    "gist": "A complex of equals has no heart. Let one building stand as the head among the others.",
     "broader": [
       95,
       96,
@@ -2289,6 +2388,7 @@ export const patterns = [
     "name": "Pedestrian Street",
     "confidence": 2,
     "category": "Group of Buildings",
+    "gist": "Buildings fed by corridors turn their backs on the world. Serve them from outdoor streets instead.",
     "broader": [
       31,
       32,
@@ -2329,6 +2429,7 @@ export const patterns = [
     "name": "Building Thoroughfare",
     "confidence": 0,
     "category": "Group of Buildings",
+    "gist": "A building the public must cross should not feel private. Make its passage a real street under a roof.",
     "broader": [
       46,
       72,
@@ -2361,6 +2462,7 @@ export const patterns = [
     "name": "Family of Entrances",
     "confidence": 1,
     "category": "Group of Buildings",
+    "gist": "A row of doors, and no telling which is whose. Shape entrances as a visible family, alike and distinct.",
     "broader": [
       81,
       97,
@@ -2384,6 +2486,7 @@ export const patterns = [
     "name": "Small Parking Lots",
     "confidence": 1,
     "category": "Group of Buildings",
+    "gist": "Seas of parking repel every other use. Break lots into pockets of a handful of cars, screened by green.",
     "broader": [
       15,
       22,
@@ -2411,6 +2514,7 @@ export const patterns = [
     "name": "Site Repair",
     "confidence": 2,
     "category": "Siting the Buildings",
+    "gist": "Builders seize the loveliest spot and destroy it by building there. Build on the worst ground and heal it.",
     "broader": [
       95,
       96,
@@ -2435,6 +2539,7 @@ export const patterns = [
     "name": "South Facing Outdoors",
     "confidence": 2,
     "category": "Siting the Buildings",
+    "gist": "Outdoor land north of a building lives in its shadow. Keep the open space to the south, the building behind.",
     "broader": [
       67,
       71,
@@ -2458,6 +2563,7 @@ export const patterns = [
     "name": "Positive Outdoor Space",
     "confidence": 2,
     "category": "Siting the Buildings",
+    "gist": "Space left over between buildings belongs to no one. Shape the outdoors as rooms with a form of their own.",
     "broader": [
       42,
       60,
@@ -2494,6 +2600,7 @@ export const patterns = [
     "name": "Wings of Light",
     "confidence": 2,
     "category": "Siting the Buildings",
+    "gist": "Deep buildings go dark and dead at the core. Build in narrow wings so daylight reaches every room.",
     "broader": [
       75,
       76,
@@ -2531,6 +2638,7 @@ export const patterns = [
     "name": "Connected Buildings",
     "confidence": 1,
     "category": "Siting the Buildings",
+    "gist": "Slivers of space between buildings are dead on arrival. Let buildings join walls and share their edges.",
     "broader": [
       95,
       106,
@@ -2547,6 +2655,7 @@ export const patterns = [
     "name": "Long Thin House",
     "confidence": 1,
     "category": "Siting the Buildings",
+    "gist": "A compact plan crowds everyone onto one spot. Stretch the small house long and thin, rooms in a chain.",
     "broader": [
       38,
       104,
@@ -2566,6 +2675,7 @@ export const patterns = [
     "name": "Main Entrance",
     "confidence": 2,
     "category": "Building Layout",
+    "gist": "A hidden entrance makes every arrival a search. Give the building one main door, plain from the approach.",
     "broader": [
       53,
       56,
@@ -2597,6 +2707,7 @@ export const patterns = [
     "name": "Half-Hidden Garden",
     "confidence": 1,
     "category": "Building Layout",
+    "gist": "Front gardens are display; back gardens, exile. Set the garden half-hidden at the side, private but alive.",
     "broader": [
       37,
       38,
@@ -2627,6 +2738,7 @@ export const patterns = [
     "name": "Entrance Transition",
     "confidence": 2,
     "category": "Building Layout",
+    "gist": "Street to front door in one step jars the arrival. Interpose a passage of changed light, level, and view.",
     "broader": [
       53,
       102,
@@ -2649,6 +2761,7 @@ export const patterns = [
     "name": "Car Connection",
     "confidence": 0,
     "category": "Building Layout",
+    "gist": "The car arrives at a tacked-on slab. Make the drive-up a real part of the house's entrance.",
     "broader": [
       49,
       110,
@@ -2671,6 +2784,7 @@ export const patterns = [
     "name": "Hierarchy of Open Space",
     "confidence": 1,
     "category": "Building Layout",
+    "gist": "Outdoor spaces exposed on all sides give no rest. Give each a back, opening toward some larger space.",
     "broader": [
       61,
       67,
@@ -2698,6 +2812,7 @@ export const patterns = [
     "name": "Courtyards Which Live",
     "confidence": 2,
     "category": "Building Layout",
+    "gist": "Sealed courtyards go silent and unused. Give courts a path through, a view out, and the sun.",
     "broader": [
       41,
       69,
@@ -2724,6 +2839,7 @@ export const patterns = [
     "name": "Cascade of Roofs",
     "confidence": 1,
     "category": "Building Layout",
+    "gist": "One flat lid makes a building read as a box. Step the roofs down in a cascade from the tallest heart.",
     "broader": [
       95,
       96,
@@ -2748,6 +2864,7 @@ export const patterns = [
     "name": "Sheltering Roof",
     "confidence": 2,
     "category": "Building Layout",
+    "gist": "A roof hidden behind parapets shelters no one's heart. Let the roof show, and bring its edges low.",
     "broader": [
       96,
       107,
@@ -2768,6 +2885,7 @@ export const patterns = [
     "name": "Roof Garden",
     "confidence": 1,
     "category": "Building Layout",
+    "gist": "Flat roofs hold acres of unused sky. Make some of them gardens people walk out onto.",
     "broader": [
       39,
       96,
@@ -2798,6 +2916,7 @@ export const patterns = [
     "name": "Arcades",
     "confidence": 2,
     "category": "Between the Buildings",
+    "gist": "The building's edge sheds both rain and people. Run arcades along it, a public path under cover.",
     "broader": [
       34,
       56,
@@ -2839,6 +2958,7 @@ export const patterns = [
     "name": "Paths and Goals",
     "confidence": 1,
     "category": "Between the Buildings",
+    "gist": "Paths drawn on plans get cut across on foot. Lay paths between the goals people actually walk.",
     "broader": [
       30,
       36,
@@ -2871,6 +2991,7 @@ export const patterns = [
     "name": "Path Shape",
     "confidence": 1,
     "category": "Between the Buildings",
+    "gist": "A path that is only a channel forbids stopping. Swell it in the middle where people can pause.",
     "broader": [
       31,
       32,
@@ -2902,6 +3023,7 @@ export const patterns = [
     "name": "Building Fronts",
     "confidence": 1,
     "category": "Between the Buildings",
+    "gist": "Buildings set back behind lawns quit the street. Bring their fronts to the path, each one its own.",
     "broader": [
       42,
       45,
@@ -2929,6 +3051,7 @@ export const patterns = [
     "name": "Pedestrian Density",
     "confidence": 1,
     "category": "Between the Buildings",
+    "gist": "An empty plaza depresses; a packed one repels. Size public ground so a modest crowd makes it live.",
     "broader": [
       29,
       31,
@@ -2955,6 +3078,7 @@ export const patterns = [
     "name": "Activity Pockets",
     "confidence": 2,
     "category": "Between the Buildings",
+    "gist": "A public space lives or dies at its rim. Ring it with pockets of activity facing in.",
     "broader": [
       31,
       61,
@@ -2986,6 +3110,7 @@ export const patterns = [
     "name": "Stair Seats",
     "confidence": 1,
     "category": "Between the Buildings",
+    "gist": "People perch where they can watch the passing scene. Make broad steps that face the action.",
     "broader": [
       55,
       61,
@@ -3016,6 +3141,7 @@ export const patterns = [
     "name": "Something Roughly in the Middle",
     "confidence": 0,
     "category": "Between the Buildings",
+    "gist": "An empty middle gives no reason to stay. Put something rough at the center to gather around.",
     "broader": [
       61,
       67,
@@ -3040,6 +3166,7 @@ export const patterns = [
     "name": "Intimacy Gradient",
     "confidence": 2,
     "category": "Light and Space",
+    "gist": "One flat plan dumps guests into private depths. Grade the rooms from public front to intimate back.",
     "broader": [
       96,
       107,
@@ -3070,6 +3197,7 @@ export const patterns = [
     "name": "Indoor Sunlight",
     "confidence": 1,
     "category": "Light and Space",
+    "gist": "Main rooms facing away from the sun stay cold all day. Put the daily rooms on the building's bright side.",
     "broader": [
       105,
       127
@@ -3091,6 +3219,7 @@ export const patterns = [
     "name": "Common Areas at the Heart",
     "confidence": 2,
     "category": "Light and Space",
+    "gist": "A common room at the end of a corridor stays empty. Put shared space at the crossing of everyone's paths.",
     "broader": [
       65,
       69,
@@ -3133,6 +3262,7 @@ export const patterns = [
     "name": "Entrance Room",
     "confidence": 2,
     "category": "Light and Space",
+    "gist": "Arrival deserves more than a door in a wall. Make the entrance a room, half inside and half out.",
     "broader": [
       102,
       110,
@@ -3165,6 +3295,7 @@ export const patterns = [
     "name": "The Flow Through Rooms",
     "confidence": 0,
     "category": "Light and Space",
+    "gist": "Corridors move bodies and kill encounters. Let rooms open into rooms, movement passing through life.",
     "broader": [
       127,
       129
@@ -3187,6 +3318,7 @@ export const patterns = [
     "name": "Short Passages",
     "confidence": 1,
     "category": "Light and Space",
+    "gist": "Long dim passages oppress everyone who walks them. Keep passages short, daylit, and wide as rooms.",
     "broader": [
       98,
       101,
@@ -3217,6 +3349,7 @@ export const patterns = [
     "name": "Staircase as a Stage",
     "confidence": 0,
     "category": "Light and Space",
+    "gist": "A stair shut in a shaft is only plumbing for people. Open it to the room — every descent an entrance.",
     "broader": [
       110,
       131,
@@ -3236,6 +3369,7 @@ export const patterns = [
     "name": "Zen View",
     "confidence": 1,
     "category": "Light and Space",
+    "gist": "A view stared at all day goes stale. Reveal the best view briefly, at a turn, in passing.",
     "broader": [
       62,
       66,
@@ -3262,6 +3396,7 @@ export const patterns = [
     "name": "Tapestry of Light and Dark",
     "confidence": 1,
     "category": "Light and Space",
+    "gist": "Uniform brightness flattens a building's inner life. Alternate pools of light with darker ground between.",
     "broader": [
       97,
       101,
@@ -3287,6 +3422,7 @@ export const patterns = [
     "name": "Couple's Realm",
     "confidence": 1,
     "category": "Private Rooms",
+    "gist": "A marriage squeezed into a bedroom thins out. Give the couple a realm of the house that is theirs.",
     "broader": [
       65,
       75,
@@ -3315,6 +3451,7 @@ export const patterns = [
     "name": "Children's Realm",
     "confidence": 1,
     "category": "Private Rooms",
+    "gist": "Children fitted into adult rooms are always trespassing. Give them a territory running from bed to outdoors.",
     "broader": [
       68,
       76,
@@ -3338,6 +3475,7 @@ export const patterns = [
     "name": "Sleeping to the East",
     "confidence": 1,
     "category": "Private Rooms",
+    "gist": "Waking against the light leaves the body behind the day. Place beds where morning sun can reach them.",
     "broader": [
       127,
       128,
@@ -3360,6 +3498,7 @@ export const patterns = [
     "name": "Farmhouse Kitchen",
     "confidence": 2,
     "category": "Private Rooms",
+    "gist": "The cook is exiled to a galley while life happens elsewhere. Make one big room where cooking and living share.",
     "broader": [
       65,
       78,
@@ -3385,6 +3524,7 @@ export const patterns = [
     "name": "Private Terrace on the Street",
     "confidence": 2,
     "category": "Private Rooms",
+    "gist": "Indoors you miss the street; on the street you have no seat. Make a half-private terrace beside the life.",
     "broader": [
       51,
       100,
@@ -3418,6 +3558,7 @@ export const patterns = [
     "name": "A Room of One's Own",
     "confidence": 2,
     "category": "Private Rooms",
+    "gist": "No one can be shared all day long. Give each member of the household a room of their own, however small.",
     "broader": [
       27,
       75,
@@ -3446,6 +3587,7 @@ export const patterns = [
     "name": "Sequence of Sitting Spaces",
     "confidence": 1,
     "category": "Private Rooms",
+    "gist": "One sitting room must serve every mood, and serves none. Scatter sitting places from formal to nook.",
     "broader": [
       127,
       129,
@@ -3478,6 +3620,7 @@ export const patterns = [
     "name": "Bed Cluster",
     "confidence": 1,
     "category": "Private Rooms",
+    "gist": "A child alone behind a bedroom door is far away. Cluster children's beds in alcoves off a shared space.",
     "broader": [
       76,
       136,
@@ -3500,6 +3643,7 @@ export const patterns = [
     "name": "Bathing Room",
     "confidence": 1,
     "category": "Private Rooms",
+    "gist": "Bathing is chopped into hurried utility stalls. Make one generous room for water, steam, and bodies.",
     "broader": [
       72,
       78,
@@ -3526,6 +3670,7 @@ export const patterns = [
     "name": "Bulk Storage",
     "confidence": 0,
     "category": "Private Rooms",
+    "gist": "Every household hauls bulky things with nowhere to keep them. Build real storage for the big stuff.",
     "broader": [
       76,
       80,
@@ -3547,6 +3692,7 @@ export const patterns = [
     "name": "Flexible Office Space",
     "confidence": 0,
     "category": "Public Rooms",
+    "gist": "Office walls freeze yesterday's org chart. Make workspace that regroups as easily as the teams do.",
     "broader": [
       80,
       81,
@@ -3575,6 +3721,7 @@ export const patterns = [
     "name": "Communal Eating",
     "confidence": 1,
     "category": "Public Rooms",
+    "gist": "Without a common table there is no common life. Make shared meals the regular heart of any group.",
     "broader": [
       41,
       75,
@@ -3597,6 +3744,7 @@ export const patterns = [
     "name": "Small Work Groups",
     "confidence": 2,
     "category": "Public Rooms",
+    "gist": "People massed in open halls go numb. Let work happen in groups of a handful, each with its own place.",
     "broader": [
       80,
       81,
@@ -3618,6 +3766,7 @@ export const patterns = [
     "name": "Reception Welcomes You",
     "confidence": 0,
     "category": "Public Rooms",
+    "gist": "Arrival meets a barrier manned by a gatekeeper. Make reception a hearth — warm, seated, unhurried.",
     "broader": [
       80,
       81,
@@ -3644,6 +3793,7 @@ export const patterns = [
     "name": "A Place to Wait",
     "confidence": 1,
     "category": "Public Rooms",
+    "gist": "Waiting rooms hold people hostage to a clock. Fold waiting into life — a window, a cafe, something to watch.",
     "broader": [
       34,
       47,
@@ -3672,6 +3822,7 @@ export const patterns = [
     "name": "Small Meeting Rooms",
     "confidence": 1,
     "category": "Public Rooms",
+    "gist": "Big rooms breed big, dull meetings. Make most meeting places small enough for real talk.",
     "broader": [
       43,
       44,
@@ -3694,6 +3845,7 @@ export const patterns = [
     "name": "Half-Private Office",
     "confidence": 0,
     "category": "Public Rooms",
+    "gist": "A sealed office isolates; an open desk exposes. Give workers rooms half open to the flow.",
     "broader": [
       83,
       127,
@@ -3715,6 +3867,7 @@ export const patterns = [
     "name": "Rooms to Rent",
     "confidence": 0,
     "category": "Outbuildings",
+    "gist": "A house sized for one moment of life goes obsolete. Build in rooms that can be let out or taken back.",
     "broader": [
       26,
       45,
@@ -3739,6 +3892,7 @@ export const patterns = [
     "name": "Teenager's Cottage",
     "confidence": 1,
     "category": "Outbuildings",
+    "gist": "A teenager has outgrown the nest but not the family. Give them a cottage-room at the household's edge.",
     "broader": [
       26,
       75,
@@ -3762,6 +3916,7 @@ export const patterns = [
     "name": "Old Age Cottage",
     "confidence": 2,
     "category": "Outbuildings",
+    "gist": "The old must choose between dependence and distance. Build small cottages right beside the family house.",
     "broader": [
       26,
       40,
@@ -3785,6 +3940,7 @@ export const patterns = [
     "name": "Settled Work",
     "confidence": 1,
     "category": "Outbuildings",
+    "gist": "Work that discards its elders wastes their ripeness. Let work deepen with age into something one keeps.",
     "broader": [
       26,
       40,
@@ -3804,6 +3960,7 @@ export const patterns = [
     "name": "Home Workshop",
     "confidence": 0,
     "category": "Outbuildings",
+    "gist": "Work banished from home becomes invisible to children. Keep a workshop where the house meets the street.",
     "broader": [
       9,
       18,
@@ -3833,6 +3990,7 @@ export const patterns = [
     "name": "Open Stairs",
     "confidence": 1,
     "category": "Outbuildings",
+    "gist": "One internal stair makes every upstairs tenant a lodger. Give upper rooms their own open stairs from outside.",
     "broader": [
       39,
       62,
@@ -3864,6 +4022,7 @@ export const patterns = [
     "name": "Light on Two Sides of Every Room",
     "confidence": 2,
     "category": "Liminal Space",
+    "gist": "A room lit from one side glares and shadows every face. Give each room daylight from two directions.",
     "broader": [
       106,
       107,
@@ -3903,6 +4062,7 @@ export const patterns = [
     "name": "Building Edge",
     "confidence": 2,
     "category": "Liminal Space",
+    "gist": "An edge that is only a line repels lingering. Thicken the building's edge into a place to inhabit.",
     "broader": [
       45,
       69,
@@ -3936,6 +4096,7 @@ export const patterns = [
     "name": "Sunny Place",
     "confidence": 2,
     "category": "Liminal Space",
+    "gist": "The sunny spot outside goes to waste without a reason to sit. Make the sun's place a destination.",
     "broader": [
       73,
       105,
@@ -3964,6 +4125,7 @@ export const patterns = [
     "name": "North Face",
     "confidence": 0,
     "category": "Liminal Space",
+    "gist": "The north side of a building breeds damp and gloom. Slope it low, and give it the uses that need no sun.",
     "broader": [
       105,
       113,
@@ -3984,6 +4146,7 @@ export const patterns = [
     "name": "Outdoor Room",
     "confidence": 2,
     "category": "Liminal Space",
+    "gist": "A garden with no walls cannot hold a gathering. Build an outdoor room — enclosed, part-roofed, open-aired.",
     "broader": [
       69,
       106,
@@ -4025,6 +4188,7 @@ export const patterns = [
     "name": "Street Windows",
     "confidence": 1,
     "category": "Liminal Space",
+    "gist": "A street no window watches feels abandoned. Let rooms lean out and keep an eye on the passing life.",
     "broader": [
       51,
       57,
@@ -4052,6 +4216,7 @@ export const patterns = [
     "name": "Opening to the Street",
     "confidence": 1,
     "category": "Liminal Space",
+    "gist": "Sealed frontages make the street a corridor of strangers. Open ground floors directly to the walk.",
     "broader": [
       43,
       44,
@@ -4083,6 +4248,7 @@ export const patterns = [
     "name": "Gallery Surround",
     "confidence": 1,
     "category": "Liminal Space",
+    "gist": "Inside and outside meet at a hard line. Wrap the building in galleries where the two mix.",
     "broader": [
       97,
       100,
@@ -4113,6 +4279,7 @@ export const patterns = [
     "name": "Six-Foot Balcony",
     "confidence": 2,
     "category": "Liminal Space",
+    "gist": "A narrow balcony is a shelf nobody uses. Make balconies deep enough to hold a table and two chairs.",
     "broader": [
       100,
       115,
@@ -4137,6 +4304,7 @@ export const patterns = [
     "name": "Connection to the Earth",
     "confidence": 2,
     "category": "Liminal Space",
+    "gist": "A house hovering above its site never touches down. Step the building to the soil in terraces and thresholds.",
     "broader": [
       119,
       125,
@@ -4163,6 +4331,7 @@ export const patterns = [
     "name": "Terraced Slope",
     "confidence": 1,
     "category": "Gardens",
+    "gist": "Grading a slope flat erases the land's form. Terrace the hillside and let building follow its lines.",
     "broader": [
       104,
       140,
@@ -4184,6 +4353,7 @@ export const patterns = [
     "name": "Fruit Trees",
     "confidence": 1,
     "category": "Gardens",
+    "gist": "Ornamental planting feeds no one. Plant fruit trees where their harvest falls into common hands.",
     "broader": [
       51,
       67,
@@ -4205,6 +4375,7 @@ export const patterns = [
     "name": "Tree Places",
     "confidence": 2,
     "category": "Gardens",
+    "gist": "Trees planted as decoration stand apart from life. Shape the places under and among them for people.",
     "broader": [
       59,
       60,
@@ -4232,6 +4403,7 @@ export const patterns = [
     "name": "Garden Growing Wild",
     "confidence": 2,
     "category": "Gardens",
+    "gist": "A manicured garden enslaves its keeper. Let the garden grow half wild, tended but not tamed.",
     "broader": [
       73,
       104,
@@ -4253,6 +4425,7 @@ export const patterns = [
     "name": "Garden Wall",
     "confidence": 1,
     "category": "Gardens",
+    "gist": "A garden open to every noise never rests. Wall it, and pierce the wall with openings.",
     "broader": [
       56,
       59,
@@ -4283,6 +4456,7 @@ export const patterns = [
     "name": "Trellised Walk",
     "confidence": 2,
     "category": "Gardens",
+    "gist": "A bare path offers no reason to walk slowly. Build trellised walks where vines make the roof.",
     "broader": [
       54,
       71,
@@ -4311,6 +4485,7 @@ export const patterns = [
     "name": "Greenhouse",
     "confidence": 0,
     "category": "Gardens",
+    "gist": "Garden and house meet only through a door. Add a glass room where warmth and growing things overlap.",
     "broader": [
       37,
       41,
@@ -4332,6 +4507,7 @@ export const patterns = [
     "name": "Garden Seat",
     "confidence": 0,
     "category": "Gardens",
+    "gist": "A garden with no still corner is never truly entered. Place one quiet seat where a person can sit alone.",
     "broader": [
       114,
       150,
@@ -4352,6 +4528,7 @@ export const patterns = [
     "name": "Vegetable Garden",
     "confidence": 1,
     "category": "Gardens",
+    "gist": "Food comes from nowhere anyone has seen. Keep a vegetable plot within every household's reach.",
     "broader": [
       39,
       40,
@@ -4372,6 +4549,7 @@ export const patterns = [
     "name": "Compost",
     "confidence": 1,
     "category": "Gardens",
+    "gist": "Waste flushed away breaks the soil's cycle. Return what rots to the ground that feeds you.",
     "broader": [
       37,
       74,
@@ -4389,6 +4567,7 @@ export const patterns = [
     "name": "Alcoves",
     "confidence": 2,
     "category": "Minor Rooms",
+    "gist": "One open room forces everyone into one activity. Carve small alcoves off it where two can withdraw.",
     "broader": [
       90,
       129,
@@ -4422,6 +4601,7 @@ export const patterns = [
     "name": "Window Place",
     "confidence": 2,
     "category": "Minor Rooms",
+    "gist": "People drift to windows, then find no reason to stay. Make the window itself a place to inhabit.",
     "broader": [
       78,
       101,
@@ -4458,6 +4638,7 @@ export const patterns = [
     "name": "The Fire",
     "confidence": 1,
     "category": "Minor Rooms",
+    "gist": "Heat without flame gathers no one. Keep a fire as the live center the household circles.",
     "broader": [
       90,
       129,
@@ -4475,6 +4656,7 @@ export const patterns = [
     "name": "Eating Atmosphere",
     "confidence": 0,
     "category": "Minor Rooms",
+    "gist": "Meals eaten under a flat glare scatter quickly. Set a heavy table in its own pool of light.",
     "broader": [
       139,
       147
@@ -4493,6 +4675,7 @@ export const patterns = [
     "name": "Workspace Enclosure",
     "confidence": 2,
     "category": "Minor Rooms",
+    "gist": "An exposed desk distracts; a closed cell entombs. Wrap each workspace in half-open enclosure.",
     "broader": [
       78,
       83,
@@ -4522,6 +4705,7 @@ export const patterns = [
     "name": "Cooking Layout",
     "confidence": 1,
     "category": "Minor Rooms",
+    "gist": "A kitchen laid out by diagram makes the cook trek. Ring stove, sink, and counter within a step of each other.",
     "broader": [
       139
     ],
@@ -4536,6 +4720,7 @@ export const patterns = [
     "name": "Sitting Circle",
     "confidence": 1,
     "category": "Minor Rooms",
+    "gist": "Chairs backed against the walls kill conversation. Draw seats into a rough circle, partly enclosed.",
     "broader": [
       127,
       136,
@@ -4560,6 +4745,7 @@ export const patterns = [
     "name": "Communal Sleeping",
     "confidence": 0,
     "category": "Minor Rooms",
+    "gist": "Sleep is rationed one room per person, always apart. Make it possible to sleep near others without shame.",
     "broader": [
       91,
       136,
@@ -4579,6 +4765,7 @@ export const patterns = [
     "name": "Marriage Bed",
     "confidence": 0,
     "category": "Minor Rooms",
+    "gist": "The marriage bed is bought as furniture. Build it as a place — enclosed, particular, the couple's own.",
     "broader": [
       26,
       136,
@@ -4598,6 +4785,7 @@ export const patterns = [
     "name": "Bed Alcove",
     "confidence": 2,
     "category": "Minor Rooms",
+    "gist": "A whole room spent on a bed serves the bed, not sleep. Tuck the bed into an alcove scaled to it.",
     "broader": [
       78,
       94,
@@ -4623,6 +4811,7 @@ export const patterns = [
     "name": "Dressing Rooms",
     "confidence": 1,
     "category": "Minor Rooms",
+    "gist": "Dressing happens in the leftover corners of bedrooms. Give it a lit niche of its own between bed and bath.",
     "broader": [
       78,
       136,
@@ -4647,6 +4836,7 @@ export const patterns = [
     "name": "Ceiling Height Variety",
     "confidence": 2,
     "category": "Shaping the Rooms",
+    "gist": "One ceiling height flattens every social shade. Vary heights with the intimacy of the rooms.",
     "broader": [
       90,
       101,
@@ -4674,6 +4864,7 @@ export const patterns = [
     "name": "The Shape of Indoor Space",
     "confidence": 2,
     "category": "Shaping the Rooms",
+    "gist": "Clever geometries fight the body's sense of shelter. Keep rooms roughly rectangular, ceilings gently vaulted.",
     "broader": [
       87,
       89,
@@ -4723,6 +4914,7 @@ export const patterns = [
     "name": "Windows Overlooking Life",
     "confidence": 1,
     "category": "Shaping the Rooms",
+    "gist": "A window onto a blank wall wastes the gaze. Aim windows at life — street, garden, coming and going.",
     "broader": [
       152,
       157,
@@ -4745,6 +4937,7 @@ export const patterns = [
     "name": "Half-Open Wall",
     "confidence": 1,
     "category": "Shaping the Rooms",
+    "gist": "A full wall seals rooms apart; none at all merges them. Build half-open walls that join while dividing.",
     "broader": [
       101,
       119,
@@ -4774,6 +4967,7 @@ export const patterns = [
     "name": "Interior Windows",
     "confidence": 0,
     "category": "Shaping the Rooms",
+    "gist": "Inner rooms go blind without borrowed light. Cut windows between rooms as well as to the world.",
     "broader": [
       101,
       130,
@@ -4793,6 +4987,7 @@ export const patterns = [
     "name": "Staircase Volume",
     "confidence": 1,
     "category": "Shaping the Rooms",
+    "gist": "Stairs squeezed to a code minimum pinch the whole house. Give the staircase a volume it can live in.",
     "broader": [
       133,
       158
@@ -4809,6 +5004,7 @@ export const patterns = [
     "name": "Corner Doors",
     "confidence": 1,
     "category": "Shaping the Rooms",
+    "gist": "A door in mid-wall shreds the room with paths. Hang doors near corners, leaving the body of the room whole.",
     "broader": [
       131,
       135,
@@ -4828,6 +5024,7 @@ export const patterns = [
     "name": "Thick Walls",
     "confidence": 2,
     "category": "Thick Walls",
+    "gist": "Thin walls hold nothing and belong to no one. Thicken them until they carry shelves, seats, and sills.",
     "broader": [
       87,
       89,
@@ -4860,6 +5057,7 @@ export const patterns = [
     "name": "Closets Between Rooms",
     "confidence": 1,
     "category": "Thick Walls",
+    "gist": "Storage lands wherever plans have slack. Use closets as thick, quieting walls between rooms.",
     "broader": [
       132,
       136,
@@ -4880,6 +5078,7 @@ export const patterns = [
     "name": "Sunny Counter",
     "confidence": 1,
     "category": "Thick Walls",
+    "gist": "Counter work in shadow makes the kitchen a chore. Run the working counter along the sunny wall.",
     "broader": [
       128,
       139,
@@ -4898,6 +5097,7 @@ export const patterns = [
     "name": "Open Shelves",
     "confidence": 1,
     "category": "Thick Walls",
+    "gist": "Things sealed in cupboards disappear from use. Keep the daily things on open shelves, one row deep.",
     "broader": [
       87,
       89,
@@ -4920,6 +5120,7 @@ export const patterns = [
     "name": "Waist-High Shelf",
     "confidence": 0,
     "category": "Thick Walls",
+    "gist": "The small stuff of the day needs a landing place. Run a waist-high shelf around the room's edge.",
     "broader": [
       130,
       139,
@@ -4941,6 +5142,7 @@ export const patterns = [
     "name": "Built-in Seats",
     "confidence": 1,
     "category": "Thick Walls",
+    "gist": "Loose chairs pushed to the wall never invite. Build seats into the fabric at the natural resting spots.",
     "broader": [
       130,
       142,
@@ -4960,6 +5162,7 @@ export const patterns = [
     "name": "Child Caves",
     "confidence": 0,
     "category": "Thick Walls",
+    "gist": "Children crave small dark dens adults can't enter. Leave cave-like spaces built at their scale.",
     "broader": [
       73,
       86,
@@ -4979,6 +5182,7 @@ export const patterns = [
     "name": "Secret Place",
     "confidence": 0,
     "category": "Thick Walls",
+    "gist": "A home with no hiding place keeps no secrets. Leave one concealed spot for the things that matter most.",
     "broader": [
       190,
       197
@@ -4994,6 +5198,7 @@ export const patterns = [
     "name": "Structure Follows Social Spaces",
     "confidence": 2,
     "category": "Emergent Structure",
+    "gist": "Structure imposed first squeezes life into its grid. Let the social spaces come first and the frame follow.",
     "broader": [
       95,
       96,
@@ -5022,6 +5227,7 @@ export const patterns = [
     "name": "Efficient Structure",
     "confidence": 1,
     "category": "Emergent Structure",
+    "gist": "A skeleton with cladding hung on it wastes both. Let the walls and vaults themselves do the carrying.",
     "broader": [
       205
     ],
@@ -5049,6 +5255,7 @@ export const patterns = [
     "name": "Good Materials",
     "confidence": 2,
     "category": "Emergent Structure",
+    "gist": "Industrial materials resist the hand and age badly. Build with stuff that is good to touch and easy to mend.",
     "broader": [
       205,
       206
@@ -5068,6 +5275,7 @@ export const patterns = [
     "name": "Gradual Stiffening",
     "confidence": 2,
     "category": "Emergent Structure",
+    "gist": "A building can't be perfected on paper first. Raise a light frame, then stiffen it step by step as you build.",
     "broader": [
       205,
       206,
@@ -5089,6 +5297,7 @@ export const patterns = [
     "name": "Roof Layout",
     "confidence": 1,
     "category": "Structural Layout",
+    "gist": "Roofs drawn after the plan end up fighting it. Lay out the roofs with the wings, as one act.",
     "broader": [
       115,
       116,
@@ -5109,6 +5318,7 @@ export const patterns = [
     "name": "Floor and Ceiling Layout",
     "confidence": 0,
     "category": "Structural Layout",
+    "gist": "Floors poured as abstract slabs ignore the rooms below. Shape each floor and ceiling to the spaces it covers.",
     "broader": [
       190,
       191,
@@ -5129,6 +5339,7 @@ export const patterns = [
     "name": "Thickening the Outer Walls",
     "confidence": 1,
     "category": "Structural Layout",
+    "gist": "A wall that is only a skin can hold no places. Thicken the outer walls as you build the alcoves into them.",
     "broader": [
       116,
       119,
@@ -5155,6 +5366,7 @@ export const patterns = [
     "name": "Columns at the Corners",
     "confidence": 2,
     "category": "Structural Layout",
+    "gist": "A room's corners are where its loads want to land. Set columns at the corners of every social space.",
     "broader": [
       46,
       191,
@@ -5185,6 +5397,7 @@ export const patterns = [
     "name": "Final Column Distribution",
     "confidence": 2,
     "category": "Structural Layout",
+    "gist": "A uniform grid of columns ignores how load gathers. Set them closer on the lower floors, which carry the most.",
     "broader": [
       96,
       190,
@@ -5204,6 +5417,7 @@ export const patterns = [
     "name": "Root Foundations",
     "confidence": 0,
     "category": "Erecting the Frame",
+    "gist": "A column meeting loose ground wanders and cracks. Root each one into its own footing like a tooth.",
     "broader": [
       104,
       168,
@@ -5221,6 +5435,7 @@ export const patterns = [
     "name": "Ground Floor Slab",
     "confidence": 0,
     "category": "Erecting the Frame",
+    "gist": "Deep foundations cost more than the rooms above. Float the ground floor on a simple ballasted slab.",
     "broader": [
       145,
       168,
@@ -5239,6 +5454,7 @@ export const patterns = [
     "name": "Box Columns",
     "confidence": 2,
     "category": "Erecting the Frame",
+    "gist": "Solid columns are heavy, costly, and mute. Build hollow box columns you can fill and shape on site.",
     "broader": [
       206,
       208,
@@ -5262,6 +5478,7 @@ export const patterns = [
     "name": "Perimeter Beams",
     "confidence": 1,
     "category": "Erecting the Frame",
+    "gist": "Walls meeting roof need a continuous collar. Run a perimeter beam around every floor and eave.",
     "broader": [
       206,
       208,
@@ -5282,6 +5499,7 @@ export const patterns = [
     "name": "Wall Membranes",
     "confidence": 1,
     "category": "Erecting the Frame",
+    "gist": "Walls stacked as heavy block are dead weight. Build them as two skins filled to become one membrane.",
     "broader": [
       191,
       206,
@@ -5304,6 +5522,7 @@ export const patterns = [
     "name": "Floor-Ceiling Vaults",
     "confidence": 2,
     "category": "Erecting the Frame",
+    "gist": "Flat spans demand steel and heavy beams. Span floors as shallow vaults that carry load by shape.",
     "broader": [
       190,
       191,
@@ -5337,6 +5556,7 @@ export const patterns = [
     "name": "Roof Vaults",
     "confidence": 1,
     "category": "Erecting the Frame",
+    "gist": "Roof shapes get chosen like hats, by fashion. Vault the roof along the lines the forces actually take.",
     "broader": [
       117,
       118,
@@ -5358,6 +5578,7 @@ export const patterns = [
     "name": "Natural Doors and Windows",
     "confidence": 2,
     "category": "Fenestration",
+    "gist": "Standard openings ignore what each room needs. Place and size every door and window where life asks.",
     "broader": [
       134,
       138,
@@ -5385,6 +5606,7 @@ export const patterns = [
     "name": "Low Sill",
     "confidence": 0,
     "category": "Fenestration",
+    "gist": "A high sill cuts the seated off from the ground outside. Bring sills low so the world stays in view.",
     "broader": [
       132,
       134,
@@ -5404,6 +5626,7 @@ export const patterns = [
     "name": "Deep Reveals",
     "confidence": 0,
     "category": "Fenestration",
+    "gist": "Glass flush in a thin wall makes a harsh bright hole. Set windows deep, with splayed reveals to soften light.",
     "broader": [
       159,
       180,
@@ -5423,6 +5646,7 @@ export const patterns = [
     "name": "Low Doorway",
     "confidence": 0,
     "category": "Fenestration",
+    "gist": "Every threshold crossed at full stride feels the same. Make doorways to intimate places low enough to notice.",
     "broader": [
       102,
       110,
@@ -5444,6 +5668,7 @@ export const patterns = [
     "name": "Frames as Thickened Edges",
     "confidence": 2,
     "category": "Fenestration",
+    "gist": "Frames tacked on as trim split from the wall. Make each frame by thickening the wall's own edge.",
     "broader": [
       196,
       206,
@@ -5468,6 +5693,7 @@ export const patterns = [
     "name": "Column Place",
     "confidence": 1,
     "category": "Frame Adjustments",
+    "gist": "A thin freestanding column is an obstacle. Make columns thick enough to lean against — small places.",
     "broader": [
       69,
       119,
@@ -5494,6 +5720,7 @@ export const patterns = [
     "name": "Column Connections",
     "confidence": 2,
     "category": "Frame Adjustments",
+    "gist": "The joint is where column and beam want to fail. Thicken the connections with braces and capitals.",
     "broader": [
       119,
       166,
@@ -5514,6 +5741,7 @@ export const patterns = [
     "name": "Stair Vault",
     "confidence": 1,
     "category": "Frame Adjustments",
+    "gist": "A stair needs support without a cage around it. Carry it on a vault and keep the space beneath.",
     "broader": [
       133,
       195,
@@ -5534,6 +5762,7 @@ export const patterns = [
     "name": "Duct Space",
     "confidence": 0,
     "category": "Frame Adjustments",
+    "gist": "Services buried in the structure fail out of reach. Run ducts in open chases you can always get at.",
     "broader": [
       206,
       219
@@ -5548,6 +5777,7 @@ export const patterns = [
     "name": "Radiant Heat",
     "confidence": 1,
     "category": "Frame Adjustments",
+    "gist": "Blown air heats the room and leaves the body cold. Warm with surfaces that shine their heat on skin.",
     "broader": [
       218,
       219,
@@ -5562,6 +5792,7 @@ export const patterns = [
     "name": "Dormer Windows",
     "confidence": 1,
     "category": "Frame Adjustments",
+    "gist": "Under a plain roof the attic stays dark and dead. Punch dormers through so the roof space becomes rooms.",
     "broader": [
       117,
       180,
@@ -5585,6 +5816,7 @@ export const patterns = [
     "name": "Roof Caps",
     "confidence": 0,
     "category": "Frame Adjustments",
+    "gist": "A roof that just stops meets the sky abruptly. Finish its edges and ridges with caps that mark the meeting.",
     "broader": [
       118,
       220
@@ -5598,6 +5830,7 @@ export const patterns = [
     "name": "Floor Surface",
     "confidence": 2,
     "category": "Interior Details",
+    "gist": "One flooring everywhere says every room is the same. Change the floor from hard public to soft private ground.",
     "broader": [
       127,
       210,
@@ -5616,6 +5849,7 @@ export const patterns = [
     "name": "Lapped Outside Walls",
     "confidence": 0,
     "category": "Interior Details",
+    "gist": "Flush outer skins let water find every seam. Lap the outside materials like scales, always shedding down.",
     "broader": [
       207,
       218,
@@ -5631,6 +5865,7 @@ export const patterns = [
     "name": "Soft Inside Walls",
     "confidence": 1,
     "category": "Interior Details",
+    "gist": "Hard cold inner surfaces keep the hand away. Finish rooms in soft warm coats that take the touch.",
     "broader": [
       207,
       218,
@@ -5647,6 +5882,7 @@ export const patterns = [
     "name": "Windows Which Open Wide",
     "confidence": 1,
     "category": "Interior Details",
+    "gist": "A sealed pane turns the world into weatherproof TV. Fit windows that swing their whole frame open.",
     "broader": [
       128,
       164,
@@ -5666,6 +5902,7 @@ export const patterns = [
     "name": "Solid Doors with Glass",
     "confidence": 0,
     "category": "Interior Details",
+    "gist": "A blind door divides; a glass one fails to shelter. Make doors solid, with a glazed eye to see through.",
     "broader": [
       101,
       130,
@@ -5686,6 +5923,7 @@ export const patterns = [
     "name": "Filtered Light",
     "confidence": 1,
     "category": "Interior Details",
+    "gist": "Raw sun through plate glass glares and burns. Filter the light at its edge — vines, lattice, small panes.",
     "broader": [
       138,
       144,
@@ -5709,6 +5947,7 @@ export const patterns = [
     "name": "Small Panes",
     "confidence": 2,
     "category": "Interior Details",
+    "gist": "One big sheet of glass flattens the world to a picture. Divide the window into small panes that bring it near.",
     "broader": [
       192,
       193,
@@ -5729,6 +5968,7 @@ export const patterns = [
     "name": "Half-Inch Trim",
     "confidence": 2,
     "category": "Interior Details",
+    "gist": "Where materials meet, raw joints open and crack. Cover the meeting lines with simple, honest trim.",
     "broader": [
       216,
       217,
@@ -5749,6 +5989,7 @@ export const patterns = [
     "name": "Seat Spots",
     "confidence": 2,
     "category": "Outdoor Details",
+    "gist": "Benches placed by diagram sit empty. Put seats exactly where sun, view, and passing life converge.",
     "broader": [
       69,
       70,
@@ -5779,6 +6020,7 @@ export const patterns = [
     "name": "Front Door Bench",
     "confidence": 1,
     "category": "Outdoor Details",
+    "gist": "The threshold invites lingering but offers no seat. Put a bench at the front door, half in the street's life.",
     "broader": [
       119,
       122,
@@ -5800,6 +6042,7 @@ export const patterns = [
     "name": "Sitting Wall",
     "confidence": 2,
     "category": "Outdoor Details",
+    "gist": "A fence only divides. Build low walls wide enough to sit on, so the boundary gathers people.",
     "broader": [
       51,
       55,
@@ -5837,6 +6080,7 @@ export const patterns = [
     "name": "Canvas Roofs",
     "confidence": 1,
     "category": "Outdoor Details",
+    "gist": "Hard materials can't make soft, movable shade. Use canvas — awnings and roofs that open with the season.",
     "broader": [
       32,
       46,
@@ -5868,6 +6112,7 @@ export const patterns = [
     "name": "Raised Flowers",
     "confidence": 1,
     "category": "Outdoor Details",
+    "gist": "Flowers at ground level pass underfoot unseen. Raise them in beds and pots to sill and hand height.",
     "broader": [
       51,
       113,
@@ -5890,6 +6135,7 @@ export const patterns = [
     "name": "Climbing Plants",
     "confidence": 0,
     "category": "Outdoor Details",
+    "gist": "A bare new wall stands apart from its ground. Let climbing plants knit the building into the place.",
     "broader": [
       118,
       164,
@@ -5904,6 +6150,7 @@ export const patterns = [
     "name": "Paving With Cracks Between the Stones",
     "confidence": 2,
     "category": "Outdoor Details",
+    "gist": "Sealed paving kills the ground beneath it. Lay stones with earth in the cracks, so life comes through.",
     "broader": [
       51,
       120,
@@ -5923,6 +6170,7 @@ export const patterns = [
     "name": "Soft Tile and Brick",
     "confidence": 0,
     "category": "Outdoor Details",
+    "gist": "Hard glazed surfaces refuse the print of use. Fire soft tile and brick that wear smooth underfoot.",
     "broader": [
       125,
       168,
@@ -5944,6 +6192,7 @@ export const patterns = [
     "name": "Ornament",
     "confidence": 2,
     "category": "Ornamentation",
+    "gist": "Decoration sprayed anywhere cheapens what it touches. Put ornament at the seams, where things meet.",
     "broader": [
       110,
       160,
@@ -5977,6 +6226,7 @@ export const patterns = [
     "name": "Warm Colors",
     "confidence": 2,
     "category": "Ornamentation",
+    "gist": "Cool tones drain a room even in full sun. Choose colors that make the light itself feel warm.",
     "broader": [
       135,
       182,
@@ -5999,6 +6249,7 @@ export const patterns = [
     "name": "Different Chairs",
     "confidence": 0,
     "category": "Ornamentation",
+    "gist": "Matching chair sets pretend all bodies are alike. Gather different chairs, each right for someone.",
     "broader": [
       88,
       142,
@@ -6017,6 +6268,7 @@ export const patterns = [
     "name": "Pools of Light",
     "confidence": 2,
     "category": "Ornamentation",
+    "gist": "Uniform lighting flattens a room to a diagram. Hang low lamps that make pools of light over each place.",
     "broader": [
       129,
       130,
@@ -6038,6 +6290,7 @@ export const patterns = [
     "name": "Things From Your Life",
     "confidence": 1,
     "category": "Ornamentation",
+    "gist": "Decor bought to impress says nothing about you. Keep the things your own life has marked and made dear.",
     "broader": [
       141,
       201,

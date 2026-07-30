@@ -66,3 +66,13 @@ Ladder ends (verified plausible, not errors): 1 has no broader (top);
       A companion issue draft with the full 55-star mismatch table is in
       the session scratchpad (`beksomega-issue-draft.md`) — not filed.
 - [ ] File apl-md issue for 13/98 stars if the book check disagrees.
+
+## Gist review — 2026-07-31
+
+All 253 gists human-reviewed and approved in one pass (review sheet +
+chat approval). Edits applied at review time: 96 rewritten (the draft tied
+story count to neighbors; the pattern ties it to the four-story limit and
+floor area), 213 rewritten (tangled load wording), and 13 gists normalized
+from spaced hyphen to em dash (18, 78, 85, 92, 133, 149, 150, 163, 187,
+192, 226, 238, 244). reviewedHash set to sha256 of the approved text for
+every entry; converter now emits 253 reviewed gists to production.
