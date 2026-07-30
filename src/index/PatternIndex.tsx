@@ -21,7 +21,8 @@ export default function PatternIndex() {
       <h1 style={{ fontWeight: 'normal' }}>Pattern Atlas</h1>
       <p style={{ color: 'var(--color-fade)' }}>
         The 253 patterns of <em>A Pattern Language</em> (1977), from region to
-        ornament. <Link href="/">View as a map</Link>.
+        ornament. <Link href="/">View as a map</Link> ·{' '}
+        <Link href="/colophon">colophon</Link>.
       </p>
       {bands.map((band) => (
         <section key={band}>

@@ -494,7 +494,8 @@ export default function Graph() {
       <header className="atlas-header">
         <h1>Pattern Atlas</h1>
         <nav>
-          <Link href="/patterns">pattern index</Link>
+          <Link href="/patterns">pattern index</Link>{' '}
+          <Link href="/colophon">colophon</Link>
         </nav>
       </header>
       <span className="tier-note">

@@ -45,6 +45,17 @@ describe('App smoke', () => {
   })
 })
 
+describe('colophon (/colophon attributions)', () => {
+  it('credits the books and the metadata source', () => {
+    window.history.replaceState(null, '', '/colophon')
+    const html = renderToString(<App />)
+    expect(html).toContain('Colophon')
+    expect(html).toContain('Oxford University Press')
+    expect(html).toContain('apl-md')
+    expect(html).toContain('original')
+  })
+})
+
 describe('pattern index (/patterns a11y surface)', () => {
   it('lists all 253 patterns', () => {
     const html = renderToString(<PatternIndex />)

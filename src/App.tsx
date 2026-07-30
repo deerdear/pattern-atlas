@@ -8,6 +8,7 @@ import Graph from './atlas/Graph'
 import PatternCard from './card/PatternCard'
 import NotFoundCard from './card/NotFoundCard'
 import PatternIndex from './index/PatternIndex'
+import Colophon from './colophon/Colophon'
 import Intro from './intro/Intro'
 import { parsePatternId } from './data/schema'
 
@@ -44,6 +45,7 @@ export default function App() {
   return (
     <Switch>
       <Route path="/patterns" component={PatternIndex} />
+      <Route path="/colophon" component={Colophon} />
       {GlyphGrid ? (
         <Route path="/dev/glyphs">
           <Suspense fallback={null}>
