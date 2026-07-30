@@ -198,6 +198,39 @@
   letter-spacing: 0.04em;
   pointer-events: none;
   user-select: none;
+  /* Paper halo: labels stay legible over linework and other labels. */
+  paint-order: stroke;
+  stroke: var(--color-page);
+  stroke-width: 0.22em;
+  stroke-linejoin: round;
+}
+
+/* Label sizes step down as the camera dives: a name from the scale above,
+   revealed by glow at a deeper tier, reads as a caption, not a banner.
+   The translate pulls each label back toward its node, since the baked
+   offset assumed the home-tier size. */
+.tier-building .node--towns .label {
+  font-size: 9px; /* svg user units */
+  transform: translateY(-9px);
+}
+
+.tier-construction .node--towns .label {
+  font-size: 4.5px;
+  transform: translateY(-19px);
+}
+
+.tier-construction .node--buildings .label {
+  font-size: 4px;
+  transform: translateY(-6px);
+}
+
+.tier-town .node--buildings .label {
+  font-size: 8px;
+}
+
+.tier-town .node--construction .label,
+.tier-building .node--construction .label {
+  font-size: 3.2px;
 }
 
 .node .hit {
@@ -300,6 +333,17 @@
 
 .node.lit .ctx-dot {
   display: inline;
+}
+
+/* Lit context dots from the scale above shrink with depth — a lit town at
+   building zoom is a landmark dot, not a boulder. */
+.tier-building .node--towns .ctx-dot {
+  r: 2.5px;
+}
+
+.tier-construction .node--towns .ctx-dot,
+.tier-construction .node--buildings .ctx-dot {
+  r: 1.4px;
 }
 
 /* The open pattern itself: visible at any tier, its name in full ink. */
