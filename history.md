@@ -113,3 +113,20 @@ lint clean. Remaining human sign-off: live pan/zoom feel, tier thresholds,
 label overlap in dense districts (worst near canvas center), 60fps check.
 Force retune after first preview: towns spread to fill canvas (charge -480,
 collide 42+11√children), buildings fill their cell (charge -55, center 0.055).
+
+## 2026-07-30: Village iterations, cards, intro, colophon, GitHub Pages
+
+Same branch, user-driven iteration: quarters (15 towns categories, ring
+anchors + hulls + baked label separation, two-line headings), bundled lanes
+(w≥5), corner sketch marginalia (src/lib/sketch.ts), pattern cards at
+/pattern/:id (dev-only draft gists via dynamic import — verified absent
+from prod bundle), camera centering (named interruptible transition,
+gesture wins), scale-filter rail (highlights a hierarchy, no camera moves),
+focus mode (off-thread labels hide while glowing), per-tier label sizing +
+paper halos, five intro cards ending on the author's motivation, /colophon
+attributions. Deployed: github.com/deerdear/pattern-atlas (public), Pages
+via Actions from feat/town-plan-map (environment branch policy widened),
+BASE_PATH-aware build + wouter Router base + 404.html SPA fallback. Gotcha
+logged: worktrees inside the main repo resolve node_modules from the parent
+checkout — @types/d3-transition compiled locally while missing from
+package.json; CI caught it. Live: https://deerdear.github.io/pattern-atlas/
