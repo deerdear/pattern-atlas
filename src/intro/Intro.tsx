@@ -155,9 +155,7 @@ export default function Intro() {
   return (
     <div className="intro-scrim" role="dialog" aria-modal="true" aria-label="About the Pattern Atlas">
       <article className="intro-card">
-        <p className="intro-count">
-          {index + 1} · {CARDS.length}
-        </p>
+        <p className="intro-count">{`${index + 1} · ${CARDS.length}`}</p>
         <h1 className="intro-title">{card.title}</h1>
         {card.body}
         <footer className="intro-footer">
