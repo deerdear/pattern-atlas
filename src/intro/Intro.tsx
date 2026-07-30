@@ -1,7 +1,8 @@
-// The five introduction cards shown on first visit: where the language
-// comes from, how it works, how the map draws it, why this atlas exists
-// (EDIT CARD 4 — that one is yours), and how to wander. All prose here is
-// original (AD-5): the book's own text never enters the repo.
+// The introduction cards shown on first visit: the quality without a name,
+// where the language comes from, how it works, how the map draws it, why
+// this atlas exists (EDIT the "why this atlas" card — that one is yours),
+// and how to wander. All prose here is original (AD-5): the books' own
+// text never enters the repo.
 //
 // Shows once (localStorage), reopenable via the small "about" link.
 
@@ -11,6 +12,27 @@ import './intro.css'
 const SEEN_KEY = 'atlas-intro-seen'
 
 const CARDS: { title: string; body: ReactNode }[] = [
+  {
+    title: 'the quality without a name',
+    body: (
+      <>
+        <p>
+          Before the patterns came a question. In{' '}
+          <em>The Timeless Way of Building</em> (1979), Christopher Alexander
+          circles a quality he finds in certain places — an old courtyard, a
+          market street, a window seat someone actually sits in. Words like{' '}
+          <em>alive</em> or <em>whole</em> come close to it, then slip off.
+          He argues the quality cannot be named — yet anyone can recognize
+          it, and a place can be built toward it, deliberately.
+        </p>
+        <p>
+          This atlas is a map of his answer to <em>how</em>. Wander it
+          looking for that quality: every mark here is one small move toward
+          places that feel alive.
+        </p>
+      </>
+    ),
+  },
   {
     title: 'a pattern language',
     body: (
