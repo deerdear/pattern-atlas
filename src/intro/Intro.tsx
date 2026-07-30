@@ -1,8 +1,7 @@
 // The introduction cards shown on first visit: the quality without a name,
-// where the language comes from, how it works, how the map draws it, why
-// this atlas exists (EDIT the "why this atlas" card — that one is yours),
-// and how to wander. All prose here is original (AD-5): the books' own
-// text never enters the repo.
+// where the language comes from, how it works, how the map draws it, the
+// author's own motivation, and how to wander. All prose here is original
+// (AD-5): the books' own text never enters the repo.
 //
 // Shows once (localStorage), reopenable via the small "about" link.
 
@@ -88,19 +87,22 @@ const CARDS: { title: string; body: ReactNode }[] = [
     ),
   },
   {
-    // EDIT ME: this card is the author's own motivation. Replace the
-    // placeholder paragraphs with your reasons for building the atlas.
+    // The author's own motivation — their words.
     title: 'why this atlas',
     body: (
       <>
-        <p className="intro-placeholder">
-          [Your motivation goes here — why you wanted to build this. A few
-          sentences: what the book means to you, what you hoped a map of it
-          would make visible that the bound sequence of pages cannot.]
+        <p>
+          Alexander was a pioneer — the first Architecture PhD of Harvard,
+          and a trained mathematician. He applied his language to
+          architecture, but the method is truly timeless. I was gifted the
+          book by someone, and it reignited my observational attention to
+          simple, true things. Thus I wanted to build something as an
+          application of the patterns, and start building my own pattern
+          language.
         </p>
-        <p className="intro-placeholder">
-          [Optionally a second paragraph: who you hope wanders here, and
-          what they might take away.]
+        <p>
+          Hopefully this inspires you to see the world through Christopher
+          Alexander&rsquo;s eyes — or to discover patterns for yourself.
         </p>
       </>
     ),

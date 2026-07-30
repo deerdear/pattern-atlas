@@ -40,11 +40,6 @@
   max-width: 44ch;
 }
 
-.intro-placeholder {
-  color: var(--color-fade);
-  font-style: italic;
-}
-
 .intro-footer {
   display: flex;
   align-items: center;
