@@ -1,7 +1,7 @@
 // The introduction cards shown on first visit: the quality without a name,
-// where the language comes from, how it works, how the map draws it, the
-// author's own motivation, and how to wander. All prose here is original
-// (AD-5): the books' own text never enters the repo.
+// where the language comes from, how it works, how the map draws it, and
+// the author's own motivation. All prose here is original (AD-5): the
+// books' own text never enters the repo.
 //
 // Shows once (localStorage), reopenable via the small "about" link.
 
@@ -103,25 +103,6 @@ const CARDS: { title: string; body: ReactNode }[] = [
         <p>
           Hopefully this inspires you to see the world through Christopher
           Alexander&rsquo;s eyes — or to discover patterns for yourself.
-        </p>
-      </>
-    ),
-  },
-  {
-    title: 'how to wander',
-    body: (
-      <>
-        <p>
-          Wander before you search. Zoom to move between the town, its
-          buildings, and their construction. Click any mark to open its
-          pattern and follow the threads up and down the ladder, card to
-          card. The rail on the left lights a whole scale at once; hovering
-          lights a pattern&rsquo;s immediate neighborhood.
-        </p>
-        <p>
-          The names, numbers, stars, and threads are the book&rsquo;s
-          structure; every sentence of prose here is original. The book
-          itself is worth owning.
         </p>
       </>
     ),

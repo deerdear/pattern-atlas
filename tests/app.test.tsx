@@ -17,7 +17,7 @@ describe('App smoke', () => {
     window.localStorage?.removeItem('atlas-intro-seen')
     const html = renderToString(<App />)
     expect(html).toContain('intro-card')
-    expect(html).toContain('1 · 6')
+    expect(html).toContain('1 · 5')
     expect(html).toContain('the quality without a name')
     expect(html).toContain('Timeless Way of Building')
     expect(html).toContain('Christopher Alexander')
