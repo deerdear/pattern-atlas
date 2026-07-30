@@ -8,6 +8,7 @@ import Graph from './atlas/Graph'
 import PatternCard from './card/PatternCard'
 import NotFoundCard from './card/NotFoundCard'
 import PatternIndex from './index/PatternIndex'
+import Intro from './intro/Intro'
 import { parsePatternId } from './data/schema'
 
 const GlyphGrid = import.meta.env.DEV
@@ -35,6 +36,7 @@ export default function App() {
       <>
         <Graph />
         {card}
+        <Intro />
       </>
     )
   }

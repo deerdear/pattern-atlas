@@ -12,6 +12,16 @@ describe('App smoke', () => {
     expect((html.match(/<use/g) ?? []).length).toBe(253)
   })
 
+  it('introduces the atlas on first visit: five cards, motivation slot', () => {
+    window.history.replaceState(null, '', '/')
+    window.localStorage?.removeItem('atlas-intro-seen')
+    const html = renderToString(<App />)
+    expect(html).toContain('intro-card')
+    expect(html).toContain('1 · 5')
+    expect(html).toContain('a pattern language')
+    expect(html).toContain('Christopher Alexander')
+  })
+
   it('serves a pattern card over the map at /pattern/180', () => {
     window.history.replaceState(null, '', '/pattern/180')
     const html = renderToString(<App />)

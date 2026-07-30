@@ -419,6 +419,26 @@
   display: inline;
 }
 
+/* The focused scale's names light with it, in full ink at any tier. */
+.focus-towns .node--towns .label,
+.focus-buildings .node--buildings .label,
+.focus-construction .node--construction .label {
+  display: inline;
+  fill: var(--color-ink);
+}
+
+.tier-town.focus-buildings .node--buildings .label {
+  font-size: 10px;
+}
+
+.tier-town.focus-construction .node--construction .label {
+  font-size: 11px;
+}
+
+.tier-building.focus-construction .node--construction .label {
+  font-size: 5px;
+}
+
 /* Zoomed shallower than the focused scale, its glyphs grow to be seen. */
 .tier-town.focus-buildings .node--buildings use {
   transform: scale(1.7);
