@@ -356,6 +356,29 @@
   fill: var(--color-ink);
 }
 
+/* While a thread is lit, everything off it recedes: unrelated names hide
+   and the furniture fades to a whisper. Placed last — glow wins. */
+.glowing .node:not(.lit):not(.selected) .label {
+  display: none;
+}
+
+.glowing .quarter-label {
+  opacity: 0.14;
+}
+
+.glowing .quarter,
+.glowing .hedge {
+  opacity: 0.07;
+}
+
+.glowing .lane {
+  opacity: 0.03;
+}
+
+.glowing .sketch {
+  opacity: 0.04;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .node {
     transition: none;
@@ -400,6 +423,52 @@
   color: var(--color-fade);
   pointer-events: none;
   user-select: none;
+}
+
+.tier-rail {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tier-rail button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  width: 4.1rem;
+  padding: 0.45rem 0.3rem 0.35rem;
+  background: var(--color-page);
+  border: 1px solid var(--color-rule);
+  color: var(--color-fade);
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+}
+
+.tier-rail button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tier-rail button:hover {
+  border-color: var(--color-fade);
+}
+
+.tier-rail button.active {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
 }
 
 .legend {

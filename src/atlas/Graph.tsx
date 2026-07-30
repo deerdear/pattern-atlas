@@ -6,7 +6,7 @@
 // the town plan first, a district's buildings as you approach, and the
 // construction details once you are close enough to touch a wall.
 
-import { memo, useCallback, useEffect, useRef } from 'react'
+import { memo, useCallback, useEffect, useRef, type ReactNode } from 'react'
 import { Link, useLocation, useRoute } from 'wouter'
 import type { ZoomTransform } from 'd3-zoom'
 import { canvas, districtHulls, lanes, quarters } from '../data/layout'
@@ -20,7 +20,7 @@ import { churchElevation, hillHamlet, housePlan, houseRow, type Vignette } from 
 import { Edges } from './Edges'
 import { NodeGlyph, glyphId } from './NodeGlyph'
 import { highlightFor } from './glow'
-import { useCamera, type LodTier, type World } from './useCamera'
+import { useCamera, type Camera, type LodTier, type World } from './useCamera'
 import './atlas.css'
 
 const world: World = {
@@ -209,6 +209,48 @@ const Nodes = memo(function Nodes() {
   )
 })
 
+/** The three scales of the language, as a rail of icons to dive between. */
+const TIER_ICONS: Record<LodTier, ReactNode> = {
+  town: (
+    <svg viewBox="0 0 22 22" aria-hidden="true">
+      <path d="M2 17h18M4 17v-5l3-3 3 3v5M12 17v-6l3.5-3.5L19 11v6" />
+    </svg>
+  ),
+  building: (
+    <svg viewBox="0 0 22 22" aria-hidden="true">
+      <path d="M3 18h16M5 18V8h12v10M5 8l6-4.5L17 8M9.5 18v-5h3v5" />
+    </svg>
+  ),
+  construction: (
+    <svg viewBox="0 0 22 22" aria-hidden="true">
+      <path d="M15.3 6.6A6 6 0 1 0 17 11.5" />
+      <path d="M16.4 5.6l3-3M18.4 8.6l3.4-1.6" />
+      <circle cx="11" cy="11.5" r="1.3" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+}
+
+const TIER_ORDER: LodTier[] = ['town', 'building', 'construction']
+
+function TierRail({ tier, zoomTier }: { tier: LodTier; zoomTier: Camera['zoomTier'] }) {
+  return (
+    <nav className="tier-rail" aria-label="Dive to a scale of the language">
+      {TIER_ORDER.map((t) => (
+        <button
+          key={t}
+          type="button"
+          className={t === tier ? 'active' : undefined}
+          aria-pressed={t === tier}
+          onClick={() => zoomTier(t)}
+        >
+          {TIER_ICONS[t]}
+          <span>{t}</span>
+        </button>
+      ))}
+    </nav>
+  )
+}
+
 function Legend() {
   return (
     <details className="legend">
@@ -273,7 +315,7 @@ export default function Graph() {
     }
   }, [])
 
-  const { tier, centerOn } = useCamera(svgRef, cameraRef, world, onTransform)
+  const { tier, centerOn, zoomTier } = useCamera(svgRef, cameraRef, world, onTransform)
 
   // --- Neighborhood Glow, applied imperatively (refs + adjacency) ----------
   // Glow has one owner: an open card beats hover, always.
@@ -427,6 +469,7 @@ export default function Graph() {
         </nav>
       </header>
       <span className="tier-note">{TIER_NOTE[tier]}</span>
+      <TierRail tier={tier} zoomTier={zoomTier} />
       <Legend />
     </div>
   )

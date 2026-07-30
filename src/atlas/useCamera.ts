@@ -45,6 +45,12 @@ export function fitTransform(world: World, w: number, h: number): ZoomTransform 
   return zoomIdentity.translate(tx, ty).scale(k)
 }
 
+/** Mid-band zoom the tier rail dives to for each scale. */
+export const TIER_RAIL_K: Record<Exclude<LodTier, 'town'>, number> = {
+  building: 2.2,
+  construction: 4.2,
+}
+
 export interface Camera {
   tier: LodTier
   /**
@@ -54,6 +60,11 @@ export interface Camera {
    * viewport center (room for the card). Instant under reduced motion.
    */
   centerOn: (wx: number, wy: number, minK: number, shiftX?: number) => void
+  /**
+   * Jump the camera to a semantic tier: 'town' refits the whole village;
+   * the deeper tiers zoom about the current viewport center.
+   */
+  zoomTier: (tier: LodTier) => void
 }
 
 export function useCamera(
@@ -64,6 +75,7 @@ export function useCamera(
 ): Camera {
   const [tier, setTier] = useState<LodTier>('town')
   const behaviorRef = useRef<ZoomBehavior<SVGSVGElement, unknown> | null>(null)
+  const fitRef = useRef<ZoomTransform | null>(null)
 
   useEffect(() => {
     const svg = svgRef.current
@@ -103,6 +115,7 @@ export function useCamera(
     selection.call(behavior)
     selection.call(behavior.transform, fit)
     behaviorRef.current = behavior
+    fitRef.current = fit
 
     // Safari pinch fires proprietary gesture events that would zoom the page.
     const suppress = (e: Event) => e.preventDefault()
@@ -115,18 +128,11 @@ export function useCamera(
     }
   }, [svgRef, cameraRef, world, onTransform])
 
-  const centerOn = useCallback(
-    (wx: number, wy: number, minK: number, shiftX = 0) => {
+  const glide = useCallback(
+    (target: ZoomTransform) => {
       const svg = svgRef.current
       const behavior = behaviorRef.current
       if (!svg || !behavior) return
-      const w = svg.clientWidth || 960
-      const h = svg.clientHeight || 720
-      const k = Math.min(Math.max(zoomTransform(svg).k, minK), MAX_K)
-      const target = zoomIdentity
-        .translate(w / 2 - shiftX, h / 2)
-        .scale(k)
-        .translate(-wx, -wy)
       const reduce =
         typeof window.matchMedia === 'function' &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -143,5 +149,44 @@ export function useCamera(
     [svgRef],
   )
 
-  return { tier, centerOn }
+  const centerOn = useCallback(
+    (wx: number, wy: number, minK: number, shiftX = 0) => {
+      const svg = svgRef.current
+      if (!svg) return
+      const w = svg.clientWidth || 960
+      const h = svg.clientHeight || 720
+      const k = Math.min(Math.max(zoomTransform(svg).k, minK), MAX_K)
+      glide(
+        zoomIdentity
+          .translate(w / 2 - shiftX, h / 2)
+          .scale(k)
+          .translate(-wx, -wy),
+      )
+    },
+    [svgRef, glide],
+  )
+
+  const zoomTier = useCallback(
+    (target: LodTier) => {
+      const svg = svgRef.current
+      if (!svg) return
+      if (target === 'town') {
+        if (fitRef.current) glide(fitRef.current)
+        return
+      }
+      const w = svg.clientWidth || 960
+      const h = svg.clientHeight || 720
+      const cur = zoomTransform(svg)
+      const [wcx, wcy] = cur.invert([w / 2, h / 2])
+      glide(
+        zoomIdentity
+          .translate(w / 2, h / 2)
+          .scale(TIER_RAIL_K[target])
+          .translate(-wcx, -wcy),
+      )
+    },
+    [svgRef, glide],
+  )
+
+  return { tier, centerOn, zoomTier }
 }
