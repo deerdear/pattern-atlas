@@ -1,0 +1,40 @@
+/* Pattern Atlas base styles. Paper-light only (design language): ink on
+   bible paper; no dark variant. Tokens mirror src/theme/tokens.ts. */
+
+:root {
+  color-scheme: light;
+  --color-cover: #b4941f;
+  --color-ochre-deep: #8a6d14;
+  --color-page: #fbf6e8;
+  --color-ink: #221d14;
+  --color-red: #93280f;
+  --color-fade: #786e56;
+  --color-rule: #dcd3b6;
+  --color-node-dim: #8f8a7e;
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-page);
+  color: var(--color-ink);
+  font-family: var(--serif);
+}
+
+a {
+  color: var(--color-ink);
+  text-decoration-color: var(--color-rule);
+}
+
+a:hover {
+  text-decoration-color: var(--color-red);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 2px;
+}

@@ -1,0 +1,117 @@
+/* The pattern card: a page, not a popover. Paper, 1px ink border, square
+   corners, no shadow. Typography close to the 1977 edition's treatment. */
+
+.card {
+  position: absolute;
+  top: 3.4rem;
+  right: 0.75rem;
+  width: min(23rem, calc(100vw - 1.5rem));
+  max-height: calc(100dvh - 4.5rem);
+  overflow-y: auto;
+  background: var(--color-page);
+  border: 1px solid var(--color-ink);
+  padding: 1.3rem 1.5rem 1.1rem;
+}
+
+.card-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--color-fade);
+}
+
+.card-eyebrow {
+  margin: 0 0 0.2rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--color-fade);
+}
+
+.card-number {
+  margin: 0;
+  font-size: 2.7rem;
+  line-height: 1.05;
+  font-variant-numeric: oldstyle-nums;
+}
+
+.card-name {
+  margin: 0.1rem 0 0.15rem;
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 1.3rem;
+  line-height: 1.25;
+}
+
+.card-asterisks {
+  color: var(--color-red);
+  letter-spacing: 0.1em;
+}
+
+.card-confidence {
+  margin: 0 0 0.8rem;
+  font-size: 0.85rem;
+  color: var(--color-fade);
+}
+
+.card-gist {
+  margin: 0 0 1rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
+  max-width: 34ch;
+}
+
+.card-gist.draft::after {
+  content: ' · draft';
+  font-size: 0.75em;
+  color: var(--color-fade);
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+}
+
+.card-rule {
+  border: 0;
+  border-top: 1px solid var(--color-ink);
+  opacity: 0.2;
+  margin: 0.9rem 0;
+}
+
+.card-thread h2 {
+  margin: 0 0 0.25rem;
+  font-size: 0.8rem;
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+  color: var(--color-fade);
+}
+
+.card-thread ul {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.card-thread li {
+  line-height: 1.6;
+}
+
+.card-thread a {
+  text-decoration: none;
+  color: var(--color-ink);
+}
+
+.card-thread a:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--color-red);
+}
+
+.card-empty {
+  margin: 0 0 1rem;
+  font-size: 0.9rem;
+  color: var(--color-fade);
+  font-style: italic;
+}

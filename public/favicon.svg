@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Irregular pebble in the atlas palette: cover ochre held by a
+       deep-ochre edge so it reads on light and dark tabs alike. -->
+  <path
+    d="M30 5 C42 2 55 9 58 20 C61 30 56 37 57 45 C58 54 49 61 39 60.5 C30 60 23 62 15.5 56 C8 50 4 41 6 31 C8 20 12 14 18.5 9.5 C22.5 6.7 25.5 6 30 5 Z"
+    fill="#B4941F" stroke="#8A6D14" stroke-width="2.5" stroke-linejoin="round"/>
+</svg>

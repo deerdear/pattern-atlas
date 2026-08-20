@@ -1,0 +1,66 @@
+import { describe, expect, it } from 'vitest'
+import { renderToString } from 'react-dom/server'
+import App from '../src/App'
+import PatternIndex from '../src/index/PatternIndex'
+import { patterns } from '../src/data/patterns'
+
+describe('App smoke', () => {
+  it('serves the map at /', () => {
+    window.history.replaceState(null, '', '/')
+    const html = renderToString(<App />)
+    expect(html).toContain('atlas-svg')
+    expect((html.match(/<use/g) ?? []).length).toBe(253)
+  })
+
+  it('introduces the atlas on first visit: five cards, motivation slot', () => {
+    window.history.replaceState(null, '', '/')
+    window.localStorage?.removeItem('atlas-intro-seen')
+    const html = renderToString(<App />)
+    expect(html).toContain('intro-card')
+    expect(html).toContain('1 · 5')
+    expect(html).toContain('the quality without a name')
+    expect(html).toContain('Timeless Way of Building')
+    expect(html).toContain('Christopher Alexander')
+  })
+
+  it('serves a pattern card over the map at /pattern/180', () => {
+    window.history.replaceState(null, '', '/pattern/180')
+    const html = renderToString(<App />)
+    const p = patterns.find((x) => x.id === 180)!
+    expect(html).toContain('atlas-svg') // the map stays underneath
+    expect(html).toContain('Window Place')
+    expect(html).toContain('Alexander’s confidence')
+    for (const n of [...p.broader, ...p.narrower]) {
+      expect(html).toContain(`/pattern/${n}`)
+    }
+  })
+
+  it('renders a not-found card at bad pattern URLs', () => {
+    for (const bad of ['/pattern/999', '/pattern/abc', '/pattern/0']) {
+      window.history.replaceState(null, '', bad)
+      const html = renderToString(<App />)
+      expect(html, bad).toContain('No pattern here')
+      expect(html, bad).toContain('atlas-svg')
+    }
+  })
+})
+
+describe('colophon (/colophon attributions)', () => {
+  it('credits the books and the metadata source', () => {
+    window.history.replaceState(null, '', '/colophon')
+    const html = renderToString(<App />)
+    expect(html).toContain('Colophon')
+    expect(html).toContain('Oxford University Press')
+    expect(html).toContain('apl-md')
+    expect(html).toContain('original')
+  })
+})
+
+describe('pattern index (/patterns a11y surface)', () => {
+  it('lists all 253 patterns', () => {
+    const html = renderToString(<PatternIndex />)
+    expect((html.match(/<li/g) ?? []).length).toBe(253)
+    expect(html).toContain('Window Place')
+    expect(html).toContain('Independent Regions')
+  })
+})

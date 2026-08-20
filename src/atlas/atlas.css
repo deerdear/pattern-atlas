@@ -1,0 +1,601 @@
+/* The town plan. Everything here obeys the design language: ink on paper,
+   no sans-serif, no shadows, square corners. Dim/glow classes are toggled
+   imperatively from Graph.tsx; edges never transition (repaint cost).
+
+   The scene carries one tier class — tier-town / tier-building /
+   tier-construction — and this file is the matrix of what each tier shows:
+   the current scale draws in full, the scale above stays as area labels and
+   walls for orientation, the scale below waits as small context dots. */
+
+.atlas {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.atlas-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  cursor: grab;
+}
+
+.atlas-svg:active {
+  cursor: grabbing;
+}
+
+/* --- marginalia: architectural sketches in the open country ------------- */
+
+.sketch {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.tier-town .sketch {
+  opacity: 0.16;
+}
+
+.tier-building .sketch {
+  opacity: 0.06;
+}
+
+/* --- village furniture: quarters, hedges, lanes ------------------------- */
+
+.quarter,
+.hedge {
+  fill: none;
+  stroke: var(--color-fade);
+  stroke-width: 1px; /* non-scaling */
+  pointer-events: none;
+}
+
+.tier-town .quarter {
+  opacity: 0.45;
+}
+
+.tier-building .quarter,
+.tier-construction .quarter {
+  opacity: 0.12;
+}
+
+.hedge {
+  opacity: 0;
+}
+
+.tier-building .hedge {
+  opacity: 0.4;
+}
+
+.tier-construction .hedge {
+  opacity: 0.15;
+}
+
+.lane {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-linecap: round;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.tier-town .lane {
+  opacity: 0.1;
+}
+
+.tier-building .lane {
+  opacity: 0.04;
+}
+
+.quarter-label {
+  fill: var(--color-fade);
+  text-anchor: middle;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  user-select: none;
+  display: none;
+}
+
+.tier-town .quarter-label {
+  display: inline;
+}
+
+/* --- edges (streets of each tier) -------------------------------------- */
+
+.edges {
+  stroke: var(--color-ink);
+  fill: none;
+  pointer-events: none;
+}
+
+.edges path {
+  opacity: 0.04;
+}
+
+.tier-town .edge-towns {
+  visibility: hidden; /* the lanes carry these threads at the village view */
+}
+
+.tier-town .edge-construction {
+  visibility: hidden;
+}
+
+.tier-building .edge-buildings {
+  opacity: 0.1;
+}
+
+.tier-building .edge-construction {
+  opacity: 0.02;
+}
+
+.tier-construction .edge-construction {
+  opacity: 0.12;
+}
+
+.tier-construction .edge-towns {
+  visibility: hidden;
+}
+
+.edge-hi {
+  stroke: var(--color-ink);
+  opacity: 0;
+  fill: none;
+  pointer-events: none;
+  stroke-linecap: round;
+}
+
+.glowing .edges path {
+  opacity: 0.02;
+}
+
+.glowing .edge-hi {
+  opacity: 0.7;
+}
+
+/* --- nodes -------------------------------------------------------------- */
+
+.node {
+  color: var(--color-ink);
+  transition: color 120ms; /* nodes only — never edges */
+  cursor: pointer;
+}
+
+.glowing .node:not(.lit) {
+  color: var(--color-node-dim);
+}
+
+.node .ctx-dot {
+  fill: currentColor;
+  display: none;
+}
+
+.node .footprint {
+  display: none;
+  stroke: currentColor;
+  stroke-width: 0.5px;
+  fill: currentColor;
+  fill-opacity: 0.05;
+}
+
+.node .footprint-wall {
+  fill: none;
+  stroke-width: 0.35px;
+  opacity: 0.6;
+}
+
+.node .label {
+  display: none;
+  fill: var(--color-fade);
+  text-anchor: middle;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  user-select: none;
+  /* Paper halo: labels stay legible over linework and other labels. */
+  paint-order: stroke;
+  stroke: var(--color-page);
+  stroke-width: 0.22em;
+  stroke-linejoin: round;
+}
+
+/* Label sizes step down as the camera dives: a name from the scale above,
+   revealed by glow at a deeper tier, reads as a caption, not a banner.
+   The translate pulls each label back toward its node, since the baked
+   offset assumed the home-tier size. */
+.tier-building .node--towns .label {
+  font-size: 9px; /* svg user units */
+  transform: translateY(-9px);
+}
+
+.tier-construction .node--towns .label {
+  font-size: 4.5px;
+  transform: translateY(-19px);
+}
+
+.tier-construction .node--buildings .label {
+  font-size: 4px;
+  transform: translateY(-6px);
+}
+
+.tier-town .node--buildings .label {
+  font-size: 8px;
+}
+
+.tier-town .node--construction .label,
+.tier-building .node--construction .label {
+  font-size: 3.2px;
+}
+
+.node .hit {
+  r: var(--hit-r, 28px);
+  fill: none;
+  pointer-events: all;
+}
+
+/* --- the tier matrix ----------------------------------------------------
+
+   town tier: towns glyphs + names; buildings as faint dots; details absent */
+
+.tier-town .node--buildings use,
+.tier-town .node--construction {
+  display: none;
+}
+
+.tier-town .node--buildings {
+  cursor: default;
+}
+
+.tier-town .node--buildings .ctx-dot {
+  display: inline;
+  opacity: 0.45;
+}
+
+.tier-town .node--buildings .hit,
+.tier-town .node--construction .hit {
+  pointer-events: none;
+}
+
+/* Individual names are not listed — hovering a node reveals the names of
+   its whole lit thread, at any tier. */
+.glowing .node.lit .label {
+  display: inline;
+}
+
+/* building tier: footprints + glyphs + names; town names stay as area
+   labels; details as faint dots */
+
+.tier-building .node--towns use {
+  display: none;
+}
+
+.tier-building .node--towns .label {
+  display: inline;
+  opacity: 0.55;
+  pointer-events: all; /* the district name still hovers/opens its pattern */
+}
+
+.tier-building .node--buildings .footprint,
+.tier-building .node--buildings .label {
+  display: inline;
+}
+
+.tier-building .node--construction use {
+  display: none;
+}
+
+.tier-building .node--construction .ctx-dot {
+  display: inline;
+  opacity: 0.5;
+}
+
+.tier-building .node--construction .hit {
+  pointer-events: none;
+}
+
+/* construction tier: detail glyphs + names; building walls stay as context */
+
+.tier-construction .node--towns {
+  display: none;
+}
+
+.tier-construction .node--buildings use {
+  opacity: 0.35;
+}
+
+.tier-construction .node--buildings .footprint {
+  display: inline;
+  opacity: 0.5;
+}
+
+.tier-construction .node--buildings .label {
+  display: inline;
+  opacity: 0.4;
+}
+
+.tier-construction .node--construction .label {
+  display: inline;
+}
+
+/* A lit thread (Neighborhood Glow) surfaces its neighbors even on tiers
+   that would otherwise hide their scale. Placed last: .lit wins. */
+
+.node.lit,
+.tier-construction .node--towns.lit {
+  display: inline;
+}
+
+.node.lit .ctx-dot {
+  display: inline;
+}
+
+/* Lit context dots from the scale above shrink with depth — a lit town at
+   building zoom is a landmark dot, not a boulder. */
+.tier-building .node--towns .ctx-dot {
+  r: 2.5px;
+}
+
+.tier-construction .node--towns .ctx-dot,
+.tier-construction .node--buildings .ctx-dot {
+  r: 1.4px;
+}
+
+/* The open pattern itself: visible at any tier, its name in full ink. */
+.node.selected {
+  display: inline;
+}
+
+.node.selected .label {
+  display: inline;
+  fill: var(--color-ink);
+}
+
+/* While a thread is lit, everything off it recedes: unrelated names hide
+   and the furniture fades to a whisper. Placed last — glow wins. */
+.glowing .node:not(.lit):not(.selected) .label {
+  display: none;
+}
+
+.glowing .quarter-label {
+  opacity: 0.14;
+}
+
+.glowing .quarter,
+.glowing .hedge {
+  opacity: 0.07;
+}
+
+.glowing .lane {
+  opacity: 0.03;
+}
+
+.glowing .sketch {
+  opacity: 0.04;
+}
+
+/* --- the rail's scale filter --------------------------------------------
+
+   Picking a scale on the rail highlights that whole hierarchy at any zoom
+   and recedes the rest. Placed last: the filter beats the tier matrix. */
+
+.focus-towns .node:not(.node--towns),
+.focus-buildings .node:not(.node--buildings),
+.focus-construction .node:not(.node--construction) {
+  opacity: 0.18;
+}
+
+.focus-towns .node:not(.node--towns) .label,
+.focus-buildings .node:not(.node--buildings) .label,
+.focus-construction .node:not(.node--construction) .label {
+  display: none;
+}
+
+.focus-towns .node--towns,
+.focus-buildings .node--buildings,
+.focus-construction .node--construction {
+  display: inline;
+  color: var(--color-ink);
+  opacity: 1;
+}
+
+.focus-towns .node--towns use,
+.focus-buildings .node--buildings use,
+.focus-construction .node--construction use {
+  display: inline;
+}
+
+.focus-buildings .node--buildings .ctx-dot,
+.focus-construction .node--construction .ctx-dot {
+  display: none;
+}
+
+.focus-buildings .node--buildings .footprint {
+  display: inline;
+}
+
+/* The focused scale's names light with it, in full ink at any tier. */
+.focus-towns .node--towns .label,
+.focus-buildings .node--buildings .label,
+.focus-construction .node--construction .label {
+  display: inline;
+  fill: var(--color-ink);
+}
+
+.tier-town.focus-buildings .node--buildings .label {
+  font-size: 10px;
+}
+
+.tier-town.focus-construction .node--construction .label {
+  font-size: 11px;
+}
+
+.tier-building.focus-construction .node--construction .label {
+  font-size: 5px;
+}
+
+/* Zoomed shallower than the focused scale, its glyphs grow to be seen. */
+.tier-town.focus-buildings .node--buildings use {
+  transform: scale(1.7);
+}
+
+.tier-town.focus-construction .node--construction use {
+  transform: scale(2.6);
+}
+
+.tier-building.focus-construction .node--construction use {
+  transform: scale(1.7);
+}
+
+/* The focused scale is hoverable and clickable at any tier. */
+.focus-towns .node--towns .hit,
+.focus-buildings .node--buildings .hit,
+.focus-construction .node--construction .hit {
+  pointer-events: all;
+}
+
+/* Its streets rise a little; the rest of the furniture recedes. */
+.focus-buildings .edge-buildings,
+.focus-construction .edge-construction {
+  opacity: 0.09;
+}
+
+.focus-buildings .quarter-label,
+.focus-construction .quarter-label {
+  opacity: 0.12;
+}
+
+.focus-buildings .quarter,
+.focus-construction .quarter {
+  opacity: 0.08;
+}
+
+.focus-construction .hedge {
+  opacity: 0.1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .node {
+    transition: none;
+  }
+}
+
+/* --- chrome ------------------------------------------------------------ */
+
+.atlas-header {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  pointer-events: none;
+}
+
+.atlas-header h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.atlas-header nav {
+  pointer-events: auto;
+}
+
+.atlas-header a {
+  color: var(--color-fade);
+}
+
+.tier-note {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+  font-size: 0.85rem;
+  color: var(--color-fade);
+  pointer-events: none;
+  user-select: none;
+}
+
+.tier-rail {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.tier-rail button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  width: 4.1rem;
+  padding: 0.45rem 0.3rem 0.35rem;
+  background: var(--color-page);
+  border: 1px solid var(--color-rule);
+  color: var(--color-fade);
+  font-family: inherit;
+  font-size: 0.62rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.07em;
+  cursor: pointer;
+}
+
+.tier-rail button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.tier-rail button:hover {
+  border-color: var(--color-fade);
+}
+
+.tier-rail button.active {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.legend {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  background: var(--color-page);
+  border: 1px solid var(--color-ink);
+  padding: 0.4rem 0.7rem;
+  max-width: 18rem;
+  font-size: 0.85rem;
+}
+
+.legend summary {
+  cursor: pointer;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.35rem;
+  color: var(--color-ink);
+}
+
+.legend-row svg {
+  flex: none;
+}
